@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng Ký Tài Khoản Mới | SNEAKER CITY</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* ==================== CÁC THIẾT LẬP CHUNG (Tái sử dụng) ==================== */
+        :root {
+            --primary-color: #2a9d8f; /* Màu xanh ngọc năng động */
+            --secondary-color: #e76f51; /* Màu cam nổi bật cho CTA */
+            --text-dark: #264653;
+            --text-light: #f4f4f4;
+            --bg-light: #ffffff;
+            --bg-gray: #f9f9f9;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            background-color: var(--bg-gray);
+            color: var(--text-dark);
+            /* Căn giữa form đăng ký trên toàn màn hình */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--primary-color);
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* -------------------------- CSS CHO FORM ĐĂNG KÝ -------------------------- */
+        .register-container {
+            width: 100%;
+            max-width: 450px; /* Hơi rộng hơn form đăng nhập vì có nhiều trường hơn */
+            background-color: var(--bg-light);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .register-container h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 1.8em;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1em;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus {
+            border-color: var(--primary-color);
+            outline: none;
+        }
+
+        .btn-register {
+            width: 100%;
+            padding: 15px;
+            background-color: var(--secondary-color);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-top: 10px;
+        }
+
+        .btn-register:hover {
+            background-color: #d8573a;
+        }
+
+        /* --- Đồng ý Điều khoản & Đăng ký qua MXH --- */
+        .terms-checkbox {
+            display: flex;
+            align-items: center;
+            font-size: 0.9em;
+            margin-bottom: 15px;
+        }
+
+        .terms-checkbox input {
+            width: auto;
+            margin-right: 10px;
+        }
+
+        .options {
+            text-align: center;
+            font-size: 0.9em;
+            margin-top: 20px;
+        }
+
+        .social-login {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            text-align: center;
+        }
+
+        .social-login p {
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .btn-social {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 5px;
+            border-radius: 5px;
+            color: white;
+            font-weight: 600;
+            font-size: 0.9em;
+        }
+
+        .btn-google {
+            background-color: #db4437;
+        }
+
+        .btn-facebook {
+            background-color: #4267B2;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="register-container">
+        
+        <h2>Tạo Tài Khoản Mới 🚀</h2>
+
+        <form action="#" method="POST">
+            
+            <div class="form-group">
+                <label for="name">Họ và Tên</label>
+                <input type="text" id="name" name="name" placeholder="Ví dụ: Nguyễn Văn A" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Địa chỉ email hợp lệ" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="phone">Số điện thoại</label>
+                <input type="tel" id="phone" name="phone" placeholder="Để nhận thông báo đơn hàng" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Mật khẩu</label>
+                <input type="password" id="password" name="password" placeholder="Tối thiểu 6 ký tự" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="confirm-password">Xác nhận Mật khẩu</label>
+                <input type="password" id="confirm-password" name="confirm-password" placeholder="Nhập lại mật khẩu" required>
+            </div>
+
+            <div class="terms-checkbox">
+                <input type="checkbox" id="terms" name="terms" required>
+                <label for="terms" style="margin-bottom: 0;">Tôi đồng ý với <a href="#">Điều khoản dịch vụ</a></label>
+            </div>
+            
+            <button type="submit" class="btn-register">HOÀN TẤT ĐĂNG KÝ</button>
+            
+        </form>
+
+        <div class="social-login">
+            <p>Hoặc đăng ký nhanh bằng</p>
+            <a href="#" class="btn-social btn-google">Google</a>
+            <a href="#" class="btn-social btn-facebook">Facebook</a>
+        </div>
+
+        <div class="options">
+            Đã có tài khoản? <a href="#">Đăng nhập ngay</a>
+        </div>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+﻿<div class="container header-content">
+    <div class="logo">
+        <a href="#">SNEAKER CITY</a>
+    </div>
+    <nav class="nav">
+        <ul>
+            <li><a asp-action="SanPhamNoiBat" asp-controller="Website">TRANG CHỦ</a></li>
+            <li><a asp-action="GiayNam" asp-controller="Website">GIÀY NAM</a></li>
+            <li><a asp-action="GiayNu" asp-controller="Website">GIÀY NỮ</a></li>
+            <li><a asp-action="SanPhamSale" asp-controller="Website">SALE 50%</a></li>
+            <li><a asp-action="TrangBlog" asp-controller="Website">BLOG</a></li>
+        </ul>
+    </nav>
+    <div class="utility">
+        <div class="search-box">
+            <i>🔍</i>
+            <input type="text" class="search-bar" placeholder="Tìm kiếm nhanh...">
+        </div>
+        <a asp-controller="Website"  asp-action="GioHang" title="Giỏ Hàng">🛒</a>
+        <a asp-controller="NguoiDung" asp-action="TrangChuNguoiDung" title="Tài Khoản">👤</a>
+    </div>
+</div>

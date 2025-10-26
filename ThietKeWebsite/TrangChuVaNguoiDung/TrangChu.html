@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SNEAKER CITY | Giày Thể Thao Cao Cấp</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* ==================== CÁC THIẾT LẬP CHUNG ==================== */
+        :root {
+            --primary-color: #2a9d8f; /* Màu xanh ngọc năng động */
+            --secondary-color: #e76f51; /* Màu cam nổi bật cho CTA */
+            --text-dark: #264653;
+            --text-light: #f4f4f4;
+            --bg-light: #ffffff;
+            --bg-gray: #f9f9f9;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            background-color: var(--bg-gray);
+            color: var(--text-dark);
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--primary-color);
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: var(--secondary-color);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ==================== 1. HEADER & NAVIGATION ==================== */
+        .header {
+            background-color: var(--bg-light);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo a {
+            font-size: 1.8em;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+
+        .nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav ul li {
+            margin: 0 15px;
+        }
+
+        .nav ul li a {
+            color: var(--text-dark);
+            font-weight: 600;
+            padding: 5px 0;
+            border-bottom: 2px solid transparent;
+        }
+
+        .nav ul li a:hover {
+            color: var(--primary-color);
+            border-bottom-color: var(--primary-color);
+        }
+        
+        /* -------------------------- CSS MỚI CHO THANH TÌM KIẾM -------------------------- */
+        .search-box {
+            display: flex;
+            align-items: center;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            width: 250px; /* Chiều rộng mặc định lớn hơn */
+            margin-right: 15px;
+            padding: 5px 10px;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        .search-box:focus-within {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 5px rgba(42, 157, 143, 0.3);
+        }
+        
+        .search-box span {
+            color: #999;
+            font-size: 1.2em;
+            margin-right: 8px;
+            padding-top: 2px;
+        }
+
+        .search-bar {
+            border: none;
+            outline: none;
+            flex-grow: 1;
+            padding: 3px 0;
+            background: transparent;
+        }
+        /* -------------------------- KẾT THÚC CSS MỚI -------------------------- */
+
+        .utility {
+             display: flex;
+             align-items: center;
+        }
+
+        .utility a {
+            margin-left: 20px;
+            font-size: 1.2em;
+        }
+
+        /* ==================== 2. BANNER & HERO SECTION ==================== */
+        .hero-banner {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+            background-image: url('https://via.placeholder.com/1200x400?text=COLLECTION+MOI+VE+GIAY+THE+THAO');
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .hero-banner::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.4); /* Lớp phủ mờ */
+            z-index: 1;
+        }
+
+        .hero-text {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-text h2 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+
+        .btn-shop {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 5px;
+            font-weight: 700;
+            margin-top: 20px;
+            display: inline-block;
+            transition: background-color 0.3s;
+        }
+
+        .btn-shop:hover {
+            background-color: #d8573a;
+        }
+
+        /* ==================== 3. SẢN PHẨM ==================== */
+        .section-title {
+            text-align: center;
+            margin: 40px 0 30px 0;
+            font-size: 2em;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); /* 4 cột trên desktop */
+            gap: 25px;
+        }
+
+        .product-card {
+            background-color: var(--bg-light);
+            border: 1px solid #eee;
+            border-radius: 10px;
+            overflow: hidden;
+            text-align: center;
+            padding-bottom: 15px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px); /* Hiệu ứng nổi lên */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 200px; /* Chiều cao cố định cho ảnh */
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+
+        .product-card h3 {
+            font-size: 1.1em;
+            margin: 0 0 5px 0;
+            padding: 0 10px;
+        }
+
+        .product-card p {
+            font-size: 0.9em;
+            color: #777;
+            margin-bottom: 10px;
+        }
+
+        .price {
+            font-size: 1.3em;
+            color: var(--secondary-color);
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .btn-add {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 8px 25px;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: background-color 0.3s;
+            display: inline-block;
+        }
+
+        .btn-add:hover {
+            background-color: #218579;
+        }
+
+        /* ==================== 4. FOOTER ==================== */
+        .footer {
+            background-color: var(--text-dark);
+            color: var(--text-light);
+            padding: 40px 0;
+            margin-top: 50px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+
+        .footer h4 {
+            font-size: 1.1em;
+            margin-bottom: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            padding-bottom: 5px;
+        }
+
+        .footer ul {
+            list-style: none;
+        }
+
+        .footer ul li a {
+            color: var(--text-light);
+            font-size: 0.9em;
+            line-height: 2;
+            display: block;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.85em;
+        }
+        
+        /* ==================== 5. RESPONSIVE CHO MOBILE ==================== */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+            }
+
+            .nav ul {
+                padding: 10px 0;
+            }
+            
+            .utility {
+                width: 100%;
+                justify-content: center;
+                margin-top: 10px;
+            }
+            
+            .search-box {
+                width: 70%; /* Mở rộng thanh tìm kiếm trên mobile */
+                margin-right: 20px;
+            }
+
+            .product-grid, .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+
+            .hero-text h2 {
+                font-size: 2em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .product-grid {
+                grid-template-columns: 1fr; /* 1 cột trên điện thoại nhỏ */
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .utility {
+                justify-content: space-around;
+            }
+            
+            .search-box {
+                width: 80%;
+                margin-right: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="container header-content">
+            <div class="logo">
+                <a href="#">SNEAKER CITY</a>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="#">TRANG CHỦ</a></li>
+                    <li><a href="#">GIÀY NAM</a></li>
+                    <li><a href="#">GIÀY NỮ</a></li>
+                    <li><a href="#">SALE 50%</a></li>
+                    <li><a href="#">BLOG</a></li>
+                </ul>
+            </nav>
+            <div class="utility">
+                <div class="search-box">
+                    <span>🔍</span>
+                    <input type="text" class="search-bar" placeholder="Tìm kiếm nhanh...">
+                </div>
+                <a href="#" title="Giỏ Hàng">🛒</a>
+                <a href="#" title="Tài Khoản">👤</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero-banner">
+        <div class="hero-text">
+            <h2>ĐAM MÊ CỦA BẠN, BƯỚC CHÂN CỦA CHÚNG TÔI</h2>
+            <p>Khám phá bộ sưu tập giày thể thao mới nhất từ các thương hiệu hàng đầu thế giới.</p>
+            <a href="#" class="btn-shop">XEM NGAY BỘ SƯU TẬP >></a>
+        </div>
+    </section>
+
+    <main class="container">
+        
+        <h2 class="section-title">👟 Sản Phẩm Nổi Bật Tuần Này 👟</h2>
+
+        <div class="product-grid">
+
+            <div class="product-card">
+                <img src="https://via.placeholder.com/300x200?text=ADIDAS+RUNNER+X" alt="Giày Adidas Runner X">
+                <h3><a href="#">Adidas Runner X Pro</a></h3>
+                <p>Màu: Đen/Trắng | Size: 40-44</p>
+                <div class="price">2.490.000 VNĐ</div>
+                <a href="#" class="btn-add">Thêm vào Giỏ</a>
+            </div>
+
+            <div class="product-card">
+                <img src="https://via.placeholder.com/300x200?text=NIKE+AIR+MAX+LITE" alt="Giày Nike Air Max Lite">
+                <h3><a href="#">Nike Air Max Lite</a></h3>
+                <p>Màu: Xanh Navy | Size: 36-40</p>
+                <div class="price">3.150.000 VNĐ</div>
+                <a href="#" class="btn-add">Thêm vào Giỏ</a>
+            </div>
+
+            <div class="product-card">
+                <img src="https://via.placeholder.com/300x200?text=PUMA+BASKET+CLASSIC" alt="Giày Puma Basket Classic">
+                <h3><a href="#">Puma Basket Classic</a></h3>
+                <p>Màu: Trắng kem | Size: 38-42</p>
+                <div class="price">1.500.000 VNĐ</div>
+                <a href="#" class="btn-add">Thêm vào Giỏ</a>
+            </div>
+
+            <div class="product-card">
+                <img src="https://via.placeholder.com/300x200?text=NEW+BALANCE+574" alt="Giày New Balance 574">
+                <h3><a href="#">New Balance 574 Vintage</a></h3>
+                <p>Màu: Xám | Size: 39-43</p>
+                <div class="price">1.890.000 VNĐ</div>
+                <a href="#" class="btn-add">Thêm vào Giỏ</a>
+            </div>
+            
+        </div>
+        
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-grid">
+            
+            <div class="footer-col">
+                <h4>Về SNEAKER CITY</h4>
+                <p style="font-size: 0.9em;">Chúng tôi cung cấp giày thể thao chính hãng, uy tín và luôn cập nhật mẫu mã mới nhất. Chất lượng tạo nên thương hiệu.</p>
+            </div>
+            
+            <div class="footer-col">
+                <h4>Hỗ Trợ Khách Hàng</h4>
+                <ul>
+                    <li><a href="#">Chính sách Đổi/Trả</a></li>
+                    <li><a href="#">Chính sách Bảo hành</a></li>
+                    <li><a href="#">Chính sách Vận chuyển</a></li>
+                    <li><a href="#">Hướng dẫn chọn Size</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h4>Liên Kết Nhanh</h4>
+                <ul>
+                    <li><a href="#">Giày Sale Off</a></li>
+                    <li><a href="#">Giày Cao Cấp</a></li>
+                    <li><a href="#">Hợp tác/Đại lý</a></li>
+                    <li><a href="#">Tuyển dụng</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Liên Hệ</h4>
+                <p style="font-size: 0.9em;">
+                    Địa chỉ: Tòa nhà XYZ, Quận 1, TP.HCM<br>
+                    Điện thoại: 0123 456 789<br>
+                    Email: support@sneakercity.vn
+                </p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 SNEAKER CITY. Thiết kế bởi Gemini AI. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

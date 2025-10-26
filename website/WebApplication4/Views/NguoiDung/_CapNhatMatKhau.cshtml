@@ -1,0 +1,34 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<link rel="stylesheet" href="~/css/NguoiDung/CapNhatMatKhau.css" />
+<main class="main-content">
+    <h2>🔑 Thay Đổi Mật Khẩu</h2>
+
+    <p class="desc">
+        Để bảo vệ tài khoản, mật khẩu mới của bạn phải khác mật khẩu cũ và có tối thiểu 8 ký tự.
+    </p>
+
+    <form class="change-password-form" action="#" method="POST">
+
+        <div class="form-group">
+            <label for="current-password">Mật khẩu hiện tại</label>
+            <input type="password" id="current-password" name="current-password" placeholder="Nhập mật khẩu bạn đang dùng" required>
+        </div>
+
+        <div class="form-group">
+            <label for="new-password">Mật khẩu mới</label>
+            <input type="password" id="new-password" name="new-password" placeholder="Mật khẩu mới (tối thiểu 8 ký tự)" required>
+            <p class="hint">💡 Gợi ý: Sử dụng kết hợp chữ hoa, chữ thường và số để mật khẩu mạnh hơn.</p>
+        </div>
+
+        <div class="form-group">
+            <label for="confirm-password">Xác nhận mật khẩu mới</label>
+            <input type="password" id="confirm-password" name="confirm-password" placeholder="Nhập lại mật khẩu mới" required>
+        </div>
+
+        <button type="submit" class="btn-change-password">CẬP NHẬT MẬT KHẨU</button>
+    </form>
+</main>

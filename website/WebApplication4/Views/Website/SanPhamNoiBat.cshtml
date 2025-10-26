@@ -1,0 +1,27 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<section class="hero-banner">
+    <div class="hero-text">
+        <h2>ĐAM MÊ CỦA BẠN, BƯỚC CHÂN CỦA CHÚNG TÔI</h2>
+        <p>Khám phá bộ sưu tập giày thể thao mới nhất từ các thương hiệu hàng đầu thế giới.</p>
+        <a href="#" class="btn-shop">XEM NGAY BỘ SƯU TẬP >></a>
+    </div>
+</section>
+
+<main class="container">
+
+    <h2 class="section-title">👟 Sản Phẩm Nổi Bật Tuần Này 👟</h2>
+
+    <div class="product-grid">
+        <!--Bat ddau duyet sanr pham-->
+        @for(int i=0; i<=7; i++)
+        {
+            @await Component.InvokeAsync("SanPham");
+        }
+        <!--ket thuc duyet san pham-->
+    </div>
+
+</main>

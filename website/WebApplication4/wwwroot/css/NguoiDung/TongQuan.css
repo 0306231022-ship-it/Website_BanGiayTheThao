@@ -1,0 +1,56 @@
+﻿.dashboard-summary {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.summary-card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    padding: 20px;
+    text-align: center;
+    transition: all 0.25s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
+}
+
+    .summary-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    }
+
+    .summary-card span {
+        font-size: 2rem;
+        display: block;
+        margin-bottom: 12px;
+    }
+
+    .summary-card h3 {
+        font-size: 1.1rem;
+        color: #111827;
+        margin-bottom: 6px;
+    }
+
+    .summary-card p {
+        color: #6b7280;
+        font-size: 0.95rem;
+        margin: 0;
+    }
+
+    /* màu thương hiệu */
+    .summary-card.total-orders span {
+        color: #3b82f6;
+    }
+
+    .summary-card.reward-points span {
+        color: #10b981;
+    }
+
+    .summary-card.favorite span {
+        color: #ef4444;
+    }
+
+    .summary-card.address span {
+        color: #f59e0b;
+    }

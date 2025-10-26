@@ -1,0 +1,214 @@
+﻿/* ==================== CÁC THIẾT LẬP CHUNG (Tái sử dụng) ==================== */
+:root {
+    --primary-color: #2a9d8f; /* Màu xanh ngọc */
+    --secondary-color: #e76f51; /* Màu cam nổi bật (CTA) */
+    --sale-color: #e63946; /* Màu Đỏ Sốc cho SALE */
+    --text-dark: #264653;
+    --bg-light: #ffffff;
+    --bg-gray: #f9f9f9;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    background-color: var(--bg-gray);
+    color: var(--text-dark);
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+    transition: color 0.3s;
+}
+
+    a:hover {
+        color: var(--secondary-color);
+    }
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* -------------------------- CSS CHO TRANG SALE -------------------------- */
+
+/* === 1. Header & Banner Sale === */
+.sale-banner {
+    background-color: var(--sale-color); /* Nền đỏ mạnh mẽ */
+    color: white;
+    padding: 40px 0;
+    text-align: center;
+    border-bottom: 5px solid var(--secondary-color);
+}
+
+    .sale-banner h1 {
+        font-size: 3.5em;
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        margin-bottom: 10px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+/* === 2. Thời Gian Đếm Ngược === */
+.countdown-timer {
+    background-color: rgba(255, 255, 255, 0.1);
+    display: inline-flex;
+    gap: 20px;
+    padding: 10px 30px;
+    border-radius: 50px;
+    margin-top: 15px;
+    font-weight: 700;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.countdown-unit {
+    font-size: 1.8em;
+    line-height: 1.1;
+}
+
+    .countdown-unit span {
+        display: block;
+        font-size: 0.4em;
+        font-weight: 400;
+    }
+
+/* === 3. Bộ Lọc/Sắp Xếp === */
+.filter-sort-bar {
+    background-color: var(--bg-light);
+    padding: 15px 20px;
+    margin: 30px 0 20px 0;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
+}
+
+/* Nút Sale Filter (dùng để lọc nhanh theo % giảm) */
+.sale-filter button {
+    background-color: #eee;
+    border: 1px solid #ddd;
+    padding: 8px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 600;
+    margin-right: 10px;
+    transition: all 0.2s;
+}
+
+    .sale-filter button.active, .sale-filter button:hover {
+        background-color: var(--sale-color);
+        color: white;
+        border-color: var(--sale-color);
+    }
+
+/* === 4. Lưới Sản Phẩm Sale === */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 cột như trang chủ */
+    gap: 25px;
+}
+
+.product-card {
+    background-color: var(--bg-light);
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+    padding-bottom: 15px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+}
+
+    .product-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .product-card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        margin-bottom: 15px;
+    }
+
+/* Tag Sale */
+.sale-tag {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: var(--sale-color);
+    color: white;
+    font-weight: 700;
+    padding: 5px 10px;
+    border-radius: 4px;
+    z-index: 10;
+}
+
+.prices {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    margin-bottom: 10px;
+}
+
+.old-price {
+    color: #999;
+    text-decoration: line-through;
+    font-size: 0.9em;
+    margin-right: 10px;
+}
+
+.new-price {
+    font-size: 1.4em;
+    color: var(--sale-color);
+    font-weight: 700;
+}
+
+.btn-add {
+    background-color: var(--secondary-color); /* Dùng màu CTA nổi bật */
+    color: white;
+    padding: 8px 25px;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background-color 0.3s;
+    display: inline-block;
+}
+
+    .btn-add:hover {
+        background-color: #d8573a;
+    }
+
+/* -------------------------- RESPONSIVE -------------------------- */
+@media (max-width: 992px) {
+    .product-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .sale-banner h1 {
+        font-size: 2.5em;
+    }
+}
+
+@media (max-width: 768px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .filter-sort-bar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .sale-filter {
+        margin-top: 10px;
+    }
+}

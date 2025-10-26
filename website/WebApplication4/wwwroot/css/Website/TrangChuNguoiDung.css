@@ -1,0 +1,174 @@
+﻿:root {
+    --primary-color: #2a9d8f; /* Màu xanh ngọc năng động */
+    --secondary-color: #e76f51; /* Màu cam nổi bật cho CTA */
+    --text-dark: #264653;
+    --bg-light: #ffffff;
+    --bg-gray: #f9f9f9;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    background-color: var(--bg-gray);
+    color: var(--text-dark);
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+    transition: color 0.3s;
+}
+
+    a:hover {
+        color: var(--secondary-color);
+    }
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* -------------------------- CSS CHO DASHBOARD -------------------------- */
+
+.dashboard-header {
+    padding: 40px 0;
+    text-align: center;
+}
+
+    .dashboard-header h1 {
+        font-size: 2.5em;
+        margin-bottom: 5px;
+    }
+
+.dashboard-layout {
+    display: grid;
+    grid-template-columns: 250px 1fr; /* Chia 2 cột: Menu và Nội dung chính */
+    gap: 30px;
+    padding-bottom: 50px;
+}
+
+/* ----- CỘT TRÁI: SIDEBAR NAVIGATION ----- */
+.sidebar-nav {
+    background-color: var(--bg-light);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    padding: 20px 0;
+    height: fit-content;
+}
+
+    .sidebar-nav ul {
+        list-style: none;
+    }
+
+    .sidebar-nav li a {
+        display: block;
+        padding: 15px 20px;
+        color: var(--text-dark);
+        font-weight: 600;
+        border-left: 4px solid transparent;
+        transition: all 0.2s;
+    }
+
+        .sidebar-nav li a:hover {
+            background-color: var(--bg-gray);
+            border-left-color: var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .sidebar-nav li a.active {
+            background-color: var(--bg-gray);
+            border-left-color: var(--secondary-color);
+            color: var(--secondary-color);
+        }
+
+/* ----- CỘT PHẢI: NỘI DUNG CHÍNH ----- */
+.main-content {
+    background-color: var(--bg-light);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    padding: 30px;
+}
+
+.welcome-box {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 30px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+    .welcome-box p {
+        font-size: 1.1em;
+        margin-bottom: 10px;
+    }
+
+.quick-links {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+    .quick-links a {
+        display: block;
+        background-color: var(--bg-gray);
+        padding: 20px;
+        text-align: center;
+        border-radius: 8px;
+        font-weight: 600;
+        color: var(--text-dark);
+        box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
+        transition: all 0.2s;
+    }
+
+        .quick-links a:hover {
+            background-color: #e5e5e5;
+            color: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+
+        /* Icon trong quick links */
+        .quick-links a span {
+            display: block;
+            font-size: 2em;
+            margin-bottom: 5px;
+            color: var(--primary-color);
+        }
+
+/* -------------------------- RESPONSIVE CHO DASHBOARD -------------------------- */
+@media (max-width: 768px) {
+    .dashboard-layout {
+        grid-template-columns: 1fr; /* Dồn thành 1 cột */
+    }
+
+    .sidebar-nav {
+        order: -1; /* Đẩy menu lên trên */
+    }
+
+        .sidebar-nav ul {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .sidebar-nav li {
+            flex-basis: 45%; /* Chia menu thành 2 cột */
+        }
+
+            .sidebar-nav li a {
+                text-align: center;
+                border-left: none;
+                border-bottom: 2px solid transparent;
+            }
+
+                .sidebar-nav li a.active {
+                    border-left: none;
+                    border-bottom-color: var(--secondary-color);
+                }
+}

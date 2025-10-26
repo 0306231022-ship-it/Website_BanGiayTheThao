@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sản phẩm yêu thích | SNEAKER CITY</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary-color: #2a9d8f;
+      --secondary-color: #e76f51;
+      --text-dark: #264653;
+      --bg-light: #ffffff;
+      --bg-gray: #f9f9f9;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      line-height: 1.6;
+      background-color: var(--bg-gray);
+      color: var(--text-dark);
+      padding: 40px;
+      margin: 0;
+    }
+
+    .main-content {
+      background-color: var(--bg-light);
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      padding: 40px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    h2 {
+      font-size: 1.8em;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: var(--primary-color);
+    }
+
+    p {
+      color: #666;
+      margin-bottom: 25px;
+    }
+
+    /* Lưới sản phẩm */
+    .wishlist-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+    }
+
+    .product-card {
+      background-color: var(--bg-light);
+      border: 1px solid #eee;
+      border-radius: 10px;
+      overflow: hidden;
+      text-align: center;
+      position: relative;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      transition: transform 0.2s, box-shadow 0.3s;
+    }
+
+    .product-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 12px rgba(0,0,0,0.1);
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 170px;
+      object-fit: cover;
+      background-color: #fafafa;
+    }
+
+    .card-content {
+      padding: 15px;
+    }
+
+    .card-content h3 {
+      font-size: 1.1em;
+      margin-bottom: 8px;
+    }
+
+    .card-content h3 a {
+      color: var(--text-dark);
+      text-decoration: none;
+    }
+
+    .card-content h3 a:hover {
+      color: var(--secondary-color);
+    }
+
+    .price {
+      font-size: 1.2em;
+      font-weight: 700;
+      color: var(--text-dark);
+    }
+
+    .prices {
+      margin-bottom: 8px;
+    }
+
+    .old-price {
+      color: #aaa;
+      text-decoration: line-through;
+      font-size: 0.9em;
+      margin-right: 5px;
+    }
+
+    .sale-price {
+      color: var(--secondary-color);
+      font-weight: 700;
+      font-size: 1.2em;
+    }
+
+    .availability {
+      font-size: 0.9em;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .in-stock {
+      color: var(--primary-color);
+    }
+
+    .out-of-stock-text {
+      color: var(--secondary-color);
+    }
+
+    .remove-btn {
+      position: absolute;
+      top: 8px;
+      right: 12px;
+      font-size: 1.8em;
+      color: var(--secondary-color);
+      opacity: 0.7;
+      text-decoration: none;
+      transition: opacity 0.3s;
+    }
+
+    .remove-btn:hover {
+      opacity: 1;
+    }
+
+    .btn-add-to-cart {
+      width: 90%;
+      padding: 10px;
+      border: none;
+      background-color: var(--secondary-color);
+      color: white;
+      border-radius: 5px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .btn-add-to-cart:hover:not(:disabled) {
+      background-color: #d8573a;
+    }
+
+    .btn-add-to-cart:disabled {
+      background-color: #aaa;
+      cursor: not-allowed;
+    }
+
+    .product-card.out-of-stock {
+      opacity: 0.7;
+    }
+
+    .footer-link {
+      text-align: center;
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid #eee;
+    }
+
+    .footer-link a {
+      font-weight: 600;
+      color: var(--primary-color);
+      text-decoration: none;
+    }
+
+    .footer-link a:hover {
+      color: var(--secondary-color);
+    }
+  </style>
+</head>
+<body>
+  <section class="main-content">
+    <h2>❤️ Sản Phẩm Yêu Thích</h2>
+    <p>Các sản phẩm bạn đã lưu để mua sắm sau này. Hãy nhanh tay, một số sản phẩm có thể sắp hết hàng!</p>
+
+    <div class="wishlist-grid">
+      <div class="product-card">
+        <a href="#" class="remove-btn" title="Xóa khỏi danh sách">&times;</a>
+        <img src="https://via.placeholder.com/200x150?text=ADIDAS+ULTRABOOST" alt="Adidas Ultraboost 22">
+        <div class="card-content">
+          <h3><a href="#">Adidas Ultraboost 22</a></h3>
+          <p class="price">2.990.000 VNĐ</p>
+          <p class="availability in-stock">✅ Còn hàng (Size 40)</p>
+          <button class="btn-add-to-cart">THÊM VÀO GIỎ</button>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <a href="#" class="remove-btn" title="Xóa khỏi danh sách">&times;</a>
+        <img src="https://via.placeholder.com/200x150?text=NIKE+DUNK+LOW" alt="Nike Dunk Low Panda">
+        <div class="card-content">
+          <h3><a href="#">Nike Dunk Low (Sale)</a></h3>
+          <div class="prices">
+            <span class="old-price">3.200.000 VNĐ</span>
+            <span class="sale-price">2.560.000 VNĐ</span>
+          </div>
+          <p class="availability in-stock">✅ Còn hàng</p>
+          <button class="btn-add-to-cart">THÊM VÀO GIỎ</button>
+        </div>
+      </div>
+
+      <div class="product-card out-of-stock">
+        <a href="#" class="remove-btn" title="Xóa khỏi danh sách">&times;</a>
+        <img src="https://via.placeholder.com/200x150?text=JORDAN+1" alt="Air Jordan 1 Retro">
+        <div class="card-content">
+          <h3><a href="#">Air Jordan 1 Retro High</a></h3>
+          <p class="price">5.500.000 VNĐ</p>
+          <p class="availability out-of-stock-text">❌ Hết hàng</p>
+          <button class="btn-add-to-cart" disabled>HẾT HÀNG</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-link">
+      <a href="#">Xem thêm sản phẩm đang Sale</a>
+    </div>
+  </section>
+</body>
+</html>

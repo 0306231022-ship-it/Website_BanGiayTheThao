@@ -1,0 +1,57 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<link rel="stylesheet" href="~/css/NguoiDung/ThongTinNguoiDung.css" />
+<section class="main-content">
+    <h2>📝 Thông Tin Cá Nhân</h2>
+
+    <p style="margin-bottom: 30px; color: #777;">Quản lý thông tin hồ sơ của bạn để mua sắm dễ dàng hơn.</p>
+
+    <form class="personal-info-form" action="#" method="POST">
+
+        <div class="form-section">
+            <h3 style="border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px;">Hồ sơ của bạn</h3>
+
+            <div class="form-group">
+                <label for="full-name">Họ và Tên</label>
+                <input type="text" id="full-name" name="full-name" value="Nguyễn Văn A" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Địa chỉ Email</label>
+                <input type="email" id="email" name="email" value="nguyenvana@example.com" disabled title="Không thể thay đổi email">
+                <p class="hint">Email là ID tài khoản và không thể thay đổi.</p>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Số điện thoại</label>
+                <input type="tel" id="phone" name="phone" value="0987xxxxxx" required>
+            </div>
+
+            <div class="form-group-inline">
+                <div class="form-group-half">
+                    <label for="gender">Giới tính</label>
+                    <select id="gender" name="gender">
+                        <option value="male">Nam</option>
+                        <option value="female" selected>Nữ</option>
+                        <option value="other">Khác</option>
+                    </select>
+                </div>
+                <div class="form-group-half">
+                    <label for="dob">Ngày sinh</label>
+                    <input type="date" id="dob" name="dob" value="1995-10-20">
+                </div>
+            </div>
+
+        </div>
+
+        <button type="submit" class="btn-save-info">LƯU THAY ĐỔI</button>
+
+        <div class="options" style="margin-top: 20px;">
+            <a href="#" style="color: #e63946; font-weight: 600;">🔑 Thay đổi mật khẩu</a>
+        </div>
+    </form>
+
+</section>

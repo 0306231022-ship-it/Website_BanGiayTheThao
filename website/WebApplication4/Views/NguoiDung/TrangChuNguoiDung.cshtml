@@ -1,0 +1,43 @@
+﻿<link rel="stylesheet" href="~/css/TrangChuNguoiDung.css" />
+
+<main class="container">
+    <div class="dashboard-layout">
+
+        <aside class="sidebar-nav">
+            <ul>
+                <li><a data-url="/NguoiDung/TongQuan" class="active">🏠 Tổng quan</a></li>
+                <li><a data-url="/NguoiDung/MyDonHang">📦 Đơn hàng của tôi</a></li>
+                <li><a data-url="/NguoiDung/ThongTinNguoiDung">📝 Thông tin cá nhân</a></li>
+                <li><a data-url="/NguoiDung/SoDiaChi">📍 Sổ địa chỉ</a></li>
+                <li><a data-url="/NguoiDung/SanPhamYeuThich">❤️ Sản phẩm yêu thích</a></li>
+                <li><a data-url="/NguoiDung/CapNhatMatKhau">🔑 Thay đổi mật khẩu</a></li>
+                <li><a href="#" style="color: #e63946;">→ Đăng xuất</a></li>
+            </ul>
+        </aside>
+
+        <section class="main-content">
+            <!-- 🔥 Vùng thay đổi nội dung -->
+            <div id="renderArea">
+                @Html.Partial("_TongQuan")
+            </div>
+        </section>
+
+    </div>
+</main>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(".sidebar-nav a[data-url]").on("click", function (e) {
+        e.preventDefault();
+        const url = $(this).data("url");
+
+        $(".sidebar-nav a").removeClass("active");
+        $(this).addClass("active");
+
+        $("#renderArea").fadeOut(150, function () {
+            $(this).load(url, function () {
+                $(this).fadeIn(150);
+            });
+        });
+    });
+</script>

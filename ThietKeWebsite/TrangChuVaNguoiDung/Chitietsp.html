@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giày Adidas Runner X Pro | Chi Tiết Sản Phẩm</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* CSS từ trang chủ (Đảm bảo các biến màu sắc và thiết lập chung được giữ nguyên) */
+        :root {
+            --primary-color: #2a9d8f; /* Màu xanh ngọc năng động */
+            --secondary-color: #e76f51; /* Màu cam nổi bật cho CTA */
+            --text-dark: #264653;
+            --text-light: #f4f4f4;
+            --bg-light: #ffffff;
+            --bg-gray: #f9f9f9;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            background-color: var(--bg-gray);
+            color: var(--text-dark);
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--primary-color);
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: var(--secondary-color);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* -------------------------- CSS CHO PDP (TRANG CHI TIẾT) -------------------------- */
+        
+        .product-detail-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* Chia 2 cột: Ảnh và Thông tin */
+            gap: 40px;
+            padding: 40px 0;
+            background-color: var(--bg-light);
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            margin-top: 30px;
+        }
+
+        /* ----- Cột Trái: Ảnh Sản Phẩm ----- */
+        .product-gallery {
+            padding-left: 30px; /* Tạo khoảng trống */
+        }
+
+        .main-image {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .thumbnail-container {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .thumbnail {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: border-color 0.3s;
+        }
+
+        .thumbnail:hover, .thumbnail.active {
+            border-color: var(--primary-color);
+        }
+        
+        /* ----- Cột Phải: Thông tin Sản Phẩm ----- */
+        .product-info {
+            padding-right: 30px;
+        }
+
+        .product-info h1 {
+            font-size: 2.2em;
+            margin-bottom: 5px;
+            color: var(--text-dark);
+        }
+
+        .brand-name {
+            font-size: 1.1em;
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+        /* --- Giá --- */
+        .price-area {
+            display: flex;
+            align-items: baseline;
+            margin-bottom: 25px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 15px;
+        }
+
+        .current-price {
+            font-size: 2.5em;
+            color: var(--secondary-color);
+            font-weight: 700;
+            margin-right: 15px;
+        }
+
+        .old-price {
+            font-size: 1.2em;
+            color: #999;
+            text-decoration: line-through;
+        }
+        
+        /* --- Tùy chọn --- */
+        .option-group {
+            margin-bottom: 20px;
+        }
+
+        .option-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .option-buttons button {
+            padding: 10px 15px;
+            margin-right: 10px;
+            border: 1px solid #ccc;
+            background-color: var(--bg-light);
+            cursor: pointer;
+            border-radius: 4px;
+            transition: all 0.2s;
+        }
+
+        .option-buttons button:hover {
+            border-color: var(--primary-color);
+        }
+
+        .option-buttons button.selected {
+            background-color: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+        
+        /* --- Thao tác chính --- */
+        .action-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .btn-buy-now {
+            flex-grow: 1;
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+            border-radius: 5px;
+            font-weight: 700;
+            font-size: 1.1em;
+            transition: background-color 0.3s;
+            border: none;
+        }
+
+        .btn-add-cart {
+            flex-grow: 1;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+            border-radius: 5px;
+            font-weight: 700;
+            font-size: 1.1em;
+            transition: background-color 0.3s;
+            border: none;
+        }
+        
+        .btn-buy-now:hover { background-color: #d8573a; }
+        .btn-add-cart:hover { background-color: #218579; }
+        
+        /* --- Tabs mô tả --- */
+        .description-tabs {
+            margin-top: 50px;
+        }
+
+        .tab-header {
+            display: flex;
+            border-bottom: 2px solid #ddd;
+        }
+
+        .tab-button {
+            padding: 15px 25px;
+            cursor: pointer;
+            font-weight: 600;
+            border: none;
+            background: none;
+            transition: color 0.3s;
+            color: #777;
+            position: relative;
+        }
+
+        .tab-button.active {
+            color: var(--primary-color);
+        }
+
+        .tab-button.active::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--primary-color);
+        }
+
+        .tab-content {
+            padding: 20px 0;
+            background-color: var(--bg-light);
+        }
+        
+        /* -------------------------- RESPONSIVE CHO PDP -------------------------- */
+        @media (max-width: 992px) {
+            .product-detail-section {
+                grid-template-columns: 1fr; /* Dồn thành 1 cột trên tablet/mobile */
+                padding: 20px;
+            }
+            
+            .product-gallery, .product-info {
+                padding: 0;
+            }
+            
+            .price-area {
+                justify-content: center;
+            }
+            
+            .product-info h1 {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <main class="container">
+        
+        <div class="product-detail-section">
+            
+            <div class="product-gallery">
+                <img src="https://via.placeholder.com/600x400?text=ADIDAS+RUNNER+X+-+FRONT" alt="Ảnh chính Giày Adidas Runner X Pro" class="main-image" id="mainImage">
+                
+                <div class="thumbnail-container">
+                    <img src="https://via.placeholder.com/80x80?text=GOC+1" alt="Góc 1" class="thumbnail active">
+                    <img src="https://via.placeholder.com/80x80?text=GOC+2" alt="Góc 2" class="thumbnail">
+                    <img src="https://via.placeholder.com/80x80?text=DE+GIAY" alt="Đế giày" class="thumbnail">
+                    <img src="https://via.placeholder.com/80x80?text=CLOSEUP" alt="Ảnh cận cảnh" class="thumbnail">
+                </div>
+            </div>
+            
+            <div class="product-info">
+                <p class="brand-name">ADIDAS PERFORMANCE</p>
+                <h1>Giày Chạy Bộ Adidas Runner X Pro</h1>
+                
+                <div class="price-area">
+                    <span class="current-price">2.490.000 VNĐ</span>
+                    <span class="old-price">3.200.000 VNĐ</span>
+                </div>
+                
+                <p style="margin-bottom: 25px; line-height: 1.8;">
+                    Đôi giày chạy bộ hoàn hảo cho cả đường phố và phòng tập. Thiết kế siêu nhẹ, công nghệ đệm Bounce đột phá mang lại sự êm ái tối đa trong từng bước chạy.
+                </p>
+
+                <div class="option-group">
+                    <label for="size-select">Kích cỡ:</label>
+                    <div class="option-buttons">
+                        <button class="selected">39</button>
+                        <button>40</button>
+                        <button>41</button>
+                        <button>42</button>
+                        <button>43</button>
+                        <button disabled title="Hết hàng">44</button>
+                    </div>
+                </div>
+
+                <div class="option-group">
+                    <label for="color-select">Màu sắc:</label>
+                    <div class="option-buttons">
+                        <button class="selected" style="background-color: black; border: 1px solid white;" title="Đen"></button>
+                        <button style="background-color: white; border: 1px solid #ccc;" title="Trắng"></button>
+                        <button style="background-color: navy; border: 1px solid white;" title="Xanh Navy"></button>
+                    </div>
+                </div>
+                
+                <div class="option-group">
+                    <label for="quantity">Số lượng:</label>
+                    <input type="number" id="quantity" value="1" min="1" max="10" style="padding: 10px; width: 80px; border: 1px solid #ccc; border-radius: 4px;">
+                </div>
+
+                <div class="action-buttons">
+                    <button class="btn-add-cart">THÊM VÀO GIỎ</button>
+                    <button class="btn-buy-now">MUA NGAY</button>
+                </div>
+                
+                <div style="margin-top: 20px; padding: 15px; border: 1px dashed #ddd; border-radius: 5px; font-size: 0.9em;">
+                    🚚 **Giao hàng tiêu chuẩn:** Miễn phí cho đơn hàng trên 2 triệu.
+                    <br>
+                    🛡️ **Bảo hành:** Đổi trả trong 7 ngày nếu lỗi từ nhà sản xuất.
+                </div>
+                
+            </div>
+        </div>
+
+        <div class="description-tabs">
+            <div class="tab-header">
+                <button class="tab-button active">MÔ TẢ CHI TIẾT</button>
+                <button class="tab-button">THÔNG SỐ KỸ THUẬT</button>
+                <button class="tab-button">ĐÁNH GIÁ (4.5/5)</button>
+            </div>
+            
+            <div class="tab-content">
+                <p><strong>Công nghệ:</strong> Đệm Bounce êm ái, thân giày Primeknit thoáng khí. Phù hợp với chạy bộ hàng ngày và tập luyện cường độ vừa phải.</p>
+                <p><strong>Vật liệu:</strong> Thân giày dệt Primeknit, Đế ngoài cao su chống trượt. Trọng lượng siêu nhẹ chỉ 300g.</p>
+                <p><strong>Lưu ý:</strong> Nên chọn lớn hơn 0.5 size so với giày thường ngày nếu bạn có bàn chân bè.</p>
+            </div>
+            
+            </div>
+
+    </main>
+    
+    </body>
+</html>

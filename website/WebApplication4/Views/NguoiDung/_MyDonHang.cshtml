@@ -1,0 +1,127 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<link rel="stylesheet" href="~/css/NguoiDung/MyDonHang.css" />
+<section class="main-content">
+    <h2>📦 Đơn Hàng Của Tôi</h2>
+
+    <div class="order-filter">
+        <button class="filter-btn active">Tất cả</button>
+        <button class="filter-btn">Đang xử lý</button>
+        <button class="filter-btn">Đang vận chuyển</button>
+        <button class="filter-btn">Đã giao</button>
+        <button class="filter-btn">Đã hủy</button>
+    </div>
+
+    <div class="order-card">
+        <div class="order-header">
+            <div>
+                <strong>Mã đơn hàng:</strong> #SC2025001
+                <span style="margin-left: 20px;">|</span>
+                <strong>Ngày đặt:</strong> 10/10/2025
+            </div>
+            <div>
+                <strong>Tổng cộng:</strong> <span class="order-total">2.490.000 VNĐ</span>
+            </div>
+        </div>
+
+        <div class="order-body">
+            <div class="order-item-list">
+                <div class="order-item">
+                    <img src="https://via.placeholder.com/60x60?text=ADIDAS" alt="Giày Adidas">
+                    <div class="item-details">
+                        <p>Giày Adidas Runner X Pro</p>
+                        <p>Size: 41 | Số lượng: 1</p>
+                    </div>
+                    <p class="item-price">2.490.000 VNĐ</p>
+                </div>
+            </div>
+
+            <div class="order-footer">
+                <p class="order-status">Trạng thái: <span class="status-text">Đã giao hàng (15/10/2025)</span></p>
+                <div class="action-links">
+                    <a href="#" class="btn-view-detail">Xem chi tiết</a>
+                    <a href="#" class="btn-review">Đánh giá sản phẩm</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="order-card">
+        <div class="order-header">
+            <div>
+                <strong>Mã đơn hàng:</strong> #SC2025002
+                <span style="margin-left: 20px;">|</span>
+                <strong>Ngày đặt:</strong> 20/10/2025
+            </div>
+            <div>
+                <strong>Tổng cộng:</strong> <span class="order-total">3.150.000 VNĐ</span>
+            </div>
+        </div>
+
+        <div class="order-body">
+            <div class="order-item-list">
+                <div class="order-item">
+                    <img src="https://via.placeholder.com/60x60?text=NIKE" alt="Giày Nike">
+                    <div class="item-details">
+                        <p>Nike Air Max Lite</p>
+                        <p>Size: 37 | Số lượng: 1</p>
+                    </div>
+                    <p class="item-price">3.150.000 VNĐ</p>
+                </div>
+            </div>
+
+            <div class="order-footer">
+                <p class="order-status">Trạng thái: <span class="status-text status-shipping">Đang vận chuyển</span></p>
+                <div class="action-links">
+                    <a href="#" class="btn-track">Theo dõi đơn hàng</a>
+                    <a href="#" class="btn-cancel">Hủy đơn hàng</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="order-card">
+        <div class="order-header">
+            <div>
+                <strong>Mã đơn hàng:</strong> #SC2025003
+                <span style="margin-left: 20px;">|</span>
+                <strong>Ngày đặt:</strong> 15/09/2025
+            </div>
+            <div>
+                <strong>Tổng cộng:</strong> <span class="order-total">1.200.000 VNĐ</span>
+            </div>
+        </div>
+
+        <div class="order-body">
+            <div class="order-item-list">
+                <div class="order-item">
+                    <img src="https://via.placeholder.com/60x60?text=HAT" alt="Mũ Lưỡi Trai">
+                    <div class="item-details">
+                        <p>Mũ Lưỡi Trai Logo Nổi</p>
+                        <p>Màu: Đỏ | Số lượng: 2</p>
+                    </div>
+                    <p class="item-price">1.200.000 VNĐ</p>
+                </div>
+            </div>
+
+            <div class="order-footer">
+                <p class="order-status">Trạng thái: <span class="status-text status-cancelled">Đã hủy</span></p>
+                <div class="action-links">
+                    <a href="#" class="btn-view-detail">Xem chi tiết</a>
+                    <a href="#" class="btn-review" style="border: 1px solid var(--status-cancelled); color: var(--status-cancelled);">Đặt lại hàng</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="pagination">
+        <a href="#">1</a>
+        <a href="#">2</a>
+        <a href="#">3</a>
+    </div>
+
+</section>

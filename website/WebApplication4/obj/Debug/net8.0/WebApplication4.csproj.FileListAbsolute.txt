@@ -1,0 +1,129 @@
+D:\LT ASPNET CORE\WebApplication4\WebApplication4\bin\Debug\net8.0\appsettings.Development.json
+D:\LT ASPNET CORE\WebApplication4\WebApplication4\bin\Debug\net8.0\appsettings.json
+D:\LT ASPNET CORE\WebApplication4\WebApplication4\bin\Debug\net8.0\WebApplication4.staticwebassets.runtime.json
+D:\LT ASPNET CORE\WebApplication4\WebApplication4\bin\Debug\net8.0\WebApplication4.staticwebassets.endpoints.json
+D:\LT ASPNET CORE\WebApplication4\WebApplication4\bin\Debug\net8.0\WebApplication4.exe
+D:\LT ASPNET CORE\WebApplication4\WebApplication4\bin\Debug\net8.0\WebApplication4.deps.json
+D:\LT ASPNET CORE\WebApplication4\WebApplication4\bin\Debug\net8.0\WebApplication4.runtimeconfig.json
+D:\LT ASPNET CORE\WebApplication4\WebApplication4\bin\Debug\net8.0\WebApplication4.dll
+D:\LT ASPNET CORE\WebApplication4\WebApplication4\bin\Debug\net8.0\WebApplication4.pdb
+D:\LT ASPNET CORE\WebApplication4\WebApplication4\obj\Debug\net8.0\rpswa.dswa.cache.json
+D:\LT ASPNET CORE\WebApplication4\WebApplication4\obj\Debug\net8.0\WebApplication4.GeneratedMSBuildEditorConfig.editorconfig
+D:\LT ASPNET CORE\WebApplication4\WebApplication4\obj\Debug\net8.0\WebApplication4.AssemblyInfoInputs.cache
+D:\LT ASPNET CORE\WebApplication4\WebApplication4\obj\Debug\net8.0\WebApplication4.AssemblyInfo.cs
+D:\LT ASPNET CORE\WebApplication4\WebApplication4\obj\Debug\net8.0\WebApplication4.csproj.CoreCompileInputs.cache
+D:\LT ASPNET CORE\WebApplication4\WebApplication4\obj\Debug\net8.0\WebApplication4.MvcApplicationPartsAssemblyInfo.cache
+D:\LT ASPNET CORE\WebApplication4\WebApplication4\obj\Debug\net8.0\WebApplication4.RazorAssemblyInfo.cache
+D:\LT ASPNET CORE\WebApplication4\WebApplication4\obj\Debug\net8.0\WebApplication4.RazorAssemblyInfo.cs
+D:\LT ASPNET CORE\WebApplication4\WebApplication4\obj\Debug\net8.0\rjimswa.dswa.cache.json
+D:\LT ASPNET CORE\WebApplication4\WebApplication4\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
+D:\LT ASPNET CORE\WebApplication4\WebApplication4\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
+D:\LT ASPNET CORE\WebApplication4\WebApplication4\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+D:\LT ASPNET CORE\WebApplication4\WebApplication4\obj\Debug\net8.0\scopedcss\bundle\WebApplication4.styles.css
+D:\LT ASPNET CORE\WebApplication4\WebApplication4\obj\Debug\net8.0\scopedcss\projectbundle\WebApplication4.bundle.scp.css
+D:\LT ASPNET CORE\WebApplication4\WebApplication4\obj\Debug\net8.0\staticwebassets.build.json
+D:\LT ASPNET CORE\WebApplication4\WebApplication4\obj\Debug\net8.0\staticwebassets.build.json.cache
+D:\LT ASPNET CORE\WebApplication4\WebApplication4\obj\Debug\net8.0\staticwebassets.development.json
+D:\LT ASPNET CORE\WebApplication4\WebApplication4\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+D:\LT ASPNET CORE\WebApplication4\WebApplication4\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+D:\LT ASPNET CORE\WebApplication4\WebApplication4\obj\Debug\net8.0\WebApplication4.dll
+D:\LT ASPNET CORE\WebApplication4\WebApplication4\obj\Debug\net8.0\refint\WebApplication4.dll
+D:\LT ASPNET CORE\WebApplication4\WebApplication4\obj\Debug\net8.0\WebApplication4.pdb
+D:\LT ASPNET CORE\WebApplication4\WebApplication4\obj\Debug\net8.0\WebApplication4.genruntimeconfig.cache
+D:\LT ASPNET CORE\WebApplication4\WebApplication4\obj\Debug\net8.0\ref\WebApplication4.dll
+D:\Website_BanGiayTheThao\website\WebApplication4\bin\Debug\net8.0\appsettings.Development.json
+D:\Website_BanGiayTheThao\website\WebApplication4\bin\Debug\net8.0\appsettings.json
+D:\Website_BanGiayTheThao\website\WebApplication4\bin\Debug\net8.0\WebApplication4.staticwebassets.runtime.json
+D:\Website_BanGiayTheThao\website\WebApplication4\bin\Debug\net8.0\WebApplication4.staticwebassets.endpoints.json
+D:\Website_BanGiayTheThao\website\WebApplication4\bin\Debug\net8.0\WebApplication4.exe
+D:\Website_BanGiayTheThao\website\WebApplication4\bin\Debug\net8.0\WebApplication4.deps.json
+D:\Website_BanGiayTheThao\website\WebApplication4\bin\Debug\net8.0\WebApplication4.runtimeconfig.json
+D:\Website_BanGiayTheThao\website\WebApplication4\bin\Debug\net8.0\WebApplication4.dll
+D:\Website_BanGiayTheThao\website\WebApplication4\bin\Debug\net8.0\WebApplication4.pdb
+D:\Website_BanGiayTheThao\website\WebApplication4\obj\Debug\net8.0\rpswa.dswa.cache.json
+D:\Website_BanGiayTheThao\website\WebApplication4\obj\Debug\net8.0\WebApplication4.GeneratedMSBuildEditorConfig.editorconfig
+D:\Website_BanGiayTheThao\website\WebApplication4\obj\Debug\net8.0\WebApplication4.AssemblyInfoInputs.cache
+D:\Website_BanGiayTheThao\website\WebApplication4\obj\Debug\net8.0\WebApplication4.AssemblyInfo.cs
+D:\Website_BanGiayTheThao\website\WebApplication4\obj\Debug\net8.0\WebApplication4.csproj.CoreCompileInputs.cache
+D:\Website_BanGiayTheThao\website\WebApplication4\obj\Debug\net8.0\WebApplication4.MvcApplicationPartsAssemblyInfo.cache
+D:\Website_BanGiayTheThao\website\WebApplication4\obj\Debug\net8.0\WebApplication4.RazorAssemblyInfo.cache
+D:\Website_BanGiayTheThao\website\WebApplication4\obj\Debug\net8.0\WebApplication4.RazorAssemblyInfo.cs
+D:\Website_BanGiayTheThao\website\WebApplication4\obj\Debug\net8.0\rjimswa.dswa.cache.json
+D:\Website_BanGiayTheThao\website\WebApplication4\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
+D:\Website_BanGiayTheThao\website\WebApplication4\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
+D:\Website_BanGiayTheThao\website\WebApplication4\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+D:\Website_BanGiayTheThao\website\WebApplication4\obj\Debug\net8.0\scopedcss\bundle\WebApplication4.styles.css
+D:\Website_BanGiayTheThao\website\WebApplication4\obj\Debug\net8.0\scopedcss\projectbundle\WebApplication4.bundle.scp.css
+D:\Website_BanGiayTheThao\website\WebApplication4\obj\Debug\net8.0\staticwebassets.build.json
+D:\Website_BanGiayTheThao\website\WebApplication4\obj\Debug\net8.0\staticwebassets.build.json.cache
+D:\Website_BanGiayTheThao\website\WebApplication4\obj\Debug\net8.0\staticwebassets.development.json
+D:\Website_BanGiayTheThao\website\WebApplication4\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+D:\Website_BanGiayTheThao\website\WebApplication4\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+D:\Website_BanGiayTheThao\website\WebApplication4\obj\Debug\net8.0\WebApplication4.dll
+D:\Website_BanGiayTheThao\website\WebApplication4\obj\Debug\net8.0\refint\WebApplication4.dll
+D:\Website_BanGiayTheThao\website\WebApplication4\obj\Debug\net8.0\WebApplication4.pdb
+D:\Website_BanGiayTheThao\website\WebApplication4\obj\Debug\net8.0\WebApplication4.genruntimeconfig.cache
+D:\Website_BanGiayTheThao\website\WebApplication4\obj\Debug\net8.0\ref\WebApplication4.dll
+E:\Website_BanGiayTheThao\website\WebApplication4\obj\Debug\net8.0\rpswa.dswa.cache.json
+E:\Website_BanGiayTheThao\website\WebApplication4\obj\Debug\net8.0\WebApplication4.GeneratedMSBuildEditorConfig.editorconfig
+E:\Website_BanGiayTheThao\website\WebApplication4\obj\Debug\net8.0\WebApplication4.AssemblyInfoInputs.cache
+E:\Website_BanGiayTheThao\website\WebApplication4\obj\Debug\net8.0\WebApplication4.AssemblyInfo.cs
+E:\Website_BanGiayTheThao\website\WebApplication4\obj\Debug\net8.0\WebApplication4.csproj.CoreCompileInputs.cache
+E:\Website_BanGiayTheThao\website\WebApplication4\obj\Debug\net8.0\WebApplication4.MvcApplicationPartsAssemblyInfo.cache
+E:\Website_BanGiayTheThao\website\WebApplication4\obj\Debug\net8.0\WebApplication4.RazorAssemblyInfo.cache
+E:\Website_BanGiayTheThao\website\WebApplication4\obj\Debug\net8.0\WebApplication4.RazorAssemblyInfo.cs
+E:\Website_BanGiayTheThao\website\WebApplication4\obj\Debug\net8.0\WebApplication4.dll
+E:\Website_BanGiayTheThao\website\WebApplication4\obj\Debug\net8.0\refint\WebApplication4.dll
+E:\Website_BanGiayTheThao\website\WebApplication4\obj\Debug\net8.0\WebApplication4.pdb
+E:\Website_BanGiayTheThao\website\WebApplication4\bin\Debug\net8.0\appsettings.Development.json
+E:\Website_BanGiayTheThao\website\WebApplication4\bin\Debug\net8.0\appsettings.json
+E:\Website_BanGiayTheThao\website\WebApplication4\bin\Debug\net8.0\WebApplication4.staticwebassets.runtime.json
+E:\Website_BanGiayTheThao\website\WebApplication4\bin\Debug\net8.0\WebApplication4.staticwebassets.endpoints.json
+E:\Website_BanGiayTheThao\website\WebApplication4\bin\Debug\net8.0\WebApplication4.exe
+E:\Website_BanGiayTheThao\website\WebApplication4\bin\Debug\net8.0\WebApplication4.deps.json
+E:\Website_BanGiayTheThao\website\WebApplication4\bin\Debug\net8.0\WebApplication4.runtimeconfig.json
+E:\Website_BanGiayTheThao\website\WebApplication4\bin\Debug\net8.0\WebApplication4.dll
+E:\Website_BanGiayTheThao\website\WebApplication4\bin\Debug\net8.0\WebApplication4.pdb
+E:\Website_BanGiayTheThao\website\WebApplication4\obj\Debug\net8.0\rjimswa.dswa.cache.json
+E:\Website_BanGiayTheThao\website\WebApplication4\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
+E:\Website_BanGiayTheThao\website\WebApplication4\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
+E:\Website_BanGiayTheThao\website\WebApplication4\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+E:\Website_BanGiayTheThao\website\WebApplication4\obj\Debug\net8.0\scopedcss\bundle\WebApplication4.styles.css
+E:\Website_BanGiayTheThao\website\WebApplication4\obj\Debug\net8.0\scopedcss\projectbundle\WebApplication4.bundle.scp.css
+E:\Website_BanGiayTheThao\website\WebApplication4\obj\Debug\net8.0\staticwebassets.build.json
+E:\Website_BanGiayTheThao\website\WebApplication4\obj\Debug\net8.0\staticwebassets.build.json.cache
+E:\Website_BanGiayTheThao\website\WebApplication4\obj\Debug\net8.0\staticwebassets.development.json
+E:\Website_BanGiayTheThao\website\WebApplication4\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+E:\Website_BanGiayTheThao\website\WebApplication4\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+E:\Website_BanGiayTheThao\website\WebApplication4\obj\Debug\net8.0\WebApplication4.genruntimeconfig.cache
+E:\Website_BanGiayTheThao\website\WebApplication4\obj\Debug\net8.0\ref\WebApplication4.dll
+G:\Website_BanGiayTheThao\website\WebApplication4\bin\Debug\net8.0\appsettings.Development.json
+G:\Website_BanGiayTheThao\website\WebApplication4\bin\Debug\net8.0\appsettings.json
+G:\Website_BanGiayTheThao\website\WebApplication4\bin\Debug\net8.0\WebApplication4.staticwebassets.runtime.json
+G:\Website_BanGiayTheThao\website\WebApplication4\bin\Debug\net8.0\WebApplication4.exe
+G:\Website_BanGiayTheThao\website\WebApplication4\bin\Debug\net8.0\WebApplication4.deps.json
+G:\Website_BanGiayTheThao\website\WebApplication4\bin\Debug\net8.0\WebApplication4.runtimeconfig.json
+G:\Website_BanGiayTheThao\website\WebApplication4\bin\Debug\net8.0\WebApplication4.dll
+G:\Website_BanGiayTheThao\website\WebApplication4\bin\Debug\net8.0\WebApplication4.pdb
+G:\Website_BanGiayTheThao\website\WebApplication4\obj\Debug\net8.0\WebApplication4.GeneratedMSBuildEditorConfig.editorconfig
+G:\Website_BanGiayTheThao\website\WebApplication4\obj\Debug\net8.0\WebApplication4.AssemblyInfoInputs.cache
+G:\Website_BanGiayTheThao\website\WebApplication4\obj\Debug\net8.0\WebApplication4.AssemblyInfo.cs
+G:\Website_BanGiayTheThao\website\WebApplication4\obj\Debug\net8.0\WebApplication4.csproj.CoreCompileInputs.cache
+G:\Website_BanGiayTheThao\website\WebApplication4\obj\Debug\net8.0\WebApplication4.MvcApplicationPartsAssemblyInfo.cache
+G:\Website_BanGiayTheThao\website\WebApplication4\obj\Debug\net8.0\WebApplication4.RazorAssemblyInfo.cache
+G:\Website_BanGiayTheThao\website\WebApplication4\obj\Debug\net8.0\WebApplication4.RazorAssemblyInfo.cs
+G:\Website_BanGiayTheThao\website\WebApplication4\obj\Debug\net8.0\staticwebassets.build.json
+G:\Website_BanGiayTheThao\website\WebApplication4\obj\Debug\net8.0\staticwebassets.development.json
+G:\Website_BanGiayTheThao\website\WebApplication4\obj\Debug\net8.0\staticwebassets\msbuild.WebApplication4.Microsoft.AspNetCore.StaticWebAssets.props
+G:\Website_BanGiayTheThao\website\WebApplication4\obj\Debug\net8.0\staticwebassets\msbuild.build.WebApplication4.props
+G:\Website_BanGiayTheThao\website\WebApplication4\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.WebApplication4.props
+G:\Website_BanGiayTheThao\website\WebApplication4\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.WebApplication4.props
+G:\Website_BanGiayTheThao\website\WebApplication4\obj\Debug\net8.0\staticwebassets.pack.json
+G:\Website_BanGiayTheThao\website\WebApplication4\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+G:\Website_BanGiayTheThao\website\WebApplication4\obj\Debug\net8.0\scopedcss\bundle\WebApplication4.styles.css
+G:\Website_BanGiayTheThao\website\WebApplication4\obj\Debug\net8.0\scopedcss\projectbundle\WebApplication4.bundle.scp.css
+G:\Website_BanGiayTheThao\website\WebApplication4\obj\Debug\net8.0\WebApplication4.dll
+G:\Website_BanGiayTheThao\website\WebApplication4\obj\Debug\net8.0\refint\WebApplication4.dll
+G:\Website_BanGiayTheThao\website\WebApplication4\obj\Debug\net8.0\WebApplication4.pdb
+G:\Website_BanGiayTheThao\website\WebApplication4\obj\Debug\net8.0\WebApplication4.genruntimeconfig.cache
+G:\Website_BanGiayTheThao\website\WebApplication4\obj\Debug\net8.0\ref\WebApplication4.dll

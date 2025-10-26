@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SALE SỐC 50% | SNEAKER CITY</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        /* ==================== CÁC THIẾT LẬP CHUNG (Tái sử dụng) ==================== */
+        :root {
+            --primary-color: #2a9d8f; /* Màu xanh ngọc */
+            --secondary-color: #e76f51; /* Màu cam nổi bật (CTA) */
+            --sale-color: #e63946; /* Màu Đỏ Sốc cho SALE */
+            --text-dark: #264653;
+            --bg-light: #ffffff;
+            --bg-gray: #f9f9f9;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            background-color: var(--bg-gray);
+            color: var(--text-dark);
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--primary-color);
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: var(--secondary-color);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* -------------------------- CSS CHO TRANG SALE -------------------------- */
+        
+        /* === 1. Header & Banner Sale === */
+        .sale-banner {
+            background-color: var(--sale-color); /* Nền đỏ mạnh mẽ */
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+            border-bottom: 5px solid var(--secondary-color);
+        }
+
+        .sale-banner h1 {
+            font-size: 3.5em;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        /* === 2. Thời Gian Đếm Ngược === */
+        .countdown-timer {
+            background-color: rgba(255, 255, 255, 0.1);
+            display: inline-flex;
+            gap: 20px;
+            padding: 10px 30px;
+            border-radius: 50px;
+            margin-top: 15px;
+            font-weight: 700;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .countdown-unit {
+            font-size: 1.8em;
+            line-height: 1.1;
+        }
+
+        .countdown-unit span {
+            display: block;
+            font-size: 0.4em;
+            font-weight: 400;
+        }
+
+        /* === 3. Bộ Lọc/Sắp Xếp === */
+        .filter-sort-bar {
+            background-color: var(--bg-light);
+            padding: 15px 20px;
+            margin: 30px 0 20px 0;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
+        }
+        
+        /* Nút Sale Filter (dùng để lọc nhanh theo % giảm) */
+        .sale-filter button {
+            background-color: #eee;
+            border: 1px solid #ddd;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            margin-right: 10px;
+            transition: all 0.2s;
+        }
+
+        .sale-filter button.active, .sale-filter button:hover {
+            background-color: var(--sale-color);
+            color: white;
+            border-color: var(--sale-color);
+        }
+
+        /* === 4. Lưới Sản Phẩm Sale === */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); /* 4 cột như trang chủ */
+            gap: 25px;
+        }
+
+        .product-card {
+            background-color: var(--bg-light);
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            text-align: center;
+            padding-bottom: 15px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+        
+        /* Tag Sale */
+        .sale-tag {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: var(--sale-color);
+            color: white;
+            font-weight: 700;
+            padding: 5px 10px;
+            border-radius: 4px;
+            z-index: 10;
+        }
+        
+        .prices {
+            display: flex;
+            justify-content: center;
+            align-items: baseline;
+            margin-bottom: 10px;
+        }
+
+        .old-price {
+            color: #999;
+            text-decoration: line-through;
+            font-size: 0.9em;
+            margin-right: 10px;
+        }
+
+        .new-price {
+            font-size: 1.4em;
+            color: var(--sale-color);
+            font-weight: 700;
+        }
+        
+        .btn-add {
+            background-color: var(--secondary-color); /* Dùng màu CTA nổi bật */
+            color: white;
+            padding: 8px 25px;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: background-color 0.3s;
+            display: inline-block;
+        }
+        
+        .btn-add:hover {
+            background-color: #d8573a;
+        }
+
+        /* -------------------------- RESPONSIVE -------------------------- */
+        @media (max-width: 992px) {
+            .product-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .sale-banner h1 {
+                font-size: 2.5em;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .product-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .filter-sort-bar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .sale-filter {
+                margin-top: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="sale-banner">
+        <div class="container">
+            <h1>FLASH SALE - GIẢM ĐẾN 50%</h1>
+            <p>Săn ngay trước khi kết thúc!</p>
+            <div class="countdown-timer">
+                <div class="countdown-unit">15<span>NGÀY</span></div>
+                <div class="countdown-unit">04<span>GIỜ</span></div>
+                <div class="countdown-unit">30<span>PHÚT</span></div>
+                <div class="countdown-unit">55<span>GIÂY</span></div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        
+        <div class="filter-sort-bar">
+            <div class="sale-filter">
+                <label style="font-weight: 600;">Lọc nhanh:</label>
+                <button class="active">Tất cả</button>
+                <button>Giảm 50%</button>
+                <button>Giảm 30%</button>
+                <button>Giảm dưới 30%</button>
+            </div>
+            
+            <div class="sort-options">
+                <label for="sort-by">Sắp xếp theo:</label>
+                <select id="sort-by" style="padding: 5px 10px; border-radius: 4px;">
+                    <option value="popular">Phổ biến nhất</option>
+                    <option value="price-asc">Giá: Thấp → Cao</option>
+                    <option value="price-desc">Giá: Cao → Thấp</option>
+                    <option value="discount">Phần trăm giảm</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="product-grid">
+
+            <div class="product-card">
+                <span class="sale-tag">GIẢM 50%</span>
+                <img src="https://via.placeholder.com/300x200?text=SALE+ADIDAS+50" alt="Giày Adidas Giảm 50%">
+                <div style="padding: 0 10px;">
+                    <h3><a href="#">Adidas ZX 4000 Retro</a></h3>
+                    <p style="font-size: 0.9em; color: #777;">Chỉ còn 30 sản phẩm</p>
+                    <div class="prices">
+                        <span class="old-price">3.980.000 VNĐ</span>
+                        <span class="new-price">1.990.000 VNĐ</span>
+                    </div>
+                    <a href="#" class="btn-add">MUA NGAY</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <span class="sale-tag" style="background-color: var(--primary-color);">GIẢM 30%</span>
+                <img src="https://via.placeholder.com/300x200?text=NIKE+OFF+30" alt="Giày Nike Giảm 30%">
+                <div style="padding: 0 10px;">
+                    <h3><a href="#">Nike Air Max Pacer</a></h3>
+                    <p style="font-size: 0.9em; color: #777;">Còn hàng</p>
+                    <div class="prices">
+                        <span class="old-price">2.800.000 VNĐ</span>
+                        <span class="new-price" style="color: var(--primary-color);">1.960.000 VNĐ</span>
+                    </div>
+                    <a href="#" class="btn-add">MUA NGAY</a>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <span class="sale-tag">GIẢM 50%</span>
+                <img src="https://via.placeholder.com/300x200?text=PUMA+RS-X+50" alt="Giày Puma Giảm 50%">
+                <div style="padding: 0 10px;">
+                    <h3><a href="#">Puma RS-X Pop</a></h3>
+                    <p style="font-size: 0.9em; color: #777;">Sắp hết hàng!</p>
+                    <div class="prices">
+                        <span class="old-price">1.500.000 VNĐ</span>
+                        <span class="new-price">750.000 VNĐ</span>
+                    </div>
+                    <a href="#" class="btn-add">MUA NGAY</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <span class="sale-tag" style="background-color: var(--primary-color);">GIẢM 20%</span>
+                <img src="https://via.placeholder.com/300x200?text=NEW+BALANCE+OFF+20" alt="Giày New Balance Giảm 20%">
+                <div style="padding: 0 10px;">
+                    <h3><a href="#">New Balance 997H</a></h3>
+                    <p style="font-size: 0.9em; color: #777;">Còn hàng</p>
+                    <div class="prices">
+                        <span class="old-price">2.200.000 VNĐ</span>
+                        <span class="new-price" style="color: var(--primary-color);">1.760.000 VNĐ</span>
+                    </div>
+                    <a href="#" class="btn-add">MUA NGAY</a>
+                </div>
+            </div>
+            
+            </div>
+        
+    </main>
+
+    <script>
+        // Đây là ví dụ về JavaScript đơn giản để đếm ngược
+        // Trong thực tế, bạn cần logic phức tạp hơn để xử lý thời gian server và cập nhật DOM
+        function updateCountdown() {
+            // Giả định thời gian kết thúc là sau 15 ngày
+            const endDate = new Date();
+            endDate.setDate(endDate.getDate() + 15);
+            
+            const now = new Date().getTime();
+            const distance = endDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            if (distance < 0) {
+                clearInterval(countdownInterval);
+                document.querySelector('.countdown-timer').innerHTML = "SALE ĐÃ KẾT THÚC";
+            } else {
+                document.querySelector('.countdown-timer').innerHTML = `
+                    <div class="countdown-unit">${days}<span>NGÀY</span></div>
+                    <div class="countdown-unit">${String(hours).padStart(2, '0')}<span>GIỜ</span></div>
+                    <div class="countdown-unit">${String(minutes).padStart(2, '0')}<span>PHÚT</span></div>
+                    <div class="countdown-unit">${String(seconds).padStart(2, '0')}<span>GIÂY</span></div>
+                `;
+            }
+        }
+
+        // Cập nhật sau mỗi giây
+        const countdownInterval = setInterval(updateCountdown, 1000);
+        updateCountdown();
+    </script>
+</body>
+</html>

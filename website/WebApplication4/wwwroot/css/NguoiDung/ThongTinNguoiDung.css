@@ -1,0 +1,111 @@
+﻿/* ==================== BIẾN MÀU SẮC (CẦN THIẾT) ==================== */
+:root {
+    --primary-color: #2a9d8f; /* Màu xanh ngọc */
+    --secondary-color: #e76f51; /* Màu cam nổi bật (CTA) */
+    --text-dark: #264653;
+    --bg-light: #ffffff;
+    --bg-gray: #f9f9f9;
+}
+
+/* ==================== CÁC THIẾT LẬP CHUNG ==================== */
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    background-color: var(--bg-gray);
+    color: var(--text-dark);
+    padding: 20px; /* Thêm padding giả lập container */
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+/* -------------------------- CSS CHO FORM THÔNG TIN CÁ NHÂN -------------------------- */
+
+.main-content {
+    background-color: var(--bg-light);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    padding: 30px;
+    max-width: 900px; /* Giả định nằm trong container lớn hơn */
+    margin: auto;
+}
+
+.personal-info-form {
+    max-width: 600px; /* Giới hạn chiều rộng form */
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+    .form-group label {
+        display: block;
+        font-weight: 600;
+        margin-bottom: 5px;
+        color: var(--text-dark);
+    }
+
+    .form-group input, .form-group select {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-size: 1em;
+        transition: border-color 0.3s;
+        background-color: var(--bg-light);
+    }
+
+        .form-group input:disabled {
+            background-color: var(--bg-gray);
+            color: #999;
+            cursor: not-allowed;
+        }
+
+        .form-group input:focus, .form-group select:focus {
+            border-color: var(--primary-color);
+            outline: none;
+        }
+
+.hint {
+    font-size: 0.85em;
+    color: var(--secondary-color);
+    margin-top: 5px;
+}
+
+/* Bố cục cho trường Ngày sinh và Giới tính */
+.form-group-inline {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.form-group-half {
+    flex: 1; /* Chia đều 2 cột */
+}
+
+.btn-save-info {
+    padding: 12px 30px;
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+    .btn-save-info:hover {
+        background-color: #d8573a;
+    }
+
+/* Đảm bảo responsive cho bố cục inline */
+@media (max-width: 500px) {
+    .form-group-inline {
+        flex-direction: column;
+        gap: 0;
+    }
+}

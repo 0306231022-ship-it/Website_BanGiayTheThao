@@ -1,0 +1,222 @@
+﻿/* ==================== CÁC THIẾT LẬP CHUNG (Tái sử dụng) ==================== */
+:root {
+    --primary-color: #2a9d8f; /* Màu xanh ngọc năng động */
+    --secondary-color: #e76f51; /* Màu cam nổi bật cho CTA */
+    --text-dark: #264653;
+    --text-light: #f4f4f4;
+    --bg-light: #ffffff;
+    --bg-gray: #f9f9f9;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    background-color: var(--bg-gray);
+    color: var(--text-dark);
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+    transition: color 0.3s;
+}
+
+    a:hover {
+        color: var(--secondary-color);
+    }
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* -------------------------- CSS CHO GIỎ HÀNG (CART PAGE) -------------------------- */
+.cart-title {
+    text-align: center;
+    margin: 40px 0;
+    font-size: 2.2em;
+    font-weight: 700;
+}
+
+.cart-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* Chia 2 cột: Danh sách sản phẩm và Tóm tắt đơn hàng */
+    gap: 30px;
+}
+
+/* ----- Cột Trái: Danh Sách Sản Phẩm ----- */
+.cart-items {
+    background-color: var(--bg-light);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    padding: 20px 0;
+}
+
+.item-image img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-right: 20px;
+}
+
+.item-details {
+    flex-grow: 1;
+}
+
+    .item-details h4 {
+        font-size: 1.1em;
+        margin-bottom: 5px;
+    }
+
+    .item-details p {
+        font-size: 0.9em;
+        color: #777;
+        margin: 3px 0;
+    }
+
+/* Khu vực Số lượng và Xóa */
+.item-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 250px; /* Cố định chiều rộng cho khu vực hành động */
+}
+
+.quantity-control input {
+    width: 50px;
+    padding: 5px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.item-price {
+    font-weight: 700;
+    color: var(--secondary-color);
+    width: 100px;
+    text-align: right;
+}
+
+.btn-remove {
+    background: none;
+    border: none;
+    color: #ccc;
+    cursor: pointer;
+    font-size: 1.2em;
+    transition: color 0.3s;
+}
+
+    .btn-remove:hover {
+        color: #e63946;
+    }
+
+/* ----- Cột Phải: Tóm Tắt Đơn Hàng ----- */
+.cart-summary {
+    background-color: var(--bg-light);
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    height: fit-content; /* Giữ khung tóm tắt gọn gàng */
+}
+
+.summary-title {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    font-weight: 700;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    font-size: 1em;
+}
+
+.summary-total {
+    font-size: 1.4em;
+    font-weight: 700;
+    padding-top: 15px;
+    border-top: 2px solid #eee;
+    margin-top: 10px;
+}
+
+.btn-checkout {
+    display: block;
+    width: 100%;
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 15px;
+    text-align: center;
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: 1.1em;
+    margin-top: 25px;
+    transition: background-color 0.3s;
+}
+
+    .btn-checkout:hover {
+        background-color: #d8573a;
+    }
+
+/* Mã giảm giá */
+.coupon-box {
+    margin-top: 20px;
+    padding: 15px 0;
+    border-top: 1px solid #eee;
+}
+
+    .coupon-box input {
+        width: 70%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    .coupon-box button {
+        width: 25%;
+        padding: 10px;
+        background-color: var(--primary-color);
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+/* -------------------------- RESPONSIVE CHO GIỎ HÀNG -------------------------- */
+@media (max-width: 992px) {
+    .cart-layout {
+        grid-template-columns: 1fr; /* Dồn thành 1 cột trên tablet/mobile */
+    }
+
+    .item-actions {
+        flex-direction: column;
+        align-items: flex-end;
+        width: auto;
+        gap: 10px;
+    }
+
+    .item-price {
+        text-align: right;
+    }
+
+    .cart-item {
+        flex-wrap: wrap;
+    }
+}

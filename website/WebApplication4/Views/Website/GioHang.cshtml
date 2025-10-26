@@ -1,0 +1,85 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<link rel="stylesheet" href="~/css/Website/GioHang.css" />
+<main class="container">
+    <h2 class="cart-title">🛒 Giỏ Hàng Của Bạn</h2>
+
+    <div class="cart-layout">
+
+        <section class="cart-items">
+
+            <div class="cart-item">
+                <div class="item-image">
+                    <img src="https://via.placeholder.com/100x100?text=ADIDAS+RUNNER" alt="Giày Adidas Runner X Pro">
+                </div>
+                <div class="item-details">
+                    <h4><a href="#">Adidas Runner X Pro</a></h4>
+                    <p>Thương hiệu: Adidas</p>
+                    <p>Size: 41 | Màu: Đen</p>
+                </div>
+                <div class="item-actions">
+                    <div class="quantity-control">
+                        Số lượng: <input type="number" value="1" min="1" max="10">
+                    </div>
+                    <div class="item-price">2.490.000 VNĐ</div>
+                    <button class="btn-remove" title="Xóa sản phẩm">X</button>
+                </div>
+            </div>
+
+            <div class="cart-item">
+                <div class="item-image">
+                    <img src="https://via.placeholder.com/100x100?text=NIKE+AIR+MAX" alt="Giày Nike Air Max Lite">
+                </div>
+                <div class="item-details">
+                    <h4><a href="#">Nike Air Max Lite</a></h4>
+                    <p>Thương hiệu: Nike</p>
+                    <p>Size: 37 | Màu: Xanh Navy</p>
+                </div>
+                <div class="item-actions">
+                    <div class="quantity-control">
+                        Số lượng: <input type="number" value="1" min="1" max="10">
+                    </div>
+                    <div class="item-price">3.150.000 VNĐ</div>
+                    <button class="btn-remove" title="Xóa sản phẩm">X</button>
+                </div>
+            </div>
+
+            <div style="text-align: right; margin-top: 20px;">
+                <a asp-controller="Website" asp-action="SanPhamNoiBat" style="font-weight: 600;">← Tiếp tục mua sắm</a>
+            </div>
+
+        </section>
+
+        <aside class="cart-summary">
+            <div class="summary-title">Tóm Tắt Đơn Hàng</div>
+
+            <div class="summary-row">
+                <span>Tạm tính (2 sản phẩm)</span>
+                <span>5.640.000 VNĐ</span>
+            </div>
+
+            <div class="summary-row">
+                <span>Phí vận chuyển</span>
+                <span style="color: var(--primary-color);">Miễn phí</span>
+            </div>
+
+            <div class="coupon-box">
+                <label>Mã giảm giá:</label>
+                <div style="display: flex; gap: 5px;">
+                    <input type="text" placeholder="Nhập mã coupon">
+                    <button>Áp dụng</button>
+                </div>
+            </div>
+
+            <div class="summary-total">
+                <span>Thành tiền:</span>
+                <span style="color: var(--secondary-color);">5.640.000 VNĐ</span>
+            </div>
+
+            <a href="#" class="btn-checkout">TIẾN HÀNH THANH TOÁN</a>
+        </aside>
+    </div>
+</main>

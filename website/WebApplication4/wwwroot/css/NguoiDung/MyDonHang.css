@@ -1,0 +1,204 @@
+﻿/* ==================== CÁC THIẾT LẬP CHUNG (Tái sử dụng) ==================== */
+:root {
+    --primary-color: #2a9d8f; /* Màu xanh ngọc năng động */
+    --secondary-color: #e76f51; /* Màu cam nổi bật cho CTA */
+    --text-dark: #264653;
+    --bg-light: #ffffff;
+    --bg-gray: #f9f9f9;
+    --status-success: var(--primary-color);
+    --status-pending: #f39c12; /* Màu vàng */
+    --status-shipping: var(--secondary-color);
+    --status-cancelled: #e63946; /* Màu đỏ */
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    background-color: var(--bg-gray);
+    color: var(--text-dark);
+}
+
+a {
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+/* -------------------------- CSS CHO TRANG ĐƠN HÀNG -------------------------- */
+
+/* Bộ lọc trạng thái */
+.order-filter {
+    margin-bottom: 30px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+}
+
+.filter-btn {
+    padding: 8px 15px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.2s;
+}
+
+    .filter-btn.active, .filter-btn:hover {
+        background-color: var(--primary-color);
+        color: white;
+        border-color: var(--primary-color);
+    }
+
+/* Thẻ Đơn hàng */
+.order-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    background-color: var(--bg-light);
+}
+
+.order-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 20px;
+    background-color: var(--bg-gray);
+    border-bottom: 1px solid #eee;
+    font-size: 0.9em;
+}
+
+    .order-header strong {
+        font-weight: 700;
+    }
+
+.order-total {
+    font-size: 1.1em;
+    color: var(--secondary-color);
+    font-weight: 700;
+}
+
+.order-body {
+    padding: 20px;
+}
+
+/* Chi tiết Sản phẩm trong đơn hàng */
+.order-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+    .order-item img {
+        width: 60px;
+        height: 60px;
+        object-fit: cover;
+        border-radius: 4px;
+        margin-right: 15px;
+    }
+
+.item-details {
+    flex-grow: 1;
+}
+
+    .item-details p:first-child {
+        font-weight: 600;
+    }
+
+    .item-details p:last-child {
+        font-size: 0.85em;
+        color: #777;
+    }
+
+.item-price {
+    font-weight: 600;
+}
+
+/* Footer & Hành động */
+.order-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+    flex-wrap: wrap; /* Cho phép xuống dòng trên mobile */
+}
+
+.order-status {
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.status-text {
+    /* Mặc định cho trạng thái "Đã giao" */
+    color: var(--status-success);
+}
+
+/* Định nghĩa các trạng thái */
+.status-shipping {
+    color: var(--status-shipping);
+}
+
+.status-cancelled {
+    color: var(--status-cancelled);
+}
+
+.action-links a {
+    padding: 8px 15px;
+    border-radius: 4px;
+    font-weight: 600;
+    display: inline-block;
+    margin-left: 10px;
+    margin-bottom: 5px;
+}
+
+.btn-view-detail {
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+}
+
+.btn-review {
+    background-color: var(--bg-gray);
+    border: 1px solid #ccc;
+    color: var(--text-dark);
+}
+
+.btn-track {
+    border: 1px solid var(--status-shipping);
+    color: var(--status-shipping);
+}
+
+.btn-cancel {
+    background-color: #fcebeb; /* Nền đỏ nhạt */
+    border: 1px solid var(--status-cancelled);
+    color: var(--status-cancelled);
+}
+
+.pagination {
+    text-align: center;
+    padding-top: 20px;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .order-header {
+        flex-direction: column;
+        gap: 5px;
+        text-align: center;
+    }
+
+    .order-footer {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .action-links {
+        margin-top: 10px;
+        text-align: center;
+    }
+
+        .action-links a {
+            margin-left: 0;
+            margin: 5px;
+        }
+}

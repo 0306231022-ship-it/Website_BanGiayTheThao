@@ -1,0 +1,89 @@
+<!-- admin/categories.html -->
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <title>Admin - Categories</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" />
+</head>
+<body>
+  <div class="sidebar" id="sidebar">
+    <h2><i class="bi bi-shop"></i> SneakerZone</h2>
+    <ul>
+      <li><a href="index.html" style="color:inherit;text-decoration:none;"><i class="bi bi-speedometer2"></i> Dashboard</a></li>
+      <li><a href="products.html" style="color:inherit;text-decoration:none;"><i class="bi bi-box"></i> Sản phẩm</a></li>
+      <li><a href="orders.html" style="color:inherit;text-decoration:none;"><i class="bi bi-receipt"></i> Đơn hàng</a></li>
+      <li><a href="users.html" style="color:inherit;text-decoration:none;"><i class="bi bi-people"></i> Khách hàng</a></li>
+      <li class="active"><i class="bi bi-tags"></i> Danh mục</li>
+    </ul>
+  </div>
+
+  <div class="main">
+    <div class="navbar">
+      <div class="nav-left">
+        <span class="brand-toggle" id="toggleBtn5"><i class="bi bi-list"></i></span>
+        <h1>Danh mục & Thương hiệu</h1>
+      </div>
+
+      <div style="display:flex;align-items:center;gap:12px;">
+        <div class="search-box">
+          <input id="searchCat" type="text" placeholder="Tìm danh mục..." />
+          <i class="bi bi-search" style="color:#6b7280;"></i>
+        </div>
+        <div class="icons">
+          <i class="bi bi-plus-circle" id="addCatBtn"></i>
+          <i class="bi bi-person-circle"></i>
+        </div>
+      </div>
+    </div>
+
+    <div class="content">
+      <div id="catForm" style="display:none;margin-bottom:14px;">
+        <form>
+          <h3>Thêm danh mục / thương hiệu</h3>
+          <div class="form-grid">
+            <div><label>Tên</label><input id="c_name" type="text"/></div>
+            <div><label>Loại</label><select id="c_type"><option>Danh mục</option><option>Thương hiệu</option></select></div>
+          </div>
+          <div style="display:flex;gap:10px;">
+            <button type="button" class="btn" onclick="saveCat()">Lưu</button>
+            <button type="button" class="btn secondary" onclick="document.getElementById('catForm').style.display='none'">Hủy</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="table-wrap">
+        <h3 style="margin-bottom:8px;">Danh sách</h3>
+        <table id="catTable">
+          <thead><tr><th>Tên</th><th>Loại</th><th>Hành động</th></tr></thead>
+          <tbody>
+            <tr><td>Running</td><td>Danh mục</td><td><button class="btn" onclick="editCat(this)">Sửa</button> <button class="btn secondary" onclick="deleteCat(this)">Xóa</button></td></tr>
+            <tr><td>Nike</td><td>Thương hiệu</td><td><button class="btn" onclick="editCat(this)">Sửa</button> <button class="btn secondary" onclick="deleteCat(this)">Xóa</button></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <footer>© 2025 SneakerZone Admin Panel</footer>
+  </div>
+
+  <script>
+    document.getElementById('toggleBtn5')?.addEventListener('click', ()=> document.getElementById('sidebar').classList.toggle('open'));
+    document.getElementById('addCatBtn')?.addEventListener('click', ()=> document.getElementById('catForm').style.display='block');
+    function saveCat(){ alert('Lưu danh mục (demo)'); document.getElementById('catForm').style.display='none'; }
+    function editCat(btn){
+      const tr = btn.closest('tr');
+      const cols = tr.querySelectorAll('td');
+      document.getElementById('catForm').style.display='block';
+      document.getElementById('c_name').value = cols[0].innerText;
+      document.getElementById('c_type').value = cols[1].innerText;
+    }
+    function deleteCat(btn){ if(confirm('Xóa mục này?')) btn.closest('tr').remove(); }
+    document.getElementById('searchCat')?.addEventListener('input', function(){
+      const q = this.value.toLowerCase();
+      document.querySelectorAll('#catTable tbody tr').forEach(r=> r.style.display = r.innerText.toLowerCase().includes(q) ? '' : 'none');
+    });
+  </script>
+</body>
+</html>

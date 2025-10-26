@@ -1,0 +1,634 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Website_BanGiayTheThao\\website\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{78D18FFB-17BA-4583-9A64-0D02B7B74314}|WebApplication4\\WebApplication4.csproj|d:\\website_bangiaythethao\\website\\webapplication4\\views\\website\\trangblog.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{78D18FFB-17BA-4583-9A64-0D02B7B74314}|WebApplication4\\WebApplication4.csproj|solutionrelative:webapplication4\\views\\website\\trangblog.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{78D18FFB-17BA-4583-9A64-0D02B7B74314}|WebApplication4\\WebApplication4.csproj|d:\\website_bangiaythethao\\website\\webapplication4\\views\\website\\sanphamsale.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{78D18FFB-17BA-4583-9A64-0D02B7B74314}|WebApplication4\\WebApplication4.csproj|solutionrelative:webapplication4\\views\\website\\sanphamsale.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{78D18FFB-17BA-4583-9A64-0D02B7B74314}|WebApplication4\\WebApplication4.csproj|d:\\website_bangiaythethao\\website\\webapplication4\\views\\website\\sanphamnoibat.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{78D18FFB-17BA-4583-9A64-0D02B7B74314}|WebApplication4\\WebApplication4.csproj|solutionrelative:webapplication4\\views\\website\\sanphamnoibat.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{78D18FFB-17BA-4583-9A64-0D02B7B74314}|WebApplication4\\WebApplication4.csproj|d:\\website_bangiaythethao\\website\\webapplication4\\views\\website\\giohang.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{78D18FFB-17BA-4583-9A64-0D02B7B74314}|WebApplication4\\WebApplication4.csproj|solutionrelative:webapplication4\\views\\website\\giohang.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{78D18FFB-17BA-4583-9A64-0D02B7B74314}|WebApplication4\\WebApplication4.csproj|d:\\website_bangiaythethao\\website\\webapplication4\\views\\website\\giaynu.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{78D18FFB-17BA-4583-9A64-0D02B7B74314}|WebApplication4\\WebApplication4.csproj|solutionrelative:webapplication4\\views\\website\\giaynu.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{78D18FFB-17BA-4583-9A64-0D02B7B74314}|WebApplication4\\WebApplication4.csproj|d:\\website_bangiaythethao\\website\\webapplication4\\views\\website\\giaynam.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{78D18FFB-17BA-4583-9A64-0D02B7B74314}|WebApplication4\\WebApplication4.csproj|solutionrelative:webapplication4\\views\\website\\giaynam.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{78D18FFB-17BA-4583-9A64-0D02B7B74314}|WebApplication4\\WebApplication4.csproj|d:\\website_bangiaythethao\\website\\webapplication4\\wwwroot\\css\\website\\giaynam.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{78D18FFB-17BA-4583-9A64-0D02B7B74314}|WebApplication4\\WebApplication4.csproj|solutionrelative:webapplication4\\wwwroot\\css\\website\\giaynam.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{78D18FFB-17BA-4583-9A64-0D02B7B74314}|WebApplication4\\WebApplication4.csproj|d:\\website_bangiaythethao\\website\\webapplication4\\wwwroot\\css\\nguoidung\\sodiachi.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{78D18FFB-17BA-4583-9A64-0D02B7B74314}|WebApplication4\\WebApplication4.csproj|solutionrelative:webapplication4\\wwwroot\\css\\nguoidung\\sodiachi.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{78D18FFB-17BA-4583-9A64-0D02B7B74314}|WebApplication4\\WebApplication4.csproj|d:\\website_bangiaythethao\\website\\webapplication4\\wwwroot\\css\\nguoidung\\sanphamyeuthich.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{78D18FFB-17BA-4583-9A64-0D02B7B74314}|WebApplication4\\WebApplication4.csproj|solutionrelative:webapplication4\\wwwroot\\css\\nguoidung\\sanphamyeuthich.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{78D18FFB-17BA-4583-9A64-0D02B7B74314}|WebApplication4\\WebApplication4.csproj|d:\\website_bangiaythethao\\website\\webapplication4\\controllers\\nguoidungcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{78D18FFB-17BA-4583-9A64-0D02B7B74314}|WebApplication4\\WebApplication4.csproj|solutionrelative:webapplication4\\controllers\\nguoidungcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{78D18FFB-17BA-4583-9A64-0D02B7B74314}|WebApplication4\\WebApplication4.csproj|d:\\website_bangiaythethao\\website\\webapplication4\\controllers\\websitecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{78D18FFB-17BA-4583-9A64-0D02B7B74314}|WebApplication4\\WebApplication4.csproj|solutionrelative:webapplication4\\controllers\\websitecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{78D18FFB-17BA-4583-9A64-0D02B7B74314}|WebApplication4\\WebApplication4.csproj|d:\\website_bangiaythethao\\website\\webapplication4\\views\\nguoidung\\trangchunguoidung.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{78D18FFB-17BA-4583-9A64-0D02B7B74314}|WebApplication4\\WebApplication4.csproj|solutionrelative:webapplication4\\views\\nguoidung\\trangchunguoidung.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{78D18FFB-17BA-4583-9A64-0D02B7B74314}|WebApplication4\\WebApplication4.csproj|d:\\website_bangiaythethao\\website\\webapplication4\\views\\nguoidung\\_capnhatmatkhau.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{78D18FFB-17BA-4583-9A64-0D02B7B74314}|WebApplication4\\WebApplication4.csproj|solutionrelative:webapplication4\\views\\nguoidung\\_capnhatmatkhau.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{78D18FFB-17BA-4583-9A64-0D02B7B74314}|WebApplication4\\WebApplication4.csproj|d:\\website_bangiaythethao\\website\\webapplication4\\views\\nguoidung\\_mydonhang.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{78D18FFB-17BA-4583-9A64-0D02B7B74314}|WebApplication4\\WebApplication4.csproj|solutionrelative:webapplication4\\views\\nguoidung\\_mydonhang.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{78D18FFB-17BA-4583-9A64-0D02B7B74314}|WebApplication4\\WebApplication4.csproj|d:\\website_bangiaythethao\\website\\webapplication4\\wwwroot\\css\\nguoidung\\capnhatmatkhau.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{78D18FFB-17BA-4583-9A64-0D02B7B74314}|WebApplication4\\WebApplication4.csproj|solutionrelative:webapplication4\\wwwroot\\css\\nguoidung\\capnhatmatkhau.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{78D18FFB-17BA-4583-9A64-0D02B7B74314}|WebApplication4\\WebApplication4.csproj|d:\\website_bangiaythethao\\website\\webapplication4\\views\\nguoidung\\_sodiachi.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{78D18FFB-17BA-4583-9A64-0D02B7B74314}|WebApplication4\\WebApplication4.csproj|solutionrelative:webapplication4\\views\\nguoidung\\_sodiachi.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{78D18FFB-17BA-4583-9A64-0D02B7B74314}|WebApplication4\\WebApplication4.csproj|d:\\website_bangiaythethao\\website\\webapplication4\\views\\nguoidung\\_sanphamyeuthich.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{78D18FFB-17BA-4583-9A64-0D02B7B74314}|WebApplication4\\WebApplication4.csproj|solutionrelative:webapplication4\\views\\nguoidung\\_sanphamyeuthich.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{78D18FFB-17BA-4583-9A64-0D02B7B74314}|WebApplication4\\WebApplication4.csproj|d:\\website_bangiaythethao\\website\\webapplication4\\wwwroot\\css\\nguoidung\\thongtinnguoidung.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{78D18FFB-17BA-4583-9A64-0D02B7B74314}|WebApplication4\\WebApplication4.csproj|solutionrelative:webapplication4\\wwwroot\\css\\nguoidung\\thongtinnguoidung.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{78D18FFB-17BA-4583-9A64-0D02B7B74314}|WebApplication4\\WebApplication4.csproj|d:\\website_bangiaythethao\\website\\webapplication4\\views\\nguoidung\\_thongtinnguoidung.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{78D18FFB-17BA-4583-9A64-0D02B7B74314}|WebApplication4\\WebApplication4.csproj|solutionrelative:webapplication4\\views\\nguoidung\\_thongtinnguoidung.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{78D18FFB-17BA-4583-9A64-0D02B7B74314}|WebApplication4\\WebApplication4.csproj|d:\\website_bangiaythethao\\website\\webapplication4\\wwwroot\\css\\nguoidung\\tongquan.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{78D18FFB-17BA-4583-9A64-0D02B7B74314}|WebApplication4\\WebApplication4.csproj|solutionrelative:webapplication4\\wwwroot\\css\\nguoidung\\tongquan.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{78D18FFB-17BA-4583-9A64-0D02B7B74314}|WebApplication4\\WebApplication4.csproj|d:\\website_bangiaythethao\\website\\webapplication4\\views\\nguoidung\\_tongquan.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{78D18FFB-17BA-4583-9A64-0D02B7B74314}|WebApplication4\\WebApplication4.csproj|solutionrelative:webapplication4\\views\\nguoidung\\_tongquan.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{78D18FFB-17BA-4583-9A64-0D02B7B74314}|WebApplication4\\WebApplication4.csproj|d:\\website_bangiaythethao\\website\\webapplication4\\wwwroot\\css\\nguoidung\\mydonhang.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{78D18FFB-17BA-4583-9A64-0D02B7B74314}|WebApplication4\\WebApplication4.csproj|solutionrelative:webapplication4\\wwwroot\\css\\nguoidung\\mydonhang.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{78D18FFB-17BA-4583-9A64-0D02B7B74314}|WebApplication4\\WebApplication4.csproj|d:\\website_bangiaythethao\\website\\webapplication4\\views\\shared\\_footer.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{78D18FFB-17BA-4583-9A64-0D02B7B74314}|WebApplication4\\WebApplication4.csproj|solutionrelative:webapplication4\\views\\shared\\_footer.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{78D18FFB-17BA-4583-9A64-0D02B7B74314}|WebApplication4\\WebApplication4.csproj|d:\\website_bangiaythethao\\website\\webapplication4\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{78D18FFB-17BA-4583-9A64-0D02B7B74314}|WebApplication4\\WebApplication4.csproj|solutionrelative:webapplication4\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{78D18FFB-17BA-4583-9A64-0D02B7B74314}|WebApplication4\\WebApplication4.csproj|d:\\website_bangiaythethao\\website\\webapplication4\\views\\shared\\components\\sanpham\\default.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{78D18FFB-17BA-4583-9A64-0D02B7B74314}|WebApplication4\\WebApplication4.csproj|solutionrelative:webapplication4\\views\\shared\\components\\sanpham\\default.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{78D18FFB-17BA-4583-9A64-0D02B7B74314}|WebApplication4\\WebApplication4.csproj|d:\\website_bangiaythethao\\website\\webapplication4\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{78D18FFB-17BA-4583-9A64-0D02B7B74314}|WebApplication4\\WebApplication4.csproj|solutionrelative:webapplication4\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{78D18FFB-17BA-4583-9A64-0D02B7B74314}|WebApplication4\\WebApplication4.csproj|d:\\website_bangiaythethao\\website\\webapplication4\\viewcompoments\\sanphamcompoment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{78D18FFB-17BA-4583-9A64-0D02B7B74314}|WebApplication4\\WebApplication4.csproj|solutionrelative:webapplication4\\viewcompoments\\sanphamcompoment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{78D18FFB-17BA-4583-9A64-0D02B7B74314}|WebApplication4\\WebApplication4.csproj|d:\\website_bangiaythethao\\website\\webapplication4\\lopdulieugia\\dulieugia_sanpham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{78D18FFB-17BA-4583-9A64-0D02B7B74314}|WebApplication4\\WebApplication4.csproj|solutionrelative:webapplication4\\lopdulieugia\\dulieugia_sanpham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{78D18FFB-17BA-4583-9A64-0D02B7B74314}|WebApplication4\\WebApplication4.csproj|d:\\website_bangiaythethao\\website\\webapplication4\\views\\shared\\truycapnhanh_nguoidung.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{78D18FFB-17BA-4583-9A64-0D02B7B74314}|WebApplication4\\WebApplication4.csproj|solutionrelative:webapplication4\\views\\shared\\truycapnhanh_nguoidung.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{78D18FFB-17BA-4583-9A64-0D02B7B74314}|WebApplication4\\WebApplication4.csproj|d:\\website_bangiaythethao\\website\\webapplication4\\views\\shared\\_header.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{78D18FFB-17BA-4583-9A64-0D02B7B74314}|WebApplication4\\WebApplication4.csproj|solutionrelative:webapplication4\\views\\shared\\_header.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{78D18FFB-17BA-4583-9A64-0D02B7B74314}|WebApplication4\\WebApplication4.csproj|d:\\website_bangiaythethao\\website\\webapplication4\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{78D18FFB-17BA-4583-9A64-0D02B7B74314}|WebApplication4\\WebApplication4.csproj|solutionrelative:webapplication4\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{78D18FFB-17BA-4583-9A64-0D02B7B74314}|WebApplication4\\WebApplication4.csproj|d:\\website_bangiaythethao\\website\\webapplication4\\abtracttion\\sanpham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{78D18FFB-17BA-4583-9A64-0D02B7B74314}|WebApplication4\\WebApplication4.csproj|solutionrelative:webapplication4\\abtracttion\\sanpham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\SV\\AppData\\Local\\Temp\\.vsdbgsrc\\0915356fc5c2603a4f27d366d0dfa96e6ba4c4d4999e1d10541dd1224d38f3c0\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{78D18FFB-17BA-4583-9A64-0D02B7B74314}|WebApplication4\\WebApplication4.csproj|d:\\website_bangiaythethao\\website\\webapplication4\\middware\\ghilog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{78D18FFB-17BA-4583-9A64-0D02B7B74314}|WebApplication4\\WebApplication4.csproj|solutionrelative:webapplication4\\middware\\ghilog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{78D18FFB-17BA-4583-9A64-0D02B7B74314}|WebApplication4\\WebApplication4.csproj|d:\\website_bangiaythethao\\website\\webapplication4\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{78D18FFB-17BA-4583-9A64-0D02B7B74314}|WebApplication4\\WebApplication4.csproj|solutionrelative:webapplication4\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{78D18FFB-17BA-4583-9A64-0D02B7B74314}|WebApplication4\\WebApplication4.csproj|d:\\website_bangiaythethao\\website\\webapplication4\\views\\shared\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{78D18FFB-17BA-4583-9A64-0D02B7B74314}|WebApplication4\\WebApplication4.csproj|solutionrelative:webapplication4\\views\\shared\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{78D18FFB-17BA-4583-9A64-0D02B7B74314}|WebApplication4\\WebApplication4.csproj|d:\\website_bangiaythethao\\website\\webapplication4\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{78D18FFB-17BA-4583-9A64-0D02B7B74314}|WebApplication4\\WebApplication4.csproj|solutionrelative:webapplication4\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "GiayNam.cshtml",
+              "DocumentMoniker": "D:\\Website_BanGiayTheThao\\website\\WebApplication4\\Views\\Website\\GiayNam.cshtml",
+              "RelativeDocumentMoniker": "WebApplication4\\Views\\Website\\GiayNam.cshtml",
+              "ToolTip": "D:\\Website_BanGiayTheThao\\website\\WebApplication4\\Views\\Website\\GiayNam.cshtml",
+              "RelativeToolTip": "WebApplication4\\Views\\Website\\GiayNam.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-22T09:11:42.824Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "GiayNu.cshtml",
+              "DocumentMoniker": "D:\\Website_BanGiayTheThao\\website\\WebApplication4\\Views\\Website\\GiayNu.cshtml",
+              "RelativeDocumentMoniker": "WebApplication4\\Views\\Website\\GiayNu.cshtml",
+              "ToolTip": "D:\\Website_BanGiayTheThao\\website\\WebApplication4\\Views\\Website\\GiayNu.cshtml",
+              "RelativeToolTip": "WebApplication4\\Views\\Website\\GiayNu.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-22T09:19:30.979Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "GioHang.cshtml",
+              "DocumentMoniker": "D:\\Website_BanGiayTheThao\\website\\WebApplication4\\Views\\Website\\GioHang.cshtml",
+              "RelativeDocumentMoniker": "WebApplication4\\Views\\Website\\GioHang.cshtml",
+              "ToolTip": "D:\\Website_BanGiayTheThao\\website\\WebApplication4\\Views\\Website\\GioHang.cshtml",
+              "RelativeToolTip": "WebApplication4\\Views\\Website\\GioHang.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-23T01:07:48.563Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "SanPhamNoiBat.cshtml",
+              "DocumentMoniker": "D:\\Website_BanGiayTheThao\\website\\WebApplication4\\Views\\Website\\SanPhamNoiBat.cshtml",
+              "RelativeDocumentMoniker": "WebApplication4\\Views\\Website\\SanPhamNoiBat.cshtml",
+              "ToolTip": "D:\\Website_BanGiayTheThao\\website\\WebApplication4\\Views\\Website\\SanPhamNoiBat.cshtml",
+              "RelativeToolTip": "WebApplication4\\Views\\Website\\SanPhamNoiBat.cshtml",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABoAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-22T08:52:41.736Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "SanPhamSale.cshtml",
+              "DocumentMoniker": "D:\\Website_BanGiayTheThao\\website\\WebApplication4\\Views\\Website\\SanPhamSale.cshtml",
+              "RelativeDocumentMoniker": "WebApplication4\\Views\\Website\\SanPhamSale.cshtml",
+              "ToolTip": "D:\\Website_BanGiayTheThao\\website\\WebApplication4\\Views\\Website\\SanPhamSale.cshtml",
+              "RelativeToolTip": "WebApplication4\\Views\\Website\\SanPhamSale.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-22T09:26:39.627Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "TrangBlog.cshtml",
+              "DocumentMoniker": "D:\\Website_BanGiayTheThao\\website\\WebApplication4\\Views\\Website\\TrangBlog.cshtml",
+              "RelativeDocumentMoniker": "WebApplication4\\Views\\Website\\TrangBlog.cshtml",
+              "ToolTip": "D:\\Website_BanGiayTheThao\\website\\WebApplication4\\Views\\Website\\TrangBlog.cshtml",
+              "RelativeToolTip": "WebApplication4\\Views\\Website\\TrangBlog.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-22T09:32:14.92Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "GiayNam.css",
+              "DocumentMoniker": "D:\\Website_BanGiayTheThao\\website\\WebApplication4\\wwwroot\\css\\Website\\GiayNam.css",
+              "RelativeDocumentMoniker": "WebApplication4\\wwwroot\\css\\Website\\GiayNam.css",
+              "ToolTip": "D:\\Website_BanGiayTheThao\\website\\WebApplication4\\wwwroot\\css\\Website\\GiayNam.css",
+              "RelativeToolTip": "WebApplication4\\wwwroot\\css\\Website\\GiayNam.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-10-26T04:50:00.41Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "SoDiaChi.css",
+              "DocumentMoniker": "D:\\Website_BanGiayTheThao\\website\\WebApplication4\\wwwroot\\css\\NguoiDung\\SoDiaChi.css",
+              "RelativeDocumentMoniker": "WebApplication4\\wwwroot\\css\\NguoiDung\\SoDiaChi.css",
+              "ToolTip": "D:\\Website_BanGiayTheThao\\website\\WebApplication4\\wwwroot\\css\\NguoiDung\\SoDiaChi.css",
+              "RelativeToolTip": "WebApplication4\\wwwroot\\css\\NguoiDung\\SoDiaChi.css",
+              "ViewState": "AgIAAHoAAAAAAAAAAAAkwIQAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-10-26T04:31:29.661Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "SanPhamYeuThich.css",
+              "DocumentMoniker": "D:\\Website_BanGiayTheThao\\website\\WebApplication4\\wwwroot\\css\\NguoiDung\\SanPhamYeuThich.css",
+              "RelativeDocumentMoniker": "WebApplication4\\wwwroot\\css\\NguoiDung\\SanPhamYeuThich.css",
+              "ToolTip": "D:\\Website_BanGiayTheThao\\website\\WebApplication4\\wwwroot\\css\\NguoiDung\\SanPhamYeuThich.css",
+              "RelativeToolTip": "WebApplication4\\wwwroot\\css\\NguoiDung\\SanPhamYeuThich.css",
+              "ViewState": "AgIAAFcAAAAAAAAAAAAAAAoAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-10-26T04:22:36.092Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "WebsiteController.cs",
+              "DocumentMoniker": "D:\\Website_BanGiayTheThao\\website\\WebApplication4\\Controllers\\WebsiteController.cs",
+              "RelativeDocumentMoniker": "WebApplication4\\Controllers\\WebsiteController.cs",
+              "ToolTip": "D:\\Website_BanGiayTheThao\\website\\WebApplication4\\Controllers\\WebsiteController.cs",
+              "RelativeToolTip": "WebApplication4\\Controllers\\WebsiteController.cs",
+              "ViewState": "AgIAABoAAAAAAAAAAAAIwCMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-22T08:57:06.552Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "NguoiDungController.cs",
+              "DocumentMoniker": "D:\\Website_BanGiayTheThao\\website\\WebApplication4\\Controllers\\NguoiDungController.cs",
+              "RelativeDocumentMoniker": "WebApplication4\\Controllers\\NguoiDungController.cs",
+              "ToolTip": "D:\\Website_BanGiayTheThao\\website\\WebApplication4\\Controllers\\NguoiDungController.cs",
+              "RelativeToolTip": "WebApplication4\\Controllers\\NguoiDungController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-23T00:57:16.84Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "_MyDonHang.cshtml",
+              "DocumentMoniker": "D:\\Website_BanGiayTheThao\\website\\WebApplication4\\Views\\NguoiDung\\_MyDonHang.cshtml",
+              "RelativeDocumentMoniker": "WebApplication4\\Views\\NguoiDung\\_MyDonHang.cshtml",
+              "ToolTip": "D:\\Website_BanGiayTheThao\\website\\WebApplication4\\Views\\NguoiDung\\_MyDonHang.cshtml",
+              "RelativeToolTip": "WebApplication4\\Views\\NguoiDung\\_MyDonHang.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-26T03:47:31.278Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "TrangChuNguoiDung.cshtml",
+              "DocumentMoniker": "D:\\Website_BanGiayTheThao\\website\\WebApplication4\\Views\\NguoiDung\\TrangChuNguoiDung.cshtml",
+              "RelativeDocumentMoniker": "WebApplication4\\Views\\NguoiDung\\TrangChuNguoiDung.cshtml",
+              "ToolTip": "D:\\Website_BanGiayTheThao\\website\\WebApplication4\\Views\\NguoiDung\\TrangChuNguoiDung.cshtml",
+              "RelativeToolTip": "WebApplication4\\Views\\NguoiDung\\TrangChuNguoiDung.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-23T01:00:42.904Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "_CapNhatMatKhau.cshtml",
+              "DocumentMoniker": "D:\\Website_BanGiayTheThao\\website\\WebApplication4\\Views\\NguoiDung\\_CapNhatMatKhau.cshtml",
+              "RelativeDocumentMoniker": "WebApplication4\\Views\\NguoiDung\\_CapNhatMatKhau.cshtml",
+              "ToolTip": "D:\\Website_BanGiayTheThao\\website\\WebApplication4\\Views\\NguoiDung\\_CapNhatMatKhau.cshtml",
+              "RelativeToolTip": "WebApplication4\\Views\\NguoiDung\\_CapNhatMatKhau.cshtml",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAACIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-26T04:37:58.887Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "CapNhatMatKhau.css",
+              "DocumentMoniker": "D:\\Website_BanGiayTheThao\\website\\WebApplication4\\wwwroot\\css\\NguoiDung\\CapNhatMatKhau.css",
+              "RelativeDocumentMoniker": "WebApplication4\\wwwroot\\css\\NguoiDung\\CapNhatMatKhau.css",
+              "ToolTip": "D:\\Website_BanGiayTheThao\\website\\WebApplication4\\wwwroot\\css\\NguoiDung\\CapNhatMatKhau.css",
+              "RelativeToolTip": "WebApplication4\\wwwroot\\css\\NguoiDung\\CapNhatMatKhau.css",
+              "ViewState": "AgIAAFcAAAAAAAAAAAAgwGQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-10-26T04:38:41.943Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "_SoDiaChi.cshtml",
+              "DocumentMoniker": "D:\\Website_BanGiayTheThao\\website\\WebApplication4\\Views\\NguoiDung\\_SoDiaChi.cshtml",
+              "RelativeDocumentMoniker": "WebApplication4\\Views\\NguoiDung\\_SoDiaChi.cshtml",
+              "ToolTip": "D:\\Website_BanGiayTheThao\\website\\WebApplication4\\Views\\NguoiDung\\_SoDiaChi.cshtml",
+              "RelativeToolTip": "WebApplication4\\Views\\NguoiDung\\_SoDiaChi.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-26T04:30:47.321Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "_SanPhamYeuThich.cshtml",
+              "DocumentMoniker": "D:\\Website_BanGiayTheThao\\website\\WebApplication4\\Views\\NguoiDung\\_SanPhamYeuThich.cshtml",
+              "RelativeDocumentMoniker": "WebApplication4\\Views\\NguoiDung\\_SanPhamYeuThich.cshtml",
+              "ToolTip": "D:\\Website_BanGiayTheThao\\website\\WebApplication4\\Views\\NguoiDung\\_SanPhamYeuThich.cshtml",
+              "RelativeToolTip": "WebApplication4\\Views\\NguoiDung\\_SanPhamYeuThich.cshtml",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAAAAUAAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-26T04:23:14.451Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "ThongTinNguoiDung.css",
+              "DocumentMoniker": "D:\\Website_BanGiayTheThao\\website\\WebApplication4\\wwwroot\\css\\NguoiDung\\ThongTinNguoiDung.css",
+              "RelativeDocumentMoniker": "WebApplication4\\wwwroot\\css\\NguoiDung\\ThongTinNguoiDung.css",
+              "ToolTip": "D:\\Website_BanGiayTheThao\\website\\WebApplication4\\wwwroot\\css\\NguoiDung\\ThongTinNguoiDung.css",
+              "RelativeToolTip": "WebApplication4\\wwwroot\\css\\NguoiDung\\ThongTinNguoiDung.css",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAAB8AAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-10-26T04:11:46.72Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "TongQuan.css",
+              "DocumentMoniker": "D:\\Website_BanGiayTheThao\\website\\WebApplication4\\wwwroot\\css\\NguoiDung\\TongQuan.css",
+              "RelativeDocumentMoniker": "WebApplication4\\wwwroot\\css\\NguoiDung\\TongQuan.css",
+              "ToolTip": "D:\\Website_BanGiayTheThao\\website\\WebApplication4\\wwwroot\\css\\NguoiDung\\TongQuan.css",
+              "RelativeToolTip": "WebApplication4\\wwwroot\\css\\NguoiDung\\TongQuan.css",
+              "ViewState": "AgIAABwAAAAAAAAAAAAkwDgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-10-26T04:09:09.194Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "_ThongTinNguoiDung.cshtml",
+              "DocumentMoniker": "D:\\Website_BanGiayTheThao\\website\\WebApplication4\\Views\\NguoiDung\\_ThongTinNguoiDung.cshtml",
+              "RelativeDocumentMoniker": "WebApplication4\\Views\\NguoiDung\\_ThongTinNguoiDung.cshtml",
+              "ToolTip": "D:\\Website_BanGiayTheThao\\website\\WebApplication4\\Views\\NguoiDung\\_ThongTinNguoiDung.cshtml",
+              "RelativeToolTip": "WebApplication4\\Views\\NguoiDung\\_ThongTinNguoiDung.cshtml",
+              "ViewState": "AgIAAC8AAAAAAAAAAAAAADUAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-26T04:10:53.196Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "_TongQuan.cshtml",
+              "DocumentMoniker": "D:\\Website_BanGiayTheThao\\website\\WebApplication4\\Views\\NguoiDung\\_TongQuan.cshtml",
+              "RelativeDocumentMoniker": "WebApplication4\\Views\\NguoiDung\\_TongQuan.cshtml",
+              "ToolTip": "D:\\Website_BanGiayTheThao\\website\\WebApplication4\\Views\\NguoiDung\\_TongQuan.cshtml",
+              "RelativeToolTip": "WebApplication4\\Views\\NguoiDung\\_TongQuan.cshtml",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAAAEAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-26T03:39:04.459Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "MyDonHang.css",
+              "DocumentMoniker": "D:\\Website_BanGiayTheThao\\website\\WebApplication4\\wwwroot\\css\\NguoiDung\\MyDonHang.css",
+              "RelativeDocumentMoniker": "WebApplication4\\wwwroot\\css\\NguoiDung\\MyDonHang.css",
+              "ToolTip": "D:\\Website_BanGiayTheThao\\website\\WebApplication4\\wwwroot\\css\\NguoiDung\\MyDonHang.css",
+              "RelativeToolTip": "WebApplication4\\wwwroot\\css\\NguoiDung\\MyDonHang.css",
+              "ViewState": "AgIAAMwAAAAAAAAAAAAAAMsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-10-26T03:49:12.271Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "TruyCapNhanh_NguoiDung.cshtml",
+              "DocumentMoniker": "D:\\Website_BanGiayTheThao\\website\\WebApplication4\\Views\\Shared\\TruyCapNhanh_NguoiDung.cshtml",
+              "RelativeDocumentMoniker": "WebApplication4\\Views\\Shared\\TruyCapNhanh_NguoiDung.cshtml",
+              "ToolTip": "D:\\Website_BanGiayTheThao\\website\\WebApplication4\\Views\\Shared\\TruyCapNhanh_NguoiDung.cshtml",
+              "RelativeToolTip": "WebApplication4\\Views\\Shared\\TruyCapNhanh_NguoiDung.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-23T01:33:33.859Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "DuLieuGia_SanPham.cs",
+              "DocumentMoniker": "D:\\Website_BanGiayTheThao\\website\\WebApplication4\\LopDuLieuGia\\DuLieuGia_SanPham.cs",
+              "RelativeDocumentMoniker": "WebApplication4\\LopDuLieuGia\\DuLieuGia_SanPham.cs",
+              "ToolTip": "D:\\Website_BanGiayTheThao\\website\\WebApplication4\\LopDuLieuGia\\DuLieuGia_SanPham.cs",
+              "RelativeToolTip": "WebApplication4\\LopDuLieuGia\\DuLieuGia_SanPham.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-22T12:38:59.409Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "SanPhamCompoment.cs",
+              "DocumentMoniker": "D:\\Website_BanGiayTheThao\\website\\WebApplication4\\ViewCompoments\\SanPhamCompoment.cs",
+              "RelativeDocumentMoniker": "WebApplication4\\ViewCompoments\\SanPhamCompoment.cs",
+              "ToolTip": "D:\\Website_BanGiayTheThao\\website\\WebApplication4\\ViewCompoments\\SanPhamCompoment.cs",
+              "RelativeToolTip": "WebApplication4\\ViewCompoments\\SanPhamCompoment.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAQwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-22T12:40:58.478Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Website_BanGiayTheThao\\website\\WebApplication4\\Program.cs",
+              "RelativeDocumentMoniker": "WebApplication4\\Program.cs",
+              "ToolTip": "D:\\Website_BanGiayTheThao\\website\\WebApplication4\\Program.cs",
+              "RelativeToolTip": "WebApplication4\\Program.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-22T12:24:22.398Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "_Header.cshtml",
+              "DocumentMoniker": "D:\\Website_BanGiayTheThao\\website\\WebApplication4\\Views\\Shared\\_Header.cshtml",
+              "RelativeDocumentMoniker": "WebApplication4\\Views\\Shared\\_Header.cshtml",
+              "ToolTip": "D:\\Website_BanGiayTheThao\\website\\WebApplication4\\Views\\Shared\\_Header.cshtml",
+              "RelativeToolTip": "WebApplication4\\Views\\Shared\\_Header.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-22T08:44:43.753Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "D:\\Website_BanGiayTheThao\\website\\WebApplication4\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "WebApplication4\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "D:\\Website_BanGiayTheThao\\website\\WebApplication4\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "WebApplication4\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-22T08:34:47.007Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "Default.cshtml",
+              "DocumentMoniker": "D:\\Website_BanGiayTheThao\\website\\WebApplication4\\Views\\Shared\\Components\\SanPham\\Default.cshtml",
+              "RelativeDocumentMoniker": "WebApplication4\\Views\\Shared\\Components\\SanPham\\Default.cshtml",
+              "ToolTip": "D:\\Website_BanGiayTheThao\\website\\WebApplication4\\Views\\Shared\\Components\\SanPham\\Default.cshtml",
+              "RelativeToolTip": "WebApplication4\\Views\\Shared\\Components\\SanPham\\Default.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-22T09:24:23.106Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "_ValidationScriptsPartial.cshtml",
+              "DocumentMoniker": "D:\\Website_BanGiayTheThao\\website\\WebApplication4\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "RelativeDocumentMoniker": "WebApplication4\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "ToolTip": "D:\\Website_BanGiayTheThao\\website\\WebApplication4\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "RelativeToolTip": "WebApplication4\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-22T09:24:13.917Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "SanPham.cs",
+              "DocumentMoniker": "D:\\Website_BanGiayTheThao\\website\\WebApplication4\\Abtracttion\\SanPham.cs",
+              "RelativeDocumentMoniker": "WebApplication4\\Abtracttion\\SanPham.cs",
+              "ToolTip": "D:\\Website_BanGiayTheThao\\website\\WebApplication4\\Abtracttion\\SanPham.cs",
+              "RelativeToolTip": "WebApplication4\\Abtracttion\\SanPham.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-22T12:44:50.627Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "Product.cs",
+              "DocumentMoniker": "D:\\Website_BanGiayTheThao\\website\\WebApplication4\\Models\\Product.cs",
+              "RelativeDocumentMoniker": "WebApplication4\\Models\\Product.cs",
+              "ToolTip": "D:\\Website_BanGiayTheThao\\website\\WebApplication4\\Models\\Product.cs",
+              "RelativeToolTip": "WebApplication4\\Models\\Product.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAQAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-22T12:29:11.953Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\SV\\AppData\\Local\\Temp\\.vsdbgsrc\\0915356fc5c2603a4f27d366d0dfa96e6ba4c4d4999e1d10541dd1224d38f3c0\\Program.cs",
+              "ToolTip": "C:\\Users\\SV\\AppData\\Local\\Temp\\.vsdbgsrc\\0915356fc5c2603a4f27d366d0dfa96e6ba4c4d4999e1d10541dd1224d38f3c0\\Program.cs [Read Only]",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAAAwAAAACAAAAAQAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-22T23:32:10.647Z",
+              "EditorCaption": " [Read Only]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "GhiLog.cs",
+              "DocumentMoniker": "D:\\Website_BanGiayTheThao\\website\\WebApplication4\\Middware\\GhiLog.cs",
+              "RelativeDocumentMoniker": "WebApplication4\\Middware\\GhiLog.cs",
+              "ToolTip": "D:\\Website_BanGiayTheThao\\website\\WebApplication4\\Middware\\GhiLog.cs",
+              "RelativeToolTip": "WebApplication4\\Middware\\GhiLog.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-22T13:11:32.976Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "Error.cshtml",
+              "DocumentMoniker": "D:\\Website_BanGiayTheThao\\website\\WebApplication4\\Views\\Shared\\Error.cshtml",
+              "RelativeDocumentMoniker": "WebApplication4\\Views\\Shared\\Error.cshtml",
+              "ToolTip": "D:\\Website_BanGiayTheThao\\website\\WebApplication4\\Views\\Shared\\Error.cshtml",
+              "RelativeToolTip": "WebApplication4\\Views\\Shared\\Error.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-22T09:24:17.701Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "_Footer.cshtml",
+              "DocumentMoniker": "D:\\Website_BanGiayTheThao\\website\\WebApplication4\\Views\\Shared\\_Footer.cshtml",
+              "RelativeDocumentMoniker": "WebApplication4\\Views\\Shared\\_Footer.cshtml",
+              "ToolTip": "D:\\Website_BanGiayTheThao\\website\\WebApplication4\\Views\\Shared\\_Footer.cshtml",
+              "RelativeToolTip": "WebApplication4\\Views\\Shared\\_Footer.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACYAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-22T08:45:14.686Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "site.css",
+              "DocumentMoniker": "D:\\Website_BanGiayTheThao\\website\\WebApplication4\\wwwroot\\css\\site.css",
+              "RelativeDocumentMoniker": "WebApplication4\\wwwroot\\css\\site.css",
+              "ToolTip": "D:\\Website_BanGiayTheThao\\website\\WebApplication4\\wwwroot\\css\\site.css",
+              "RelativeToolTip": "WebApplication4\\wwwroot\\css\\site.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-10-22T08:40:32.635Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

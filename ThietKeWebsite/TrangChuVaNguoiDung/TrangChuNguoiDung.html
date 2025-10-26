@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tài Khoản Của Tôi | SNEAKER CITY</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* ==================== CÁC THIẾT LẬP CHUNG (Tái sử dụng) ==================== */
+        :root {
+            --primary-color: #2a9d8f; /* Màu xanh ngọc năng động */
+            --secondary-color: #e76f51; /* Màu cam nổi bật cho CTA */
+            --text-dark: #264653;
+            --bg-light: #ffffff;
+            --bg-gray: #f9f9f9;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            background-color: var(--bg-gray);
+            color: var(--text-dark);
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--primary-color);
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: var(--secondary-color);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* -------------------------- CSS CHO DASHBOARD -------------------------- */
+        
+        .dashboard-header {
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .dashboard-header h1 {
+            font-size: 2.5em;
+            margin-bottom: 5px;
+        }
+
+        .dashboard-layout {
+            display: grid;
+            grid-template-columns: 250px 1fr; /* Chia 2 cột: Menu và Nội dung chính */
+            gap: 30px;
+            padding-bottom: 50px;
+        }
+
+        /* ----- CỘT TRÁI: SIDEBAR NAVIGATION ----- */
+        .sidebar-nav {
+            background-color: var(--bg-light);
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            padding: 20px 0;
+            height: fit-content;
+        }
+
+        .sidebar-nav ul {
+            list-style: none;
+        }
+
+        .sidebar-nav li a {
+            display: block;
+            padding: 15px 20px;
+            color: var(--text-dark);
+            font-weight: 600;
+            border-left: 4px solid transparent;
+            transition: all 0.2s;
+        }
+
+        .sidebar-nav li a:hover {
+            background-color: var(--bg-gray);
+            border-left-color: var(--primary-color);
+            color: var(--primary-color);
+        }
+        
+        .sidebar-nav li a.active {
+            background-color: var(--bg-gray);
+            border-left-color: var(--secondary-color);
+            color: var(--secondary-color);
+        }
+
+        /* ----- CỘT PHẢI: NỘI DUNG CHÍNH ----- */
+        .main-content {
+            background-color: var(--bg-light);
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            padding: 30px;
+        }
+        
+        .welcome-box {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        .welcome-box p {
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+
+        .quick-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .quick-links a {
+            display: block;
+            background-color: var(--bg-gray);
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px;
+            font-weight: 600;
+            color: var(--text-dark);
+            box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
+            transition: all 0.2s;
+        }
+
+        .quick-links a:hover {
+            background-color: #e5e5e5;
+            color: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+        
+        /* Icon trong quick links */
+        .quick-links a span {
+            display: block;
+            font-size: 2em;
+            margin-bottom: 5px;
+            color: var(--primary-color);
+        }
+
+        /* -------------------------- RESPONSIVE CHO DASHBOARD -------------------------- */
+        @media (max-width: 768px) {
+            .dashboard-layout {
+                grid-template-columns: 1fr; /* Dồn thành 1 cột */
+            }
+            
+            .sidebar-nav {
+                order: -1; /* Đẩy menu lên trên */
+            }
+            
+            .sidebar-nav ul {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-around;
+            }
+            
+            .sidebar-nav li {
+                flex-basis: 45%; /* Chia menu thành 2 cột */
+            }
+
+            .sidebar-nav li a {
+                text-align: center;
+                border-left: none;
+                border-bottom: 2px solid transparent;
+            }
+            
+            .sidebar-nav li a.active {
+                border-left: none;
+                border-bottom-color: var(--secondary-color);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="dashboard-header">
+        <div class="container">
+            <h1>Khu Vực Tài Khoản</h1>
+            <p>Xin chào, **Nguyễn Văn A**! Chào mừng trở lại với SNEAKER CITY.</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="dashboard-layout">
+            
+            <aside class="sidebar-nav">
+                <ul>
+                    <li><a href="#" class="active">🏠 Tổng quan</a></li>
+                    <li><a href="#">📦 Đơn hàng của tôi</a></li>
+                    <li><a href="#">📝 Thông tin cá nhân</a></li>
+                    <li><a href="#">📍 Sổ địa chỉ</a></li>
+                    <li><a href="#">❤️ Sản phẩm yêu thích</a></li>
+                    <li><a href="#">🔑 Thay đổi mật khẩu</a></li>
+                    <li><a href="#" style="color: #e63946;">→ Đăng xuất</a></li>
+                </ul>
+            </aside>
+            
+            <section class="main-content">
+                
+                <div class="welcome-box">
+                    <p>Chào mừng bạn đã trở lại! Từ trang tổng quan này, bạn có thể xem lại hoạt động gần đây của tài khoản và quản lý thông tin của mình.</p>
+                    <p style="font-weight: 700;">Đơn hàng gần nhất: #SC12345 (Đang vận chuyển)</p>
+                </div>
+
+                <h2>Truy cập nhanh</h2>
+                
+                <div class="quick-links">
+                    <a href="#">
+                        <span>📦</span>
+                        Lịch sử đơn hàng
+                    </a>
+                    <a href="#">
+                        <span>📝</span>
+                        Cập nhật hồ sơ
+                    </a>
+                    <a href="#">
+                        <span>📍</span>
+                        Thêm địa chỉ giao hàng
+                    </a>
+                    <a href="#">
+                        <span>❤️</span>
+                        Xem danh sách yêu thích
+                    </a>
+                </div>
+                
+                <div style="margin-top: 40px; border-top: 1px solid #eee; padding-top: 20px;">
+                    <h3>Thống kê tài khoản</h3>
+                    <p>Tổng số đơn hàng đã đặt: **5**</p>
+                    <p>Điểm thưởng tích lũy: **250** điểm</p>
+                </div>
+                
+            </section>
+            
+        </div>
+    </main>
+
+    </body>
+</html>

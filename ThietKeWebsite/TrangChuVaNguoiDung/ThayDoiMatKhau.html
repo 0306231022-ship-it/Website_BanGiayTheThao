@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thay đổi mật khẩu</title>
+    <link rel="stylesheet" href="ThayDoiMatKhau.css">
+</head>
+<style>
+    /* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+
+body {
+    background-color: #fafafa;
+    color: #333;
+}
+
+/* NỘI DUNG CHÍNH */
+.main-content {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 30px 25px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+}
+
+.main-content h2 {
+    font-size: 1.8rem;
+    color: #222;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.main-content .desc {
+    margin-bottom: 25px;
+    color: #777;
+    text-align: center;
+    font-size: 0.95rem;
+}
+
+/* FORM */
+.change-password-form {
+    width: 100%;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.2s;
+    background-color: #f9f9f9;
+}
+
+.form-group input:focus {
+    border-color: #007bff;
+    background-color: #fff;
+    outline: none;
+}
+
+.hint {
+    font-size: 0.85rem;
+    color: #007bff;
+    margin-top: 6px;
+}
+
+/* NÚT CẬP NHẬT */
+.btn-change-password {
+    width: 100%;
+    padding: 14px;
+    background-color: #ff6f3c;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-change-password:hover {
+    background-color: #e35b26;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .main-content {
+        margin: 20px;
+        padding: 20px;
+    }
+}
+
+</style>
+<body>
+    <main class="main-content">
+        <h2>🔑 Thay Đổi Mật Khẩu</h2>
+        
+        <p class="desc">
+            Để bảo vệ tài khoản, mật khẩu mới của bạn phải khác mật khẩu cũ và có tối thiểu 8 ký tự.
+        </p>
+
+        <form class="change-password-form" action="#" method="POST">
+            
+            <div class="form-group">
+                <label for="current-password">Mật khẩu hiện tại</label>
+                <input type="password" id="current-password" name="current-password" placeholder="Nhập mật khẩu bạn đang dùng" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="new-password">Mật khẩu mới</label>
+                <input type="password" id="new-password" name="new-password" placeholder="Mật khẩu mới (tối thiểu 8 ký tự)" required>
+                <p class="hint">💡 Gợi ý: Sử dụng kết hợp chữ hoa, chữ thường và số để mật khẩu mạnh hơn.</p>
+            </div>
+            
+            <div class="form-group">
+                <label for="confirm-password">Xác nhận mật khẩu mới</label>
+                <input type="password" id="confirm-password" name="confirm-password" placeholder="Nhập lại mật khẩu mới" required>
+            </div>
+
+            <button type="submit" class="btn-change-password">CẬP NHẬT MẬT KHẨU</button>
+        </form>
+    </main>
+</body>
+</html>

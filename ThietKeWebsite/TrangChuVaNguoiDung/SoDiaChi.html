@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sổ địa chỉ - Sneaker City</title>
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+
+body {
+    background-color: #fafafa;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 900px;
+    margin: 20px auto;
+}
+
+.header {
+    border-bottom: 2px solid #e0e0e0;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.header h1 {
+    font-size: 2rem;
+    color: #222;
+}
+
+.header p {
+    color: #666;
+    margin-top: 5px;
+}
+
+.address-actions {
+    text-align: right;
+    margin: 20px 0;
+}
+
+.add-btn {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.add-btn:hover {
+    background-color: #0056b3;
+}
+
+.address-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.address-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 16px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.address-info h3 {
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.address-info p {
+    color: #555;
+    font-size: 0.95rem;
+}
+
+.address-info .default {
+    display: inline-block;
+    margin-top: 8px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+}
+
+.address-controls button {
+    margin-left: 10px;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.edit-btn {
+    background-color: #ffc107;
+    color: #333;
+}
+
+.delete-btn {
+    background-color: #e74c3c;
+    color: #fff;
+}
+
+.set-default-btn {
+    background-color: #17a2b8;
+    color: #fff;
+}
+
+.address-controls button:hover {
+    opacity: 0.85;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .address-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    .address-controls {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+    }
+}
+
+    </style>
+
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1>Sổ địa chỉ</h1>
+            <p>Quản lý địa chỉ giao hàng của bạn để đặt hàng nhanh hơn.</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="address-actions">
+            <button class="add-btn">➕ Thêm địa chỉ mới</button>
+        </div>
+
+        <div class="address-list">
+            <div class="address-card">
+                <div class="address-info">
+                    <h3>🏠 Nguyễn Văn A</h3>
+                    <p>123 Lê Lợi, Quận 1, TP. Hồ Chí Minh</p>
+                    <p>Điện thoại: 0901234567</p>
+                    <span class="default">Mặc định</span>
+                </div>
+                <div class="address-controls">
+                    <button class="edit-btn">✏️ Sửa</button>
+                    <button class="delete-btn">🗑️ Xóa</button>
+                </div>
+            </div>
+
+            <div class="address-card">
+                <div class="address-info">
+                    <h3>🏠 Nguyễn Văn A</h3>
+                    <p>45 Nguyễn Huệ, Quận 1, TP. Hồ Chí Minh</p>
+                    <p>Điện thoại: 0908765432</p>
+                </div>
+                <div class="address-controls">
+                    <button class="set-default-btn">⭐ Đặt làm mặc định</button>
+                    <button class="delete-btn">🗑️ Xóa</button>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
