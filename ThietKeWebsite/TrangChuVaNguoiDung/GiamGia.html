@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mã Giảm Giá Của Bạn | SNEAKER CITY</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* ==================== CÁC THIẾT LẬP CHUNG ==================== */
+        :root {
+            --primary-color: #2a9d8f; /* Màu xanh ngọc năng động */
+            --secondary-color: #e76f51; /* Màu cam nổi bật cho CTA */
+            --text-dark: #264653;
+            --text-light: #f4f4f4;
+            --bg-light: #ffffff;
+            --bg-gray: #f9f9f9;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-gray);
+            color: var(--text-dark);
+            line-height: 1.6;
+            padding: 40px 0;
+        }
+
+        .container {
+            max-width: 800px; /* Chiều rộng tối ưu cho khu vực coupon */
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ==================== COUPON LISTING ==================== */
+        .coupon-section {
+            background-color: var(--bg-light);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .coupon-section h2 {
+            font-size: 1.8em;
+            color: var(--text-dark);
+            margin-bottom: 20px;
+            border-left: 5px solid var(--primary-color);
+            padding-left: 15px;
+        }
+
+        .coupon-grid {
+            display: grid;
+            gap: 20px;
+        }
+
+        .coupon-card {
+            display: flex;
+            background-color: #fff3e0; /* Nền màu pastel nhẹ */
+            border: 2px dashed var(--secondary-color); /* Viền đứt quãng hấp dẫn */
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.2s;
+        }
+
+        .coupon-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Phần thông tin */
+        .coupon-details {
+            flex-grow: 1;
+            padding: 15px;
+            text-align: left;
+        }
+
+        .coupon-details h3 {
+            font-size: 1.2em;
+            color: var(--secondary-color);
+            margin-bottom: 5px;
+        }
+
+        .coupon-details p {
+            font-size: 0.9em;
+            color: #555;
+            margin-bottom: 5px;
+        }
+        
+        .coupon-details .usage-info {
+             font-size: 0.85em;
+             color: var(--primary-color);
+             font-weight: 600;
+        }
+
+        /* Phần mã và nút sao chép */
+        .coupon-code-area {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            flex-shrink: 0;
+            width: 150px; /* Chiều rộng cố định cho khu vực mã */
+        }
+        
+        .code-display {
+            font-size: 1.3em;
+            font-weight: 700;
+            margin-bottom: 8px;
+            letter-spacing: 1px;
+            /* Tạo hiệu ứng mã nổi bật */
+            background-color: rgba(255, 255, 255, 0.2); 
+            padding: 4px 8px;
+            border-radius: 4px;
+        }
+
+        .btn-copy {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 6px 12px;
+            border: none;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-size: 0.9em;
+        }
+
+        .btn-copy:hover {
+            background-color: #218579;
+        }
+        
+        /* ==================== RESPONSIVE ==================== */
+        @media (max-width: 500px) {
+             .coupon-card {
+                flex-direction: column;
+                text-align: center;
+            }
+             .coupon-code-area {
+                width: 100%;
+                padding: 10px;
+                border-top: 1px solid rgba(255, 255, 255, 0.3);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="coupon-section">
+            <h2>🎁 Mã Giảm Giá Đang Chờ Bạn</h2>
+
+            <div class="coupon-grid">
+                
+                <div class="coupon-card">
+                    <div class="coupon-details">
+                        <h3>Giảm 30% Đơn Hàng</h3>
+                        <p>Giảm 30% tổng giá trị đơn hàng, tối đa 200.000 VNĐ.</p>
+                        <p>Áp dụng cho mọi sản phẩm Giày Nữ.</p>
+                        <div class="usage-info">Hạn sử dụng: 31/12/2025</div>
+                    </div>
+                    <div class="coupon-code-area">
+                        <div class="code-display" id="code1">SNC30SALE</div>
+                        <button class="btn-copy" onclick="copyCode('code1')">SAO CHÉP MÃ</button>
+                    </div>
+                </div>
+
+                <div class="coupon-card" style="border: 2px dashed var(--primary-color); background-color: #e0f2f1;">
+                    <div class="coupon-details">
+                        <h3 style="color: var(--primary-color);">Miễn Phí Vận Chuyển</h3>
+                        <p>Miễn phí giao hàng toàn quốc cho đơn hàng từ 1.000.000 VNĐ.</p>
+                        <p>Áp dụng cho mọi sản phẩm.</p>
+                        <div class="usage-info">Sử dụng 1 lần/khách hàng.</div>
+                    </div>
+                    <div class="coupon-code-area" style="background-color: var(--primary-color);">
+                        <div class="code-display" id="code2">FREESHIP</div>
+                        <button class="btn-copy" onclick="copyCode('code2')">SAO CHÉP MÃ</button>
+                    </div>
+                </div>
+                
+                <div class="coupon-card" style="background-color: #fce4ec; border: 2px dashed #FF69B4;">
+                    <div class="coupon-details">
+                        <h3 style="color: #FF69B4;">Giảm 50.000 VNĐ cho Khách Mới</h3>
+                        <p>Giảm trực tiếp 50.000 VNĐ cho đơn hàng đầu tiên.</p>
+                        <p>Đơn hàng tối thiểu 500.000 VNĐ.</p>
+                        <div class="usage-info">Hạn sử dụng: 30/11/2025</div>
+                    </div>
+                    <div class="coupon-code-area" style="background-color: #FF69B4;">
+                        <div class="code-display" id="code3">NEWBIE50</div>
+                        <button class="btn-copy" onclick="copyCode('code3')">SAO CHÉP MÃ</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function copyCode(elementId) {
+            const codeElement = document.getElementById(elementId);
+            const code = codeElement.innerText;
+            
+            // Sử dụng Clipboard API (hiện đại)
+            navigator.clipboard.writeText(code).then(() => {
+                alert(`Đã sao chép mã "${code}"! Bạn có thể dán mã này vào trang Thanh toán.`);
+            }).catch(err => {
+                // Fallback cho trình duyệt cũ hơn
+                const tempInput = document.createElement('textarea');
+                tempInput.value = code;
+                document.body.appendChild(tempInput);
+                tempInput.select();
+                document.execCommand('copy');
+                document.body.removeChild(tempInput);
+                alert(`Đã sao chép mã "${code}"!`);
+            });
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hóa Đơn Bán Hàng #SC-1001</title>
+    <style>
+        /* CSS CHÍNH: Chỉ áp dụng cho khu vực hóa đơn in ấn */
+        body { 
+            font-family: 'Times New Roman', Times, serif; 
+            margin: 0; 
+            background-color: #f4f7f9; 
+            font-size: 12pt;
+        }
+        .invoice-container {
+            width: 800px; /* Chiều rộng phù hợp cho in A4 */
+            margin: 30px auto;
+            padding: 30px;
+            background-color: white;
+            border: 1px solid #ddd;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        /* Tiêu đề công ty và thông tin hóa đơn */
+        .invoice-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            border-bottom: 2px solid #2c3e50;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+        .company-info h1 {
+            color: #2c3e50;
+            margin: 0;
+            font-size: 24pt;
+        }
+        .invoice-details { text-align: right; }
+        .invoice-details p { margin: 5px 0; }
+        .invoice-details strong { font-size: 14pt; color: #3498db; }
+
+        /* Khối thông tin khách hàng và giao hàng */
+        .client-info {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+        .client-block { width: 48%; }
+        .client-block h3 { margin-top: 0; margin-bottom: 10px; color: #2c3e50; font-size: 14pt; }
+        .client-block p { margin: 3px 0; }
+
+        /* Bảng sản phẩm */
+        .product-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+        }
+        .product-table th, .product-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        .product-table th {
+            background-color: #ecf0f1;
+            color: #2c3e50;
+            font-weight: bold;
+        }
+        .product-table td:last-child { text-align: right; }
+        .product-table th:last-child { text-align: right; }
+
+        /* Tổng kết tiền */
+        .invoice-summary {
+            display: flex;
+            justify-content: flex-end;
+        }
+        .summary-box {
+            width: 350px;
+        }
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 5px 0;
+        }
+        .summary-row.total {
+            border-top: 2px solid #2c3e50;
+            margin-top: 10px;
+            padding-top: 15px;
+            font-size: 16pt;
+            font-weight: bold;
+            color: #e74c3c; /* Màu nổi bật cho Tổng cộng */
+        }
+        
+        /* Chữ ký và Ghi chú */
+        .footer-note { margin-top: 50px; text-align: center; }
+        .signature-area {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 80px;
+        }
+        .signature-box { text-align: center; width: 40%; }
+        .signature-box p { margin: 5px 0 0 0; font-style: italic; }
+
+        /* CSS dành cho In ấn (Quan trọng) */
+        @media print {
+            body { background: none; }
+            .invoice-container {
+                box-shadow: none;
+                border: none;
+                margin: 0;
+                padding: 0;
+            }
+            .print-button { display: none; } /* Ẩn nút in khi đang in */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="invoice-container">
+        
+        <div style="text-align: right;" class="print-button">
+            <button onclick="window.print()" style="padding: 10px 20px; background-color: #3498db; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 14pt;">🖨️ In Hóa Đơn</button>
+        </div>
+        
+        <div class="invoice-header">
+            <div class="company-info">
+                <h1>SNEAKER CITY</h1>
+                <p>Địa chỉ: 123 Đường Thời Trang, Q. Trendy, TP.HCM</p>
+                <p>Email: hotro@sneakercity.vn</p>
+                <p>Hotline: 1900 6789</p>
+            </div>
+            <div class="invoice-details">
+                <h2>HÓA ĐƠN BÁN HÀNG</h2>
+                <p>Mã Đơn Hàng: <strong>#SC-1001</strong></p>
+                <p>Ngày Phát Hành: 26/10/2025</p>
+                <p>Trạng Thái Thanh Toán: **CHƯA THANH TOÁN** (COD)</p>
+            </div>
+        </div>
+
+        <div class="client-info">
+            <div class="client-block">
+                <h3>Khách Hàng</h3>
+                <p>Tên: Nguyễn Văn A</p>
+                <p>Điện thoại: 098 123 4567</p>
+                <p>Email: vana@example.com</p>
+            </div>
+            <div class="client-block">
+                <h3>Địa Chỉ Giao Hàng</h3>
+                <p>Địa chỉ: Số 123, đường Hùng Vương,</p>
+                <p>Phường Bến Nghé, Quận 1, TP. Hồ Chí Minh.</p>
+                <p>Phương thức: Giao hàng tiêu chuẩn</p>
+            </div>
+        </div>
+
+        <table class="product-table">
+            <thead>
+                <tr>
+                    <th style="width: 50%;">Sản Phẩm</th>
+                    <th style="width: 10%;">SL</th>
+                    <th style="width: 20%;">Đơn Giá (VND)</th>
+                    <th style="width: 20%;">Thành Tiền (VND)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Nike Air Max 97 'Silver Bullet' (Size 41)</td>
+                    <td>1</td>
+                    <td>3,500,000</td>
+                    <td>3,500,000</td>
+                </tr>
+                <tr>
+                    <td>Air Jordan 1 Mid 'Light Smoke Grey' (Size 42)</td>
+                    <td>1</td>
+                    <td>4,200,000</td>
+                    <td>4,200,000</td>
+                </tr>
+                </tbody>
+        </table>
+
+        <div class="invoice-summary">
+            <div class="summary-box">
+                <div class="summary-row">
+                    <span>TỔNG CỘNG TIỀN HÀNG:</span>
+                    <span>7,700,000 VND</span>
+                </div>
+                <div class="summary-row">
+                    <span>Phí Vận Chuyển:</span>
+                    <span>30,000 VND</span>
+                </div>
+                <div class="summary-row" style="color: #e74c3c; font-weight: bold;">
+                    <span>Chiết khấu/Giảm giá (Mã SALE20):</span>
+                    <span>- 154,000 VND</span>
+                </div>
+                <div class="summary-row total">
+                    <span>TỔNG THANH TOÁN:</span>
+                    <span style="color: #e74c3c;">7,576,000 VND</span>
+                </div>
+                
+                <p style="text-align: right; font-style: italic; margin-top: 15px;">(Bằng chữ: Bảy triệu năm trăm bảy mươi sáu nghìn đồng chẵn)</p>
+            </div>
+        </div>
+
+        <div class="footer-note">
+            <p style="font-style: italic; color: gray;">Xin cảm ơn quý khách đã tin tưởng và mua sắm tại SNEAKER CITY!</p>
+        </div>
+        
+        <div class="signature-area">
+            <div class="signature-box">
+                <p>Khách hàng ký tên</p>
+                <p>(Ký, ghi rõ họ tên)</p>
+                <div style="height: 50px; border-bottom: 1px dashed #333; width: 150px; margin: 20px auto 0;"></div>
+            </div>
+            <div class="signature-box">
+                <p>Người bán hàng/Thủ quỹ</p>
+                <p>(Ký, ghi rõ họ tên)</p>
+                <div style="height: 50px; border-bottom: 1px dashed #333; width: 150px; margin: 20px auto 0;"></div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

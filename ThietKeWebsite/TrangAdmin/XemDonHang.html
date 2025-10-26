@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi Tiết Đơn Hàng #SC-1001 - SNEAKER CITY Admin</title>
+    <style>
+        /* CSS Cơ bản cho Admin Panel */
+        body { font-family: Arial, sans-serif; background-color: #f4f7f9; margin: 0; display: flex; }
+        #sidebar { width: 250px; background-color: #2c3e50; color: white; height: 100vh; padding-top: 20px; box-shadow: 2px 0 5px rgba(0,0,0,0.1); }
+        #sidebar a { color: white; text-decoration: none; padding: 15px 20px; display: block; }
+        #sidebar a:hover { background-color: #34495e; }
+        #main-content { flex-grow: 1; padding: 20px; }
+        
+        .header-admin { display: flex; justify-content: space-between; align-items: center; background-color: white; padding: 15px; margin-bottom: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+        .btn-action { padding: 10px 15px; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; text-decoration: none; margin-left: 10px; display: inline-block; }
+        
+        /* Màu nút hành động */
+        .btn-update { background-color: #2ecc71; color: white; } /* Cập nhật trạng thái */
+        .btn-cancel { background-color: #e74c3c; color: white; } /* Hủy đơn (Quan trọng) */
+        .btn-print { background-color: #bdc3c7; color: #34495e; } /* In đơn */
+        
+        /* Bố cục chính (2 cột) */
+        .order-detail-grid { display: flex; gap: 20px; }
+        .info-column { flex: 1; }
+        .summary-column { width: 350px; } /* Cột tổng kết */
+        
+        .detail-card { background-color: white; padding: 25px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); margin-bottom: 20px; }
+        
+        /* Hiển thị thông tin */
+        .info-group { margin-bottom: 10px; }
+        .info-label { font-weight: bold; color: #34495e; display: inline-block; width: 120px; }
+        .info-value { display: inline-block; }
+
+        /* Bảng Sản phẩm */
+        .product-list-table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+        .product-list-table th, .product-list-table td { padding: 10px; text-align: left; border-bottom: 1px solid #eee; }
+        .product-list-table th { background-color: #ecf0f1; }
+        .product-list-table img { width: 40px; height: 40px; object-fit: cover; border-radius: 4px; margin-right: 10px; vertical-align: middle; }
+        
+        /* Tổng kết tiền */
+        .total-row { display: flex; justify-content: space-between; padding: 8px 0; border-top: 1px dashed #ddd; }
+        .total-row.final { border-top: 2px solid #333; font-size: 1.1em; font-weight: bold; margin-top: 10px; padding-top: 15px; }
+        .status-badge { padding: 5px 10px; border-radius: 4px; font-size: 14px; font-weight: bold; display: inline-block; }
+        .status-new { background-color: #f1c40f; color: #333; }
+    </style>
+</head>
+<body>
+
+    <div id="sidebar">
+        <h2 style="text-align: center; padding: 10px 0; border-bottom: 1px solid #34495e;">SNEAKER CITY</h2>
+        <a href="#orders">🛒 Quản Lý Đơn Hàng</a>
+        </div>
+
+    <div id="main-content">
+
+        <div class="header-admin">
+            <h1>Chi Tiết Đơn Hàng #SC-1001</h1>
+            <div>
+                <a href="#print" class="btn-action btn-print">🖨️ In Đơn</a>
+                <a href="#update-status" class="btn-action btn-update">✅ Cập Nhật Trạng Thái</a>
+                <button onclick="showCancelModal()" class="btn-action btn-cancel">❌ Hủy Đơn Hàng</button> 
+            </div>
+        </div>
+
+        <div class="order-detail-grid">
+            
+            <div class="info-column">
+                
+                <div class="detail-card">
+                    <h2>Thông Tin Tổng Quan</h2>
+                    <div class="info-group">
+                        <span class="info-label">Mã Đơn Hàng:</span>
+                        <span class="info-value" style="font-weight: bold;">#SC-1001</span>
+                    </div>
+                    <div class="info-group">
+                        <span class="info-label">Trạng Thái Hiện Tại:</span>
+                        <span class="status-badge status-new">Mới</span>
+                        <select style="margin-left: 20px; padding: 8px; border-radius: 4px;">
+                            <option>-- Đổi Trạng Thái --</option>
+                            <option>Đang xử lý</option>
+                            <option>Đang giao hàng</option>
+                            <option>Hoàn thành</option>
+                        </select>
+                    </div>
+                    <div class="info-group">
+                        <span class="info-label">Ngày Tạo Đơn:</span>
+                        <span class="info-value">26/10/2025 lúc 14:30</span>
+                    </div>
+                    <div class="info-group">
+                        <span class="info-label">PT Thanh Toán:</span>
+                        <span class="info-value">Thanh toán khi nhận hàng (COD)</span>
+                    </div>
+                    <div class="info-group">
+                        <span class="info-label">Tình Trạng TT:</span>
+                        <span class="info-value" style="color: #e74c3c; font-weight: bold;">CHƯA THANH TOÁN</span>
+                    </div>
+                </div>
+                
+                <div class="detail-card">
+                    <h2>Danh Sách Sản Phẩm (2 Sản phẩm)</h2>
+                    <table class="product-list-table">
+                        <thead>
+                            <tr>
+                                <th style="width: 50%;">Sản phẩm</th>
+                                <th style="width: 15%;">Đơn giá</th>
+                                <th style="width: 10%;">SL</th>
+                                <th style="width: 25%;">Thành tiền</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <img src="product1.jpg" alt="Air Max">
+                                    Nike Air Max 97 'Silver Bullet' (Size 41)
+                                </td>
+                                <td>3,500,000</td>
+                                <td>1</td>
+                                <td style="font-weight: bold;">3,500,000 VND</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="product2.jpg" alt="Jordan">
+                                    Air Jordan 1 Mid 'Light Smoke Grey' (Size 42)
+                                </td>
+                                <td>4,200,000</td>
+                                <td>1</td>
+                                <td style="font-weight: bold;">4,200,000 VND</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+
+            <div class="summary-column">
+                
+                <div class="detail-card">
+                    <h2>Thông Tin Khách Hàng</h2>
+                    <div class="info-group">
+                        <span class="info-label">Tên Khách Hàng:</span>
+                        <span class="info-value">Nguyễn Văn A</span>
+                    </div>
+                    <div class="info-group">
+                        <span class="info-label">Điện Thoại:</span>
+                        <span class="info-value">098 123 4567</span>
+                    </div>
+                    <div class="info-group">
+                        <span class="info-label">Email:</span>
+                        <span class="info-value">vana@example.com</span>
+                    </div>
+                    <div class="info-group" style="margin-top: 15px;">
+                        <span class="info-label" style="width: 100%; margin-bottom: 5px;">Địa Chỉ Giao Hàng:</span>
+                        <span class="info-value" style="display: block;">Số 123, đường Hùng Vương, Phường Bến Nghé, Quận 1, TP. Hồ Chí Minh.</span>
+                    </div>
+                </div>
+
+                <div class="detail-card">
+                    <h2>Tóm Tắt Thanh Toán</h2>
+                    <div class="total-row">
+                        <span>Tổng tiền hàng:</span>
+                        <span>7,700,000 VND</span>
+                    </div>
+                    <div class="total-row">
+                        <span>Phí Vận Chuyển:</span>
+                        <span>30,000 VND</span>
+                    </div>
+                    <div class="total-row" style="color: #e74c3c;">
+                        <span>Giảm giá (Mã SALE20):</span>
+                        <span>- 154,000 VND</span>
+                    </div>
+                    <div class="total-row final">
+                        <span>TỔNG CỘNG:</span>
+                        <span style="color: #333; font-size: 1.2em;">7,576,000 VND</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        
+    </div>
+
+    <div id="cancel-modal" style="display:none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000; justify-content: center; align-items: center;">
+        <div style="background: white; padding: 30px; border-radius: 8px; width: 400px; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">
+            <h3 style="color: #e74c3c;">Xác Nhận Hủy Đơn Hàng #SC-1001</h3>
+            <p>Bạn có chắc chắn muốn hủy đơn hàng này không? Hành động này không thể hoàn tác.</p>
+            <label for="cancel-reason" style="font-weight: bold; display: block; margin-top: 15px;">Lý do Hủy Đơn (*)</label>
+            <textarea id="cancel-reason" rows="3" placeholder="Ví dụ: Khách hàng hủy do đổi ý, Sản phẩm hết hàng..." style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; margin-bottom: 20px;"></textarea>
+            
+            <div style="text-align: right;">
+                <button onclick="hideCancelModal()" class="btn-action btn-cancel" style="background-color: #bdc3c7;">Đóng</button>
+                <button onclick="confirmCancel()" class="btn-action btn-cancel" style="background-color: #e74c3c;">XÁC NHẬN HỦY</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const modal = document.getElementById('cancel-modal');
+
+        function showCancelModal() {
+            modal.style.display = 'flex';
+        }
+
+        function hideCancelModal() {
+            modal.style.display = 'none';
+        }
+
+        function confirmCancel() {
+            const reason = document.getElementById('cancel-reason').value;
+            if (reason.trim() === '') {
+                alert('Vui lòng nhập lý do hủy đơn hàng.');
+                return;
+            }
+            // Logic HỦY ĐƠN HÀNG thực tế sẽ gửi lý do lên backend tại đây
+            alert(`Đơn hàng #SC-1001 đã được hủy với lý do: ${reason}.`);
+            hideCancelModal();
+            // Sau khi hủy, trang sẽ được tải lại hoặc chuyển trạng thái đơn hàng thành Đã Hủy
+        }
+    </script>
+</body>
+</html>

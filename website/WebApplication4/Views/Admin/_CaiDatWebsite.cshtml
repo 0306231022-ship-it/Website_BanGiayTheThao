@@ -1,0 +1,104 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "_Adminlayout";
+}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/js/all.min.js"></script>
+
+<div id="main-content">
+
+    <div class="header-admin">
+        <h1><i class="fas fa-cog" style="color: #3498db; margin-right: 10px;"></i> Cài Đặt Chung</h1>
+    </div>
+
+    <div class="settings-container">
+        <form id="general-settings-form" onsubmit="saveSettings(event)">
+
+            <h2 class="section-header"><i class="fas fa-info-circle"></i> Thông Tin Cơ Bản</h2>
+
+            <div class="form-group">
+                <label for="site-name">Tên Website:</label>
+                <input type="text" id="site-name" value="SNEAKER CITY" required>
+            </div>
+
+            <div class="form-group">
+                <label for="site-description">Mô Tả Website (SEO):</label>
+                <textarea id="site-description" rows="3">Cửa hàng bán lẻ giày sneaker chính hãng, cập nhật mẫu mới liên tục. Uy tín, chất lượng hàng đầu Việt Nam.</textarea>
+            </div>
+
+            <div class="form-group">
+                <label>Logo & Favicon:</label>
+                <div class="logo-upload-group">
+                    <div class="logo-preview">
+                        <i class="fas fa-image" style="font-size: 24px; color: #ccc;"></i>
+                    </div>
+                    <input type="file" id="logo-file" accept="image/*" style="padding: 0;">
+                </div>
+                <small style="color: #95a5a6;">Tải lên logo và favicon (biểu tượng trang).</small>
+            </div>
+
+            <h2 class="section-header" style="margin-top: 40px;"><i class="fas fa-map-marker-alt"></i> Thông Tin Liên Hệ</h2>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="phone">Số Điện Thoại Hotline:</label>
+                    <input type="text" id="phone" value="0901 234 567">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Hỗ Trợ:</label>
+                    <input type="email" id="email" value="support@sneakercity.vn">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="address">Địa Chỉ Chính:</label>
+                <input type="text" id="address" value="456 Đường ABC, Quận 1, TP. Hồ Chí Minh">
+            </div>
+
+            <div class="form-group">
+                <label for="social-facebook">Link Facebook:</label>
+                <input type="url" id="social-facebook" value="https://facebook.com/sneakercityvn" placeholder="https://facebook.com/...">
+            </div>
+
+            <h2 class="section-header" style="margin-top: 40px;"><i class="fas fa-sliders-h"></i> Cấu Hình Khác</h2>
+
+            <div class="form-group">
+                <label for="currency">Đơn vị Tiền tệ Mặc định:</label>
+                <input type="text" id="currency" value="VND" placeholder="USD, VND, EUR...">
+                <small style="color: #95a5a6;">Đơn vị hiển thị giá sản phẩm trên website.</small>
+            </div>
+
+            <div class="form-group">
+                <label for="maintenance-mode">Chế độ Bảo trì (Maintenance Mode):</label>
+                <label style="font-weight: normal; margin-top: 5px;">
+                    <input type="checkbox" id="maintenance-mode">
+                    Kích hoạt chế độ bảo trì (Chỉ Admin mới có thể xem website).
+                </label>
+            </div>
+
+            <div style="overflow: auto; margin-top: 30px;">
+                <button type="submit" class="save-settings-btn"><i class="fas fa-save"></i> Lưu Cài Đặt</button>
+            </div>
+
+        </form>
+    </div>
+
+</div>
+
+<script>
+    function saveSettings(event) {
+        event.preventDefault();
+
+        const siteName = document.getElementById('site-name').value;
+        const maintenanceMode = document.getElementById('maintenance-mode').checked;
+
+        let message = `Đã lưu thành công các cài đặt mới cho website "${siteName}".\n`;
+        message += `Chế độ Bảo trì: ${maintenanceMode ? 'ĐANG BẬT' : 'ĐANG TẮT'}`;
+
+        alert(message);
+
+        // THỰC TẾ: Gửi dữ liệu form qua AJAX/Fetch API lên Backend để lưu vào database
+    }
+</script>
+

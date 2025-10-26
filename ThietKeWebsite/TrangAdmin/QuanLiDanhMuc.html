@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản Lý Danh Mục - SNEAKER CITY Admin</title>
+    <style>
+        /* CSS Cơ bản cho Admin Panel */
+        body { font-family: Arial, sans-serif; background-color: #f4f7f9; margin: 0; display: flex; }
+        #sidebar { width: 250px; background-color: #2c3e50; color: white; height: 100vh; padding-top: 20px; box-shadow: 2px 0 5px rgba(0,0,0,0.1); }
+        #sidebar a { color: white; text-decoration: none; padding: 15px 20px; display: block; }
+        #sidebar a:hover { background-color: #34495e; }
+        #main-content { flex-grow: 1; padding: 20px; }
+        
+        .header-admin { display: flex; justify-content: space-between; align-items: center; background-color: white; padding: 15px; margin-bottom: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+        .btn-primary { background-color: #3498db; color: white; padding: 10px 15px; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; text-decoration: none; display: inline-block; }
+        
+        /* Style cho Form Thêm/Sửa Danh mục */
+        .category-form-card {
+            background-color: white;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .form-group {
+            margin-bottom: 15px;
+            display: flex;
+            gap: 20px;
+        }
+        .form-field { flex: 1; }
+        .form-field label { display: block; font-weight: bold; margin-bottom: 5px; color: #34495e; }
+        .form-field input[type="text"], .form-field select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        /* Style cho Bảng Danh mục */
+        .category-table { width: 100%; border-collapse: collapse; background-color: white; border-radius: 8px; overflow: hidden; margin-top: 15px; }
+        .category-table th, .category-table td { padding: 12px 15px; text-align: left; border-bottom: 1px solid #ddd; }
+        .category-table th { background-color: #ecf0f1; color: #34495e; }
+        
+        /* Nút Hành động trong bảng */
+        .action-btn { margin-right: 5px; padding: 5px 10px; border: none; cursor: pointer; border-radius: 4px; }
+        .edit-btn { background-color: #f39c12; color: white; }
+        .delete-btn { background-color: #e74c3c; color: white; }
+    </style>
+</head>
+<body>
+
+    <div id="sidebar">
+        <h2 style="text-align: center; padding: 10px 0; border-bottom: 1px solid #34495e;">SNEAKER CITY</h2>
+        <a href="#dashboard">🏠 Dashboard</a>
+        <a href="#posts">📝 Quản Lý Blog</a>
+        <a href="#products">📦 Quản Lý Sản Phẩm</a>
+        <a href="#categories" style="background-color: #34495e;">🏷️ Danh Mục</a>
+        <a href="#orders">🛒 Đơn Hàng</a>
+        <a href="#users">👥 Người Dùng</a>
+        <a href="#settings">⚙️ Cài Đặt Chung</a>
+        <a href="#logout">➡️ Đăng Xuất</a>
+    </div>
+
+    <div id="main-content">
+
+        <div class="header-admin">
+            <h1>Quản Lý Danh Mục Sản Phẩm</h1>
+            <a href="#add-category-form" class="btn-primary">+ Thêm Danh Mục Mới</a>
+        </div>
+        
+        <div class="category-form-card" id="add-category-form">
+            <h2>🏷️ Thêm Danh Mục Mới</h2>
+            <form action="/add-category" method="POST">
+                <div class="form-group">
+                    <div class="form-field">
+                        <label for="category-name">Tên Danh Mục (*)</label>
+                        <input type="text" id="category-name" name="category_name" required placeholder="Ví dụ: Giày Nam">
+                    </div>
+                    
+                    <div class="form-field">
+                        <label for="parent-category">Danh Mục Cha</label>
+                        <select id="parent-category" name="parent_id">
+                            <option value="0">-- (Không có) Danh mục gốc --</option>
+                            <option value="1">Giày</option>
+                            <option value="2">Quần áo</option>
+                            </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="form-field">
+                        <label for="category-slug">Slug (URL)</label>
+                        <input type="text" id="category-slug" name="category_slug" placeholder="Ví dụ: giay-nam">
+                    </div>
+
+                    <div class="form-field" style="display: flex; align-items: flex-end;">
+                        <button type="submit" class="btn-primary" style="width: 100%; background-color: #27ae60;">💾 Lưu Danh Mục</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div>
+            <h2>Danh Sách Danh Mục Đã Tạo</h2>
+            <table class="category-table">
+                <thead>
+                    <tr>
+                        <th style="width: 5%;">ID</th>
+                        <th style="width: 30%;">Tên Danh Mục</th>
+                        <th style="width: 25%;">Danh Mục Cha</th>
+                        <th style="width: 15%;">Số SP</th>
+                        <th style="width: 10%;">Slug</th>
+                        <th style="width: 15%;">Hành động</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td style="font-weight: bold;">Giày</td>
+                        <td>(Gốc)</td>
+                        <td>120</td>
+                        <td>giay</td>
+                        <td>
+                            <button class="action-btn edit-btn">Sửa</button>
+                            <button class="action-btn delete-btn">Xóa</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>&nbsp; &nbsp; ↳ Giày Nam</td>
+                        <td>Giày</td>
+                        <td>75</td>
+                        <td>giay-nam</td>
+                        <td>
+                            <button class="action-btn edit-btn">Sửa</button>
+                            <button class="action-btn delete-btn">Xóa</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>&nbsp; &nbsp; ↳ Giày Nữ</td>
+                        <td>Giày</td>
+                        <td>45</td>
+                        <td>giay-nu</td>
+                        <td>
+                            <button class="action-btn edit-btn">Sửa</button>
+                            <button class="action-btn delete-btn">Xóa</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td style="font-weight: bold;">Phụ kiện</td>
+                        <td>(Gốc)</td>
+                        <td>30</td>
+                        <td>phu-kien</td>
+                        <td>
+                            <button class="action-btn edit-btn">Sửa</button>
+                            <button class="action-btn delete-btn">Xóa</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+    </div>
+
+</body>
+</html>

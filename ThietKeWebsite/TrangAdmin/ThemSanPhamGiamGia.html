@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thêm Chương Trình Giảm Giá - SNEAKER CITY Admin</title>
+    <style>
+        /* (Giữ nguyên các style cơ bản từ các trang Admin trước) */
+        body { font-family: Arial, sans-serif; background-color: #f4f7f9; margin: 0; display: flex; }
+        #sidebar { width: 250px; background-color: #2c3e50; color: white; height: 100vh; padding-top: 20px; box-shadow: 2px 0 5px rgba(0,0,0,0.1); }
+        #sidebar a { color: white; text-decoration: none; padding: 15px 20px; display: block; }
+        #sidebar a:hover { background-color: #34495e; }
+        #main-content { flex-grow: 1; padding: 20px; }
+        
+        .header-admin { display: flex; justify-content: space-between; align-items: center; background-color: white; padding: 15px; margin-bottom: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+        
+        .sale-form-container {
+            max-width: 800px; /* Giới hạn chiều rộng form */
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        /* Style cho Form */
+        input[type="text"], input[type="number"], input[type="datetime-local"], select {
+            width: 100%; padding: 10px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; 
+        }
+        label { font-weight: bold; display: block; margin-bottom: 5px; color: #34495e;}
+
+        /* Style cho khối chức năng */
+        .setting-block { border: 1px solid #ddd; padding: 15px; border-radius: 4px; margin-bottom: 20px; }
+        
+        .btn-action { padding: 10px 15px; border: none; border-radius: 4px; cursor: pointer; font-weight: bold; }
+        .btn-schedule { background-color: #e74c3c; color: white; } /* Màu đỏ nổi bật cho Sale */
+        .btn-cancel { background-color: #bdc3c7; color: #34495e; }
+        
+        .price-input-group { display: flex; align-items: center; }
+        .price-input-group input { margin-bottom: 0; }
+        .price-unit { padding: 0 10px; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <div id="sidebar">
+        <h2 style="text-align: center; padding: 10px 0; border-bottom: 1px solid #34495e;">SNEAKER CITY</h2>
+        <a href="#dashboard">🏠 Dashboard</a>
+        <a href="#posts">📝 Quản Lý Blog</a>
+        <a href="#products" style="background-color: #34495e;">📦 Quản Lý Sản Phẩm</a>
+        <a href="#categories">🏷️ Danh Mục</a>
+        <a href="#orders">🛒 Đơn Hàng</a>
+        <a href="#users">👥 Người Dùng</a>
+        <a href="#settings">⚙️ Cài Đặt Chung</a>
+        <a href="#logout">➡️ Đăng Xuất</a>
+    </div>
+
+    <div id="main-content">
+        
+        <div class="header-admin">
+            <h1>Thiết Lập Chương Trình Giảm Giá (Sale)</h1>
+            <a href="#product-management" class="btn-cancel" style="padding: 10px 15px;">⬅️ Quay lại Quản lý Sản phẩm</a>
+        </div>
+
+        <div class="sale-form-container">
+            <form action="/schedule-sale" method="POST">
+                
+                <div class="setting-block">
+                    <h3>Chọn Sản Phẩm Áp Dụng</h3>
+                    <label for="product-select">Chọn Sản Phẩm (*)</label>
+                    <select id="product-select" name="product_id" required>
+                        <option value="">-- Chọn Sản Phẩm Cần Giảm Giá --</option>
+                        <option value="1">Nike Air Max 97 'Silver Bullet'</option>
+                        <option value="2">Air Jordan 1 Mid 'Light Smoke Grey'</option>
+                        <option value="3">Adidas Ultraboost 21</option>
+                    </select>
+
+                    <label for="sale-name">Tên Chương Trình Giảm Giá (Nội bộ)</label>
+                    <input type="text" id="sale-name" name="sale_name" placeholder="Ví dụ: Flash Sale Giày Nam Cuối Tuần">
+                </div>
+                
+                <div class="setting-block">
+                    <h3>Cài Đặt Mức Giảm</h3>
+                    
+                    <label for="discount-type">Loại Giảm Giá (*)</label>
+                    <select id="discount-type" name="discount_type" required>
+                        <option value="percentage">Giảm theo Phần trăm (%)</option>
+                        <option value="fixed">Giảm theo Số tiền cố định (VND)</option>
+                        <option value="fixed_price">Giá cố định sau giảm (VND)</option>
+                    </select>
+
+                    <label for="discount-value">Giá trị Giảm (*)</label>
+                    <div class="price-input-group">
+                        <input type="number" id="discount-value" name="discount_value" required min="1" placeholder="Ví dụ: 50 (nếu chọn %) hoặc 1000000 (nếu chọn số tiền)">
+                        <span class="price-unit">%</span>
+                    </div>
+                    
+                    <p style="margin-top: -10px; font-size: 14px; color: gray;">*Giá cuối cùng sẽ được tính toán dựa trên Giá Niêm Yết của sản phẩm.</p>
+                </div>
+
+                <div class="setting-block">
+                    <h3>Thời Gian Áp Dụng (*)</h3 >
+                    
+                    <div style="display: flex; gap: 20px;">
+                        <div style="flex: 1;">
+                            <label for="start-time">Thời gian BẮT ĐẦU</label>
+                            <input type="datetime-local" id="start-time" name="start_time" required>
+                        </div>
+                        <div style="flex: 1;">
+                            <label for="end-time">Thời gian KẾT THÚC</label>
+                            <input type="datetime-local" id="end-time" name="end_time" required>
+                        </div>
+                    </div>
+                    
+                    <label>
+                        <input type="checkbox" name="no_end_date"> Không có ngày kết thúc (Áp dụng vô thời hạn)
+                    </label>
+                </div>
+
+                <div class="setting-block" style="text-align: right;">
+                    <button type="button" class="btn-action btn-cancel" onclick="window.history.back()">Hủy Bỏ</button>
+                    <button type="submit" class="btn-action btn-schedule">🛒 Lên Lịch Giảm Giá Ngay</button>
+                </div>
+
+            </form>
+        </div>
+
+    </div>
+
+    <script>
+        document.getElementById('discount-type').addEventListener('change', function() {
+            const unitElement = document.querySelector('.price-unit');
+            const valueInput = document.getElementById('discount-value');
+            if (this.value === 'percentage') {
+                unitElement.textContent = '%';
+                valueInput.placeholder = 'Ví dụ: 50 (cho 50%)';
+            } else if (this.value === 'fixed') {
+                unitElement.textContent = 'VND';
+                valueInput.placeholder = 'Ví dụ: 500000 (cho 500,000 VND)';
+            } else { // fixed_price
+                unitElement.textContent = 'VND';
+                valueInput.placeholder = 'Giá bán sau giảm (VND)';
+            }
+        });
+    </script>
+</body>
+</html>

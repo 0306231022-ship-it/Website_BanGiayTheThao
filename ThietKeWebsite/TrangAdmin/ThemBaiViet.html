@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viết Bài Mới - SNEAKER CITY Admin</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f4f7f9; margin: 0; display: flex; }
+        #sidebar { width: 250px; background-color: #2c3e50; color: white; height: 100vh; padding-top: 20px; box-shadow: 2px 0 5px rgba(0,0,0,0.1); }
+        #sidebar a { color: white; text-decoration: none; padding: 15px 20px; display: block; }
+        #sidebar a:hover { background-color: #34495e; }
+        #main-content { flex-grow: 1; padding: 20px; display: flex; } /* Thêm flex để chia bố cục 2 cột chính */
+        .post-form-container { flex: 3; /* Cột nội dung chính chiếm 3 phần */
+            background-color: white; padding: 25px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); margin-right: 20px; }
+        .sidebar-settings { flex: 1; /* Cột cài đặt chiếm 1 phần */
+            background-color: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+        
+        /* Style cho Form */
+        input[type="text"], textarea, select {
+            width: 100%; padding: 10px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; 
+        }
+        label { font-weight: bold; display: block; margin-bottom: 5px; color: #34495e;}
+        
+        /* Style cho Trình soạn thảo (giả lập) */
+        .editor-area { min-height: 400px; border: 1px solid #ccc; background-color: #f9f9f9; padding: 15px; border-radius: 4px; margin-bottom: 20px; }
+        
+        /* Style cho các khối cài đặt */
+        .setting-block { border: 1px solid #ddd; padding: 15px; border-radius: 4px; margin-bottom: 20px; }
+        .btn-action { padding: 10px 15px; border: none; border-radius: 4px; cursor: pointer; font-weight: bold; }
+        .btn-publish { background-color: #2ecc71; color: white; }
+        .btn-draft { background-color: #f39c12; color: white; margin-right: 10px; }
+        
+        /* Style cho nút Quay Lại (Mới) */
+        .btn-cancel { background-color: #95a5a6; color: white; text-decoration: none; display: block; text-align: center; margin-bottom: 15px; } 
+    </style>
+</head>
+<body>
+
+    <div id="sidebar">
+        <h2 style="text-align: center; padding: 10px 0; border-bottom: 1px solid #34495e;">SNEAKER CITY</h2>
+        <a href="#dashboard">🏠 Dashboard</a>
+        <a href="#posts">📝 Quản Lý Bài Viết</a>
+        <a href="#new-post" style="background-color: #34495e;">➕ Viết Bài Mới</a> <a href="#categories">🏷️ Thể Loại & Tags</a>
+        <a href="#comments">💬 Bình Luận</a>
+        <a href="#media">🖼️ Thư Viện Media</a>
+        <a href="#settings">⚙️ Cài Đặt Chung</a>
+        <a href="#logout">➡️ Đăng Xuất</a>
+    </div>
+
+    <div id="main-content">
+        
+        <div class="post-form-container">
+            <h1>Viết Bài Mới</h1>
+            
+            <form action="/submit-post" method="POST">
+                
+                <label for="post-title">Tiêu đề Bài viết</label>
+                <input type="text" id="post-title" name="title" placeholder="Nhập tiêu đề bài viết tại đây..." required>
+                
+                <label for="post-slug">Đường dẫn (URL Slug)</label>
+                <input type="text" id="post-slug" name="slug" placeholder="vi-du-ve-tieu-de-bai-viet">
+
+                <label for="post-content">Nội dung Bài viết</label>
+                <div class="editor-area">
+                    <textarea id="post-content" name="content" style="width: 100%; min-height: 380px; border: none; resize: none;" placeholder="Bắt đầu viết nội dung bài viết..."></textarea>
+                </div>
+
+                <label for="post-excerpt">Đoạn Tóm Tắt (Hiển thị ngoài trang chủ, giới hạn 150 ký tự)</label>
+                <textarea id="post-excerpt" name="excerpt" rows="3" maxlength="150" placeholder="Nhập đoạn tóm tắt ngắn gọn của bài viết..."></textarea>
+
+            </form>
+        </div>
+        
+        <div class="sidebar-settings">
+            
+            <div class="setting-block" style="text-align: right;">
+                <a href="#posts" class="btn-action btn-cancel">← Quay Lại Quản Lý</a> 
+                
+                <button type="submit" class="btn-action btn-draft">Lưu Nháp</button>
+                <button type="submit" class="btn-action btn-publish">Xuất Bản</button>
+            </div>
+            
+            <div class="setting-block">
+                <h3>Trạng thái & Lịch trình</h3>
+                <p>Trạng thái: <span style="color: #f39c12; font-weight: bold;">Bản Nháp</span></p>
+                
+                <label for="post-author">Tác giả</label>
+                <select id="post-author" name="author">
+                    <option value="admin">Admin</option>
+                    <option value="minh-khang">Minh Khang</option>
+                </select>
+
+                <label for="publish-date">Ngày/Giờ Xuất Bản</label>
+                <input type="datetime-local" id="publish-date" name="publish_date" value="2025-10-26T15:30">
+            </div>
+
+            <div class="setting-block">
+                <h3>Phân loại</h3>
+                
+                <label for="post-category">Chuyên mục</label>
+                <select id="post-category" name="category">
+                    <option value="xu-huong">Xu hướng</option>
+                    <option value="danh-gia">Đánh giá sản phẩm</option>
+                    <option value="meo-vat">Mẹo vặt & Chăm sóc</option>
+                    <option value="kien-thuc">Kiến thức thương hiệu</option>
+                </select>
+
+                <label for="post-tags">Thẻ (Tags)</label>
+                <input type="text" id="post-tags" name="tags" placeholder="giày, sneaker, winter 2025">
+            </div>
+
+            <div class="setting-block">
+                <h3>Hình ảnh Đại diện</h3>
+                <input type="file" id="featured-image" name="featured_image" accept="image/*">
+                <div style="margin-top: 10px; border: 1px dashed #ccc; padding: 10px; text-align: center;">
+                    Ảnh đại diện sẽ hiển thị ở đây
+                </div>
+            </div>
+
+            <div class="setting-block">
+                <h3>Tùy chọn SEO</h3>
+                <label for="seo-title">Tiêu đề SEO</label>
+                <input type="text" id="seo-title" name="seo_title" placeholder="Tiêu đề hiển thị trên Google...">
+
+                <label for="meta-description">Mô tả Meta</label>
+                <textarea id="meta-description" name="meta_description" rows="3" placeholder="Mô tả ngắn gọn cho công cụ tìm kiếm..."></textarea>
+            </div>
+
+        </div>
+
+    </div>
+</body>
+</html>

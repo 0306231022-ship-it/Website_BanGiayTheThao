@@ -1,0 +1,79 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "_Adminlayout";
+}
+
+<link rel="stylesheet" href="~/css/Admin/QuanLiBaiViet.css" />
+<div id="main-content">
+    <div class="stats-grid">
+        <div class="stat-card">
+            <h3>Tổng Bài Viết</h3>
+            <p style="font-size: 24px; color: #2ecc71;">250</p>
+        </div>
+        <div class="stat-card">
+            <h3>Lượt Xem Tháng Này</h3>
+            <p style="font-size: 24px; color: #3498db;">45,890</p>
+        </div>
+        <div class="stat-card">
+            <h3>Bình Luận Mới</h3>
+            <p style="font-size: 24px; color: #f1c40f;">12</p>
+        </div>
+        <div class="stat-card">
+            <h3>Bản Nháp</h3>
+            <p style="font-size: 24px; color: #e67e22;">5</p>
+        </div>
+    </div>
+
+    <h2>Bài Viết Gần Đây</h2>
+    <table class="content-table" id="posts">
+        <thead>
+            <tr>
+                <th>Tiêu đề Bài viết</th>
+                <th>Chuyên mục</th>
+                <th>Tác giả</th>
+                <th>Ngày đăng</th>
+                <th>Hành động</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>5 Xu Hướng Giày Sneaker Hot Nhất Mùa Đông 2025</td>
+                <td>Xu hướng</td>
+                <td>Admin</td>
+                <td>01/10/2025</td>
+                <td>
+                    <button class="action-btn edit-btn">Sửa</button>
+                    <button class="action-btn delete-btn">Xóa</button>
+                </td>
+            </tr>
+            <tr>
+                <td>Lịch Sử Phát Triển Của Dòng Giày Air Jordan</td>
+                <td>Kiến thức</td>
+                <td>Minh Khang</td>
+                <td>25/09/2025</td>
+                <td>
+                    <button class="action-btn edit-btn">Sửa</button>
+                    <button class="action-btn delete-btn">Xóa</button>
+                </td>
+            </tr>
+            <tr>
+                <td>Cách phối đồ với Nike Dunk Low</td>
+                <td>Mẹo vặt & Chăm sóc</td>
+                <td>Admin</td>
+                <td>15/09/2025</td>
+                <td>
+                    <button class="action-btn edit-btn">Sửa</button>
+                    <button class="action-btn delete-btn">Xóa</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div style="text-align: right; margin-top: 20px;">
+        <a asp-action="ThemBaiViet" asp-asp-controller="Admin" style="padding: 10px 20px; background-color: #2ecc71; color: white; text-decoration: none; border-radius: 5px;">+ Viết Bài Mới</a>
+    </div>
+
+</div>
+

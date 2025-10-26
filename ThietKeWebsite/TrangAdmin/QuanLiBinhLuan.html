@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản Lý Bình Luận - SNEAKER CITY Admin</title>
+    <style>
+        /* CSS Cơ bản cho Admin Panel */
+        body { font-family: Arial, sans-serif; background-color: #f4f7f9; margin: 0; display: flex; }
+        #sidebar { width: 250px; background-color: #2c3e50; color: white; height: 100vh; padding-top: 20px; box-shadow: 2px 0 5px rgba(0,0,0,0.1); }
+        #sidebar a { color: white; text-decoration: none; padding: 15px 20px; display: block; }
+        #sidebar a:hover { background-color: #34495e; }
+        #main-content { flex-grow: 1; padding: 20px; }
+        
+        .header-admin { display: flex; justify-content: space-between; align-items: center; background-color: white; padding: 15px; margin-bottom: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+        
+        /* Bộ lọc và Tìm kiếm */
+        .filter-area { display: flex; gap: 15px; margin-bottom: 20px; }
+        .filter-area input[type="text"] { flex-grow: 1; padding: 10px; border-radius: 4px; border: 1px solid #ccc; box-sizing: border-box;}
+        .filter-area select { padding: 10px; border-radius: 4px; border: 1px solid #ccc; }
+
+        /* Tab Menu */
+        .tab-menu { display: flex; margin-bottom: 20px; border-bottom: 2px solid #ddd; }
+        .tab-menu button { background-color: transparent; border: none; padding: 10px 20px; cursor: pointer; font-size: 16px; border-radius: 5px 5px 0 0; margin-right: 5px; }
+        .tab-menu button.active { border-bottom: 3px solid #3498db; font-weight: bold; color: #3498db; }
+        
+        /* Bảng Bình luận */
+        .comment-table { width: 100%; border-collapse: collapse; background-color: white; border-radius: 8px; overflow: hidden; }
+        .comment-table th, .comment-table td { padding: 12px 15px; text-align: left; border-bottom: 1px solid #ddd; vertical-align: top; }
+        .comment-table th { background-color: #ecf0f1; color: #34495e; }
+
+        /* KHẮC PHỤC LỖI THỤT LỀ NỘI DUNG */
+        .comment-table td:nth-child(2) {
+            padding-left: 5px; 
+        } 
+        .comment-table th:nth-child(2) {
+            padding-left: 5px;
+        }
+
+        /* Khối bình luận */
+        .comment-content { 
+            max-width: 350px; 
+            white-space: pre-wrap;
+            font-size: 0.95em;
+        }
+        .comment-meta { font-size: 0.9em; color: #7f8c8d; }
+        .comment-meta strong { color: #34495e; }
+
+        /* Nút Hành động */
+        .action-buttons-group {
+            display: flex;
+            gap: 5px; 
+            flex-wrap: nowrap; 
+        }
+        .action-btn { 
+            margin-right: 5px; 
+            padding: 6px 10px; 
+            border: none; 
+            cursor: pointer; 
+            border-radius: 4px; 
+            font-weight: bold; 
+            white-space: nowrap; 
+        }
+        .approve-btn { background-color: #2ecc71; color: white; }
+        .reply-btn { background-color: #3498db; color: white; }
+        .delete-btn { background-color: #e74c3c; color: white; }
+        
+        /* Hiển thị trên Sản phẩm/Bài viết */
+        .link-to-entity { 
+            font-size: 0.9em; 
+            color: #3498db; 
+            text-decoration: none;
+        }
+
+        /* Modal CSS */
+        .modal {
+            display: none; 
+            position: fixed; 
+            z-index: 1000; 
+            left: 0;
+            top: 0;
+            width: 100%; 
+            height: 100%; 
+            overflow: auto; 
+            background-color: rgba(0,0,0,0.4); 
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background-color: #fefefe;
+            padding: 25px;
+            border-radius: 8px;
+            width: 500px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        .modal-content textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .modal-content .modal-footer {
+            margin-top: 20px;
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="sidebar">
+        <h2 style="text-align: center; padding: 10px 0; border-bottom: 1px solid #34495e;">SNEAKER CITY</h2>
+        <a href="#dashboard">🏠 Dashboard</a>
+        <a href="#posts">📝 Quản Lý Blog</a>
+        <a href="#products">📦 Quản Lý Sản Phẩm</a>
+        <a href="#categories">🏷️ Danh Mục</a>
+        <a href="#orders">🛒 Đơn Hàng</a>
+        <a href="#comments" style="background-color: #34495e;">💬 Quản Lý Bình Luận</a>
+        <a href="#users">👥 Người Dùng</a>
+        <a href="#settings">⚙️ Cài Đặt Chung</a>
+        <a href="#logout">➡️ Đăng Xuất</a>
+    </div>
+
+    <div id="main-content">
+
+        <div class="header-admin">
+            <h1>Quản Lý Bình Luận</h1>
+        </div>
+        
+        <div class="filter-area">
+            <input type="text" placeholder="Tìm kiếm theo Tên, Email, Nội dung..." title="Tìm kiếm bình luận">
+            <select>
+                <option>Lọc theo Loại</option>
+                <option>Sản Phẩm</option>
+                <option>Bài Viết Blog</option>
+            </select>
+        </div>
+
+        <div class="tab-menu">
+            <button class="active" onclick="showTab('pending-comments')">Cần Phê Duyệt 🔔 <span style="color: #e74c3c; font-size: 1.1em;">(5)</span></button>
+            <button onclick="showTab('published-comments')">Đã Xuất Bản (95)</button>
+        </div>
+
+        <div id="pending-comments" class="tab-content" style="display: block;">
+            <h2>Bình Luận Đang Chờ (Cần hành động)</h2>
+            <table class="comment-table">
+                <thead>
+                    <tr>
+                        <th style="width: 25%;">Tác giả</th>
+                        <th style="width: 40%;">Nội dung</th>
+                        <th style="width: 20%;">Thuộc về</th>
+                        <th style="width: 15%; min-width: 170px;">Hành động</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <strong>Trần Văn A</strong>
+                            <p class="comment-meta">vana@gmail.com</p>
+                        </td>
+                        <td>
+                            <div class="comment-content" id="comment-content-1">
+                                "Đôi này đẹp quá, còn size 40 không shop ơi? Mình đặt mua gấp."
+                            </div>
+                            <p class="comment-meta">Gửi lúc: 14:00 26/10/2025</p>
+                        </td>
+                        <td>
+                            <a href="#product-link-1" class="link-to-entity">Nike Air Max 97</a> (Sản phẩm)
+                        </td>
+                        <td>
+                            <div class="action-buttons-group">
+                                <button class="action-btn approve-btn" onclick="showReplyModal('1', 'Trần Văn A', 'Đôi này đẹp quá, còn size 40 không shop ơi? Mình đặt mua gấp.')">✅ Phê duyệt</button>
+                                <button class="action-btn delete-btn">🗑️ Xóa</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>Anonymous</strong>
+                            <p class="comment-meta">103.20.xxx.xx</p>
+                        </td>
+                        <td>
+                            <div class="comment-content" id="comment-content-2">
+                                "Bài viết hay ghê, thông tin rất hữu ích cho người mới chơi sneaker!"
+                            </div>
+                            <p class="comment-meta">Gửi lúc: 10:30 26/10/2025</p>
+                        </td>
+                        <td>
+                            <a href="#blog-link-1" class="link-to-entity">Blog: Top 5 Sneaker 2025</a> (Blog)
+                        </td>
+                        <td>
+                            <div class="action-buttons-group">
+                                <button class="action-btn approve-btn" onclick="showReplyModal('2', 'Anonymous', 'Bài viết hay ghê, thông tin rất hữu ích cho người mới chơi sneaker!')">✅ Phê duyệt</button>
+                                <button class="action-btn delete-btn">🗑️ Xóa</button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div id="published-comments" class="tab-content" style="display: none;">
+            <h2>Bình Luận Đã Xuất Bản (Đã hiển thị công khai)</h2>
+            <table class="comment-table">
+                <thead>
+                    <tr>
+                        <th style="width: 25%;">Tác giả</th>
+                        <th style="width: 40%;">Nội dung</th>
+                        <th style="width: 20%;">Thuộc về</th>
+                        <th style="width: 15%; min-width: 170px;">Hành động</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <strong>Nguyễn Thị C</strong>
+                            <p class="comment-meta">Đã đăng ký (ID: 123)</p>
+                        </td>
+                        <td>
+                            <div class="comment-content">
+                                "Shop giao hàng nhanh, giày đẹp y hình! 5 sao nha."
+                            </div>
+                            <p class="comment-meta">Đã trả lời bởi Admin.</p>
+                        </td>
+                        <td>
+                            <a href="#product-link-2" class="link-to-entity">Adidas Ultraboost 21</a> (Sản phẩm)
+                        </td>
+                        <td>
+                            <div class="action-buttons-group">
+                                <button class="action-btn reply-btn">↩️ Trả lời</button>
+                                <button class="action-btn delete-btn">🗑️ Xóa</button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+    </div>
+
+    <div id="reply-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <h3 style="color: #3498db; margin-top: 0;">Phê Duyệt và Trả Lời Bình Luận</h3>
+            <p><strong>Tác giả:</strong> <span id="modal-author"></span></p>
+            <p style="border: 1px dashed #ccc; padding: 10px; background-color: #f9f9f9; font-style: italic;">
+                <strong>Nội dung:</strong> <span id="modal-comment-content"></span>
+            </p>
+            
+            <label for="reply-text" style="font-weight: bold; margin-top: 15px; display: block;">Nội dung trả lời (Tùy chọn):</label>
+            <textarea id="reply-text" rows="4" placeholder="Ví dụ: Cảm ơn bạn đã quan tâm. Size 40 hiện vẫn còn hàng, bạn có thể đặt ngay nhé!"></textarea>
+            
+            <div class="modal-footer">
+                <button class="action-btn delete-btn" onclick="closeReplyModal()">Hủy</button>
+                <button class="action-btn approve-btn" onclick="confirmApproveAndReply()">
+                    ✅ Phê duyệt & Gửi trả lời
+                </button>
+                <button class="action-btn approve-btn" style="background-color: #1abc9c;" onclick="confirmApproveOnly()">
+                    ✅ Chỉ Phê duyệt
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentCommentId = null;
+
+        function showTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(tab => tab.style.display = 'none');
+            document.querySelectorAll('.tab-menu button').forEach(button => button.classList.remove('active'));
+            
+            document.getElementById(tabId).style.display = 'block';
+            document.querySelector(`.tab-menu button[onclick="showTab('${tabId}')"]`).classList.add('active');
+        }
+
+        function showReplyModal(commentId, author, content) {
+            currentCommentId = commentId;
+            document.getElementById('modal-author').textContent = author;
+            document.getElementById('modal-comment-content').textContent = content;
+            document.getElementById('reply-text').value = ''; 
+            document.getElementById('reply-modal').style.display = 'flex';
+        }
+
+        function closeReplyModal() {
+            document.getElementById('reply-modal').style.display = 'none';
+            currentCommentId = null;
+        }
+
+        function confirmApproveAndReply() {
+            const replyText = document.getElementById('reply-text').value.trim();
+            if (replyText === '') {
+                alert('Vui lòng nhập nội dung trả lời hoặc chọn "Chỉ Phê duyệt".');
+                return;
+            }
+            alert(`Bình luận ID ${currentCommentId} đã được PHÊ DUYỆT và TRẢ LỜI:\n"${replyText}"`);
+            closeReplyModal();
+            // Logic gửi dữ liệu lên Backend sẽ được thực hiện ở đây
+        }
+
+        function confirmApproveOnly() {
+            alert(`Bình luận ID ${currentCommentId} đã được CHỈ PHÊ DUYỆT.`);
+            closeReplyModal();
+            // Logic gửi dữ liệu lên Backend sẽ được thực hiện ở đây
+        }
+    </script>
+</body>
+</html>

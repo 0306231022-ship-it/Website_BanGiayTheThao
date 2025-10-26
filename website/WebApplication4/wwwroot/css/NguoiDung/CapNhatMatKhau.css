@@ -1,25 +1,5 @@
-﻿/* RESET */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Segoe UI", sans-serif;
-}
-
-body {
-    background-color: #fafafa;
-    color: #333;
-}
-
+﻿
 /* NỘI DUNG CHÍNH */
-.main-content {
-    max-width: 500px;
-    margin: 50px auto;
-    padding: 30px 25px;
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
-}
 
     .main-content h2 {
         font-size: 1.8rem;

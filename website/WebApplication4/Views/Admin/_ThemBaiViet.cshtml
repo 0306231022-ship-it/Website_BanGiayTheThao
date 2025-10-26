@@ -1,0 +1,91 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "_Adminlayout";
+}
+<link rel="stylesheet" href="~/css/Admin/ThemBaiViet.css" />
+
+
+<div id="main-content">
+
+    <div class="post-form-container">
+        <h1>Viết Bài Mới</h1>
+
+        <form action="/submit-post" method="POST">
+
+            <label for="post-title">Tiêu đề Bài viết</label>
+            <input type="text" id="post-title" name="title" placeholder="Nhập tiêu đề bài viết tại đây..." required>
+
+            <label for="post-slug">Đường dẫn (URL Slug)</label>
+            <input type="text" id="post-slug" name="slug" placeholder="vi-du-ve-tieu-de-bai-viet">
+
+            <label for="post-content">Nội dung Bài viết</label>
+            <div class="editor-area">
+                <textarea id="post-content" name="content" style="width: 100%; min-height: 380px; border: none; resize: none;" placeholder="Bắt đầu viết nội dung bài viết..."></textarea>
+            </div>
+
+            <label for="post-excerpt">Đoạn Tóm Tắt (Hiển thị ngoài trang chủ, giới hạn 150 ký tự)</label>
+            <textarea id="post-excerpt" name="excerpt" rows="3" maxlength="150" placeholder="Nhập đoạn tóm tắt ngắn gọn của bài viết..."></textarea>
+
+        </form>
+    </div>
+
+    <div class="sidebar-settings">
+
+        <div class="setting-block" style="text-align: right;">
+            <a asp-action="QuanLiBaiViet" asp-controller="Admin" class="btn-action btn-cancel">← Quay Lại Quản Lý</a>
+
+            <button type="submit" class="btn-action btn-draft">Lưu Nháp</button>
+            <button type="submit" class="btn-action btn-publish">Xuất Bản</button>
+        </div>
+
+        <div class="setting-block">
+            <h3>Trạng thái & Lịch trình</h3>
+            <p>Trạng thái: <span style="color: #f39c12; font-weight: bold;">Bản Nháp</span></p>
+
+            <label for="post-author">Tác giả</label>
+            <select id="post-author" name="author">
+                <option value="admin">Admin</option>
+                <option value="minh-khang">Minh Khang</option>
+            </select>
+
+            <label for="publish-date">Ngày/Giờ Xuất Bản</label>
+            <input type="datetime-local" id="publish-date" name="publish_date" value="2025-10-26T15:30">
+        </div>
+
+        <div class="setting-block">
+            <h3>Phân loại</h3>
+
+            <label for="post-category">Chuyên mục</label>
+            <select id="post-category" name="category">
+                <option value="xu-huong">Xu hướng</option>
+                <option value="danh-gia">Đánh giá sản phẩm</option>
+                <option value="meo-vat">Mẹo vặt & Chăm sóc</option>
+                <option value="kien-thuc">Kiến thức thương hiệu</option>
+            </select>
+
+            <label for="post-tags">Thẻ (Tags)</label>
+            <input type="text" id="post-tags" name="tags" placeholder="giày, sneaker, winter 2025">
+        </div>
+
+        <div class="setting-block">
+            <h3>Hình ảnh Đại diện</h3>
+            <input type="file" id="featured-image" name="featured_image" accept="image/*">
+            <div style="margin-top: 10px; border: 1px dashed #ccc; padding: 10px; text-align: center;">
+                Ảnh đại diện sẽ hiển thị ở đây
+            </div>
+        </div>
+
+        <div class="setting-block">
+            <h3>Tùy chọn SEO</h3>
+            <label for="seo-title">Tiêu đề SEO</label>
+            <input type="text" id="seo-title" name="seo_title" placeholder="Tiêu đề hiển thị trên Google...">
+
+            <label for="meta-description">Mô tả Meta</label>
+            <textarea id="meta-description" name="meta_description" rows="3" placeholder="Mô tả ngắn gọn cho công cụ tìm kiếm..."></textarea>
+        </div>
+
+    </div>
+
+</div>

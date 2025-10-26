@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản Lý Sản Phẩm - SNEAKER CITY Admin</title>
+    <style>
+        /* (Giữ nguyên các style cơ bản từ trang Dashboard và Viết Bài Mới) */
+        body { font-family: Arial, sans-serif; background-color: #f4f7f9; margin: 0; display: flex; }
+        #sidebar { width: 250px; background-color: #2c3e50; color: white; height: 100vh; padding-top: 20px; box-shadow: 2px 0 5px rgba(0,0,0,0.1); }
+        #sidebar a { color: white; text-decoration: none; padding: 15px 20px; display: block; }
+        #sidebar a:hover { background-color: #34495e; }
+        #main-content { flex-grow: 1; padding: 20px; }
+        
+        .header-admin { display: flex; justify-content: space-between; align-items: center; background-color: white; padding: 15px; margin-bottom: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+        .btn-primary { background-color: #3498db; color: white; padding: 10px 15px; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; text-decoration: none; display: inline-block; }
+        
+        /* Style cho các Tab */
+        .tab-menu { display: flex; margin-bottom: 20px; border-bottom: 2px solid #ddd; }
+        .tab-menu button { background-color: transparent; border: none; padding: 10px 20px; cursor: pointer; font-size: 16px; border-radius: 5px 5px 0 0; margin-right: 5px; }
+        .tab-menu button.active { border-bottom: 3px solid #3498db; font-weight: bold; color: #3498db; }
+        
+        /* Style cho Bảng */
+        .product-table { width: 100%; border-collapse: collapse; background-color: white; border-radius: 8px; overflow: hidden; margin-top: 15px; }
+        .product-table th, .product-table td { padding: 12px 15px; text-align: left; border-bottom: 1px solid #ddd; }
+        .product-table th { background-color: #ecf0f1; color: #34495e; }
+        .product-table td img { width: 50px; height: 50px; object-fit: cover; border-radius: 4px; }
+        .action-btn { margin-right: 5px; padding: 5px 10px; border: none; cursor: pointer; border-radius: 4px; }
+        .view-btn { background-color: #3498db; color: white; }
+        .edit-btn { background-color: #f39c12; color: white; }
+        .delete-btn { background-color: #e74c3c; color: white; }
+
+        /* CSS MỚI/CHỈNH SỬA CHO THANH TÌM KIẾM */
+        .search-container {
+            display: flex; 
+            gap: 10px; 
+            margin-bottom: 20px;
+        }
+        .search-input-group {
+            flex-grow: 1;
+            display: flex;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            overflow: hidden; /* Quan trọng để nút và input dính vào nhau */
+            background-color: white;
+        }
+        .search-input-group input[type="text"] {
+            border: none;
+            padding: 10px;
+            flex-grow: 1;
+            box-sizing: border-box;
+            margin-bottom: 0; /* Loại bỏ margin mặc định */
+        }
+        .search-button {
+            background-color: #e9ecef;
+            color: #34495e;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.2s;
+        }
+        .search-button:hover {
+            background-color: #dde1e6;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="sidebar">
+        <h2 style="text-align: center; padding: 10px 0; border-bottom: 1px solid #34495e;">SNEAKER CITY</h2>
+        <a href="#dashboard">🏠 Dashboard</a>
+        <a href="#posts">📝 Quản Lý Blog</a>
+        <a href="#products" style="background-color: #34495e;">📦 Quản Lý Sản Phẩm</a>
+        <a href="#categories">🏷️ Danh Mục</a>
+        <a href="#orders">🛒 Đơn Hàng</a>
+        <a href="#users">👥 Người Dùng</a>
+        <a href="#settings">⚙️ Cài Đặt Chung</a>
+        <a href="#logout">➡️ Đăng Xuất</a>
+    </div>
+
+    <div id="main-content">
+
+        <div class="header-admin">
+            <h1>Quản Lý Sản Phẩm</h1>
+            <a href="#add-product" class="btn-primary">+ Thêm Sản Phẩm Mới</a>
+        </div>
+        
+        <div class="search-container">
+            
+            <div class="search-input-group">
+                <input type="text" placeholder="Tìm kiếm theo tên sản phẩm, SKU..." title="Nhập từ khóa tìm kiếm">
+                <button class="search-button" type="submit">🔍</button>
+            </div>
+            <select style="padding: 10px; border-radius: 4px; border: 1px solid #ccc;">
+                <option>Lọc theo Danh mục</option>
+                <option>Giày Nam</option>
+                <option>Giày Nữ</option>
+            </select>
+        </div>
+
+        <div class="tab-menu">
+            <button class="active" onclick="showTab('all-products')">Tất Cả Sản Phẩm</button>
+            <button onclick="showTab('sale-products')">Sản Phẩm Đang Sale (SALE 50%)</button>
+        </div>
+
+        <div id="all-products" class="tab-content" style="display: block;">
+            <h2>Danh Sách Sản Phẩm</h2>
+            <table class="product-table">
+                <thead>
+                    <tr>
+                        <th>Ảnh</th>
+                        <th>Tên Sản Phẩm</th>
+                        <th>SKU</th>
+                        <th>Giá (VND)</th>
+                        <th>Tồn Kho</th>
+                        <th>Trạng Thái</th>
+                        <th>Hành động</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="product1.jpg" alt="Nike Air Max"></td>
+                        <td>Nike Air Max 97 'Silver Bullet'</td>
+                        <td>NM97-SB01</td>
+                        <td>3,500,000</td>
+                        <td>45</td>
+                        <td style="color: green; font-weight: bold;">Đang bán</td>
+                        <td>
+                            <a href="#view-product-1" class="action-btn view-btn">Xem</a>
+                            <a href="#edit-product-1" class="action-btn edit-btn">Sửa</a>
+                            <button class="action-btn delete-btn">Xóa</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><img src="product2.jpg" alt="Air Jordan"></td>
+                        <td>Air Jordan 1 Mid 'Light Smoke Grey'</td>
+                        <td>AJ1-LSG</td>
+                        <td>4,200,000</td>
+                        <td>0</td>
+                        <td style="color: red; font-weight: bold;">Hết hàng</td>
+                        <td>
+                            <a href="#view-product-2" class="action-btn view-btn">Xem</a>
+                            <a href="#edit-product-2" class="action-btn edit-btn">Sửa</a>
+                            <button class="action-btn delete-btn">Xóa</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div id="sale-products" class="tab-content" style="display: none;">
+            <h2>Quản lý Sản Phẩm Giảm Giá (SALE 50%)</h2>
+            <a href="#add-to-sale" class="btn-primary" style="background-color: #e74c3c; margin-bottom: 15px;">+ Thêm Sản Phẩm Giảm Giá</a>
+            
+            <table class="product-table">
+                <thead>
+                    <tr>
+                        <th>Tên Sản Phẩm</th>
+                        <th>Giá Gốc</th>
+                        <th>Giá Sale</th>
+                        <th>Thời gian Sale còn lại</th>
+                        <th>Hành động</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Nike Air Force 1 Low White</td>
+                        <td>2,800,000</td>
+                        <td style="color: #e74c3c; font-weight: bold;">1,400,000</td>
+                        <td>3 ngày 10 giờ</td>
+                        <td>
+                            <button class="action-btn delete-btn">Hủy Sale</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <p style="margin-top: 15px; color: gray;">*Các sản phẩm trong danh sách này sẽ tự động áp dụng mức giảm 50% cho đến khi kết thúc thời gian sale hoặc được hủy thủ công.</p>
+        </div>
+        
+    </div>
+
+    <script>
+        function showTab(tabId) {
+            // Ẩn tất cả nội dung tab
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.style.display = 'none';
+            });
+            // Loại bỏ active khỏi tất cả nút
+            document.querySelectorAll('.tab-menu button').forEach(button => {
+                button.classList.remove('active');
+            });
+            
+            // Hiển thị tab được chọn
+            document.getElementById(tabId).style.display = 'block';
+            // Thêm active vào nút được chọn
+            document.querySelector(`.tab-menu button[onclick="showTab('${tabId}')"]`).classList.add('active');
+        }
+    </script>
+
+</body>
+</html>

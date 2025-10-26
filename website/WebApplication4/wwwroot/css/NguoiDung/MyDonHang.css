@@ -11,12 +11,7 @@
     --status-cancelled: #e63946; /* Màu đỏ */
 }
 
-body {
-    font-family: 'Poppins', sans-serif;
-    line-height: 1.6;
-    background-color: var(--bg-gray);
-    color: var(--text-dark);
-}
+
 
 a {
     text-decoration: none;

@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thêm Mã Giảm Giá | Admin Panel</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* ==================== CÁC THIẾT LẬP CHUNG ==================== */
+        :root {
+            --primary-color: #2a9d8f; /* Màu xanh ngọc năng động */
+            --secondary-color: #e76f51; /* Màu cam nổi bật cho CTA */
+            --text-dark: #264653;
+            --text-light: #f4f4f4;
+            --bg-light: #ffffff;
+            --bg-gray: #f0f2f5;
+            --success-color: #4CAF50;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-gray);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px; /* Giới hạn chiều rộng cho form */
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* ==================== CONTENT HEADER ==================== */
+        .content-header {
+            margin-bottom: 25px;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 15px;
+        }
+
+        .content-header h1 {
+            font-size: 2em;
+            color: var(--text-dark);
+        }
+
+        /* ==================== FORM CARD ==================== */
+        .card {
+            background-color: var(--bg-light);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .form-section-title {
+            font-size: 1.2em;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            padding-bottom: 5px;
+            border-bottom: 1px dashed #eee;
+            font-weight: 600;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* Chia form thành 2 cột */
+            gap: 20px 30px;
+            margin-bottom: 30px;
+        }
+        
+        /* Đảm bảo các trường lớn chiếm hết 2 cột */
+        .full-width {
+            grid-column: 1 / -1; 
+        }
+
+        .form-group {
+            margin-bottom: 5px; /* Giảm margin bottom vì đã có gap */
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 0.95em;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 1em;
+            transition: border-color 0.3s, box-shadow 0.3s;
+            background-color: #fff;
+        }
+        
+        .form-group input[type="number"] {
+             /* Dấu mũi tên nhỏ */
+             -moz-appearance: textfield; 
+        }
+        .form-group input::-webkit-outer-spin-button,
+        .form-group input::-webkit-inner-spin-button {
+             -webkit-appearance: none;
+             margin: 0;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 5px rgba(42, 157, 143, 0.2);
+            outline: none;
+        }
+        
+        .form-group p.hint {
+            font-size: 0.8em;
+            color: #777;
+            margin-top: 5px;
+        }
+        
+        /* Radio button và Checkbox group */
+        .radio-group label {
+            display: inline-flex;
+            align-items: center;
+            margin-right: 20px;
+            font-weight: 400;
+            cursor: pointer;
+        }
+        
+        .radio-group input[type="radio"] {
+            width: auto;
+            margin-right: 5px;
+            accent-color: var(--primary-color);
+        }
+
+
+        /* ==================== BUTTONS ==================== */
+        .form-actions {
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            text-align: right;
+            display: flex;
+            justify-content: flex-end;
+            gap: 15px;
+        }
+
+        .btn-submit {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-size: 1em;
+        }
+
+        .btn-submit:hover {
+            background-color: #d8573a;
+        }
+
+        .btn-cancel {
+            background-color: #9e9e9e;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-size: 1em;
+        }
+        
+        .btn-cancel:hover {
+            background-color: #757575;
+        }
+
+        /* ==================== RESPONSIVE ==================== */
+        @media (max-width: 768px) {
+            .form-grid {
+                grid-template-columns: 1fr; /* Chuyển về 1 cột trên mobile */
+                gap: 20px;
+            }
+            .form-actions {
+                flex-direction: column;
+            }
+            .btn-submit, .btn-cancel {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="content-header">
+            <h1>✨ Tạo Mã Giảm Giá Mới</h1>
+        </div>
+
+        <div class="card">
+            <form action="#" method="POST">
+                
+                <h3 class="form-section-title">Thông Tin Cơ Bản</h3>
+                
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="coupon-code">Mã Giảm Giá (*)</label>
+                        <input type="text" id="coupon-code" name="coupon_code" placeholder="Ví dụ: SUMMER30" required>
+                        <p class="hint">Tối đa 15 ký tự, không dấu, không khoảng trắng.</p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="coupon-type">Loại Giảm Giá (*)</label>
+                        <select id="coupon-type" name="coupon_type" required>
+                            <option value="percentage">Giảm theo Phần trăm (%)</option>
+                            <option value="fixed_amount">Giảm theo Số tiền cố định (VNĐ)</option>
+                            <option value="free_ship">Miễn phí vận chuyển</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="coupon-value">Giá Trị Giảm (*)</label>
+                        <input type="number" id="coupon-value" name="coupon_value" placeholder="Nhập giá trị (Ví dụ: 30 hoặc 100000)" min="1" required>
+                        <p class="hint">Phần trăm (1-100) hoặc số tiền (VNĐ).</p>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="max-discount">Giới Hạn Giảm Tối Đa (VNĐ)</label>
+                        <input type="number" id="max-discount" name="max_discount" placeholder="Để trống nếu không giới hạn">
+                        <p class="hint">Chỉ áp dụng cho loại Giảm theo Phần trăm.</p>
+                    </div>
+
+                </div>
+
+                <h3 class="form-section-title">Thời Gian & Giới Hạn Sử Dụng</h3>
+                
+                <div class="form-grid">
+                    
+                    <div class="form-group">
+                        <label for="start-date">Ngày Bắt Đầu Áp Dụng (*)</label>
+                        <input type="date" id="start-date" name="start_date" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="end-date">Ngày Kết Thúc Áp Dụng (*)</label>
+                        <input type="date" id="end-date" name="end_date" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="max-usage">Tổng Lượt Dùng Tối Đa</label>
+                        <input type="number" id="max-usage" name="max_usage" placeholder="Để trống nếu không giới hạn" min="1">
+                        <p class="hint">Tổng số lần mã này có thể được sử dụng.</p>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="usage-per-customer">Lượt Dùng Mỗi Khách Hàng</label>
+                        <input type="number" id="usage-per-customer" name="usage_per_customer" value="1" min="1">
+                        <p class="hint">Số lần tối đa mỗi khách hàng (dựa trên email) được dùng mã.</p>
+                    </div>
+                    
+                </div>
+                
+                <h3 class="form-section-title full-width">Điều Kiện Áp Dụng</h3>
+                
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="min-order-value">Giá Trị Đơn Hàng Tối Thiểu (VNĐ)</label>
+                        <input type="number" id="min-order-value" name="min_order_value" placeholder="Nhập số tiền tối thiểu" min="0">
+                        <p class="hint">Mã chỉ áp dụng khi tổng đơn hàng đạt giá trị này.</p>
+                    </div>
+                    
+                    <div class="form-group radio-group">
+                        <label>Áp Dụng Cho</label>
+                        <div>
+                            <label><input type="radio" name="apply_to" value="all_products" checked> Tất cả Sản phẩm</label>
+                            <label><input type="radio" name="apply_to" value="specific_products"> Sản phẩm cụ thể</label>
+                            <label><input type="radio" name="apply_to" value="specific_categories"> Danh mục cụ thể</label>
+                        </div>
+                        <p class="hint">Lựa chọn các sản phẩm/danh mục mã được phép áp dụng.</p>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" class="btn-cancel" onclick="window.history.back()">Hủy</button>
+                    <button type="submit" class="btn-submit">💾 LƯU MÃ GIẢM GIÁ</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>

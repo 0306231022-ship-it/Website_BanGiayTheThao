@@ -1,7 +1,0 @@
-D:\Website_BanGiayTheThao\website\WebApplication4\wwwroot\css\GiayNam.css
-D:\Website_BanGiayTheThao\website\WebApplication4\wwwroot\css\GiayNu.css
-D:\Website_BanGiayTheThao\website\WebApplication4\wwwroot\css\GioHang.css
-D:\Website_BanGiayTheThao\website\WebApplication4\wwwroot\css\SanPhamSale.css
-D:\Website_BanGiayTheThao\website\WebApplication4\wwwroot\css\style.css
-D:\Website_BanGiayTheThao\website\WebApplication4\wwwroot\css\TrangBlog.css
-D:\Website_BanGiayTheThao\website\WebApplication4\wwwroot\css\TrangChuNguoiDung.css

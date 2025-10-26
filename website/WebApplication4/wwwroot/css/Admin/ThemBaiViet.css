@@ -1,0 +1,114 @@
+﻿body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f7f9;
+    margin: 0;
+    display: flex;
+}
+
+#sidebar {
+    width: 250px;
+    background-color: #2c3e50;
+    color: white;
+    height: 100vh;
+    padding-top: 20px;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+}
+
+    #sidebar a {
+        color: white;
+        text-decoration: none;
+        padding: 15px 20px;
+        display: block;
+    }
+
+        #sidebar a:hover {
+            background-color: #34495e;
+        }
+
+#main-content {
+    flex-grow: 1;
+    padding: 20px;
+    display: flex;
+}
+/* Thêm flex để chia bố cục 2 cột chính */
+.post-form-container {
+    flex: 3; /* Cột nội dung chính chiếm 3 phần */
+    background-color: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    margin-right: 20px;
+}
+
+.sidebar-settings {
+    flex: 1; /* Cột cài đặt chiếm 1 phần */
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* Style cho Form */
+input[type="text"], textarea, select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+    color: #34495e;
+}
+
+/* Style cho Trình soạn thảo (giả lập) */
+.editor-area {
+    min-height: 400px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+/* Style cho các khối cài đặt */
+.setting-block {
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.btn-action {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-publish {
+    background-color: #2ecc71;
+    color: white;
+}
+
+.btn-draft {
+    background-color: #f39c12;
+    color: white;
+    margin-right: 10px;
+}
+
+/* Style cho nút Quay Lại (Mới) */
+.btn-cancel {
+    background-color: #95a5a6;
+    color: white;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    margin-bottom: 15px;
+}
+

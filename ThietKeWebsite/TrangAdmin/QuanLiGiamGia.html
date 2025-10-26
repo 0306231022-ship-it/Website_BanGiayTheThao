@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản Lý Mã Giảm Giá | Admin Panel</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* ==================== CÁC THIẾT LẬP CHUNG ==================== */
+        :root {
+            --primary-color: #2a9d8f; /* Màu xanh ngọc năng động */
+            --secondary-color: #e76f51; /* Màu cam nổi bật cho CTA */
+            --text-dark: #264653;
+            --text-light: #f4f4f4;
+            --bg-light: #ffffff;
+            --bg-gray: #f0f2f5;
+            --success-color: #4CAF50; /* Màu xanh lá cho thành công */
+            --danger-color: #F44336; /* Màu đỏ cho xóa/cảnh báo */
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-gray);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* ==================== CONTENT HEADER ==================== */
+        .content-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .content-header h1 {
+            font-size: 2em;
+            color: var(--text-dark);
+        }
+
+        .btn-add {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-add:hover {
+            background-color: #218579;
+        }
+
+        /* ==================== TABLE / DATA VIEW ==================== */
+        .card {
+            background-color: var(--bg-light);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .search-sort-bar {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .search-sort-bar input[type="text"], 
+        .search-sort-bar select {
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 0.9em;
+        }
+        
+        .search-sort-bar input[type="text"] {
+            width: 300px;
+        }
+
+        .data-table-container {
+            overflow-x: auto;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+
+        .data-table th, .data-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .data-table th {
+            background-color: #f9f9f9;
+            color: var(--text-dark);
+            font-weight: 600;
+            font-size: 0.9em;
+            text-transform: uppercase;
+        }
+
+        .data-table tr:hover {
+            background-color: #f5f5f5;
+        }
+
+        /* Styling cho các giá trị */
+        .status-tag {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.85em;
+            font-weight: 600;
+            color: white;
+        }
+
+        .status-active {
+            background-color: var(--success-color);
+        }
+
+        .status-expired {
+            background-color: var(--danger-color);
+        }
+        
+        .status-upcoming {
+            background-color: #ff9800; /* Màu vàng cam */
+        }
+        
+        .code-value {
+            font-weight: 700;
+            color: var(--secondary-color);
+            background-color: #ffe0b2;
+            padding: 3px 8px;
+            border-radius: 4px;
+        }
+
+        /* Các nút hành động */
+        .action-btns {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn-action {
+            padding: 6px 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.9em;
+            font-weight: 500;
+            transition: opacity 0.3s;
+        }
+        
+        .btn-action:hover {
+            opacity: 0.8;
+        }
+
+        .btn-edit {
+            background-color: #2196F3; /* Xanh dương */
+            color: white;
+        }
+
+        .btn-delete {
+            background-color: var(--danger-color);
+            color: white;
+        }
+        
+        /* ==================== PAGINATION ==================== */
+        .pagination {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 20px;
+            align-items: center;
+        }
+
+        .pagination span {
+            margin-right: 15px;
+            font-size: 0.9em;
+            color: #555;
+        }
+        
+        .pagination a {
+            color: var(--text-dark);
+            padding: 8px 12px;
+            text-decoration: none;
+            border: 1px solid #ddd;
+            margin-left: -1px; 
+            transition: background-color 0.3s;
+        }
+
+        .pagination a.active {
+            background-color: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+            z-index: 1;
+        }
+
+        .pagination a:first-child {
+            border-top-left-radius: 4px;
+            border-bottom-left-radius: 4px;
+        }
+
+        .pagination a:last-child {
+            border-top-right-radius: 4px;
+            border-bottom-right-radius: 4px;
+        }
+
+        .pagination a:hover:not(.active) {
+            background-color: #eee;
+        }
+
+        /* ==================== RESPONSIVE ==================== */
+        @media (max-width: 768px) {
+            .content-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+            .search-sort-bar {
+                flex-wrap: wrap;
+            }
+            .search-sort-bar input[type="text"] {
+                width: 100%;
+            }
+            .data-table-container {
+                /* Bảng cuộn ngang trên màn hình nhỏ */
+                overflow-x: scroll;
+            }
+            .data-table {
+                /* Đảm bảo bảng đủ rộng để cuộn */
+                min-width: 700px; 
+            }
+            .pagination {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="content-header">
+            <h1>🏷️ Quản Lý Mã Giảm Giá</h1>
+            <button class="btn-add">
+                ➕ Thêm Mã Giảm Giá Mới
+            </button>
+        </div>
+
+        <div class="card">
+            <div class="search-sort-bar">
+                <input type="text" placeholder="Tìm kiếm theo mã, mô tả...">
+                <select>
+                    <option value="all">Tất cả Trạng Thái</option>
+                    <option value="active">Đang hoạt động</option>
+                    <option value="expired">Đã hết hạn</option>
+                    <option value="upcoming">Sắp có hiệu lực</option>
+                </select>
+                <select>
+                    <option value="end_date_asc">Sắp xếp theo Hạn sử dụng (Sớm nhất)</option>
+                    <option value="created_desc">Mới tạo nhất</option>
+                    <option value="usage_desc">Lượt dùng nhiều nhất</option>
+                </select>
+            </div>
+            
+            <div class="data-table-container">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Mã</th>
+                            <th>Giá Trị</th>
+                            <th>Tình Trạng</th>
+                            <th>Hạn Sử Dụng</th>
+                            <th>Lượt Dùng</th>
+                            <th>Hành Động</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="code-value">SUMMER30</span></td>
+                            <td>30% (Tối đa 200k)</td>
+                            <td><span class="status-tag status-active">Đang hoạt động</span></td>
+                            <td>31/07/2025</td>
+                            <td>1,500/Không giới hạn</td>
+                            <td>
+                                <div class="action-btns">
+                                    <button class="btn-action btn-edit">Sửa</button>
+                                    <button class="btn-action btn-delete">Xóa</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span class="code-value">FREE499</span></td>
+                            <td>Miễn phí vận chuyển</td>
+                            <td><span class="status-tag status-expired">Đã hết hạn</span></td>
+                            <td>01/05/2025</td>
+                            <td>2,500/2,500</td>
+                            <td>
+                                <div class="action-btns">
+                                    <button class="btn-action btn-edit">Sửa</button>
+                                    <button class="btn-action btn-delete">Xóa</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span class="code-value">WELCOME10</span></td>
+                            <td>Giảm 100,000 VNĐ</td>
+                            <td><span class="status-tag status-active">Đang hoạt động</span></td>
+                            <td>12/12/2025</td>
+                            <td>50/100</td>
+                            <td>
+                                <div class="action-btns">
+                                    <button class="btn-action btn-edit">Sửa</button>
+                                    <button class="btn-action btn-delete">Xóa</button>
+                                </div>
+                            </td>
+                        </tr>
+                         <tr>
+                            <td><span class="code-value">VIPNEW</span></td>
+                            <td>30% cho khách VIP</td>
+                            <td><span class="status-tag status-upcoming">Sắp có hiệu lực</span></td>
+                            <td>20/11/2025 (Bắt đầu 01/11)</td>
+                            <td>0/Không giới hạn</td>
+                            <td>
+                                <div class="action-btns">
+                                    <button class="btn-action btn-edit">Sửa</button>
+                                    <button class="btn-action btn-delete">Xóa</button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="pagination">
+                <span>Hiển thị 1-10 trên 50 mã</span>
+                <a href="#">&laquo;</a>
+                <a href="#" class="active">1</a>
+                <a href="#">2</a>
+                <a href="#">3</a>
+                <a href="#">&raquo;</a>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
