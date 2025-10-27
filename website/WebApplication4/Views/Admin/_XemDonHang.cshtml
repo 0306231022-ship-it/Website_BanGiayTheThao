@@ -1,0 +1,185 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "_Adminlayout";
+}
+
+<link rel="stylesheet" href="~/css/Admin/XemDonHang.css" />
+
+<div id="main-content">
+
+    <div class="header-admin">
+        <div class="header-left">
+            <a href="/admin/orders" class="btn-action btn-back">⬅️ Quay lại</a>
+            <h1>Chi Tiết Đơn Hàng #SC-1001</h1>
+        </div>
+        <div>
+            <a asp-action="HoaDon" asp-controller="Admin" class="btn-action btn-print">🖨️ In Đơn</a>
+            <a href="#update-status" class="btn-action btn-update">✅ Cập Nhật Trạng Thái</a>
+            <button onclick="showCancelModal()" class="btn-action btn-cancel">❌ Hủy Đơn Hàng</button>
+        </div>
+    </div>
+
+    <div class="order-detail-grid">
+
+        <div class="info-column">
+
+            <div class="detail-card">
+                <h2>Thông Tin Tổng Quan</h2>
+                <div class="info-group">
+                    <span class="info-label">Mã Đơn Hàng:</span>
+                    <span class="info-value" style="font-weight: bold;">#SC-1001</span>
+                </div>
+                <div class="info-group">
+                    <span class="info-label">Trạng Thái Hiện Tại:</span>
+                    <span class="status-badge status-new">Mới</span>
+                    <select style="margin-left: 20px; padding: 8px; border-radius: 4px; border: 1px solid #ccc;">
+                        <option>-- Đổi Trạng Thái --</option>
+                        <option>Đang xử lý</option>
+                        <option>Đang giao hàng</option>
+                        <option>Hoàn thành</option>
+                        <option>Đã hủy</option>
+                    </select>
+                </div>
+                <div class="info-group">
+                    <span class="info-label">Ngày Tạo Đơn:</span>
+                    <span class="info-value">26/10/2025 lúc 14:30</span>
+                </div>
+                <div class="info-group">
+                    <span class="info-label">PT Thanh Toán:</span>
+                    <span class="info-value">Thanh toán khi nhận hàng (COD)</span>
+                </div>
+                <div class="info-group">
+                    <span class="info-label">Tình Trạng TT:</span>
+                    <span class="info-value" style="color: #e74c3c; font-weight: bold;">CHƯA THANH TOÁN</span>
+                </div>
+            </div>
+
+            <div class="detail-card">
+                <h2>Danh Sách Sản Phẩm (2 Sản phẩm)</h2>
+                <table class="product-list-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 50%;">Sản phẩm</th>
+                            <th style="width: 15%;">Đơn giá</th>
+                            <th style="width: 10%;">SL</th>
+                            <th style="width: 25%;">Thành tiền</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <img src="product1.jpg" alt="Air Max">
+                                Nike Air Max 97 'Silver Bullet' (Size 41)
+                            </td>
+                            <td>3,500,000</td>
+                            <td>1</td>
+                            <td style="font-weight: bold;">3,500,000 VND</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img src="product2.jpg" alt="Jordan">
+                                Air Jordan 1 Mid 'Light Smoke Grey' (Size 42)
+                            </td>
+                            <td>4,200,000</td>
+                            <td>1</td>
+                            <td style="font-weight: bold;">4,200,000 VND</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
+        <div class="summary-column">
+
+            <div class="detail-card">
+                <h2>Thông Tin Khách Hàng</h2>
+                <div class="info-group">
+                    <span class="info-label">Tên Khách Hàng:</span>
+                    <span class="info-value">Nguyễn Văn A</span>
+                </div>
+                <div class="info-group">
+                    <span class="info-label">Điện Thoại:</span>
+                    <span class="info-value">098 123 4567</span>
+                </div>
+                <div class="info-group">
+                    <span class="info-label">Email:</span>
+                    <span class="info-value">vana@example.com</span>
+                </div>
+                <div class="info-group" style="margin-top: 15px;">
+                    <span class="info-label" style="width: 100%; margin-bottom: 5px;">Địa Chỉ Giao Hàng:</span>
+                    <span class="info-value" style="display: block;">Số 123, đường Hùng Vương, Phường Bến Nghé, Quận 1, TP. Hồ Chí Minh.</span>
+                </div>
+            </div>
+
+            <div class="detail-card">
+                <h2>Tóm Tắt Thanh Toán</h2>
+                <div class="total-row">
+                    <span>Tổng tiền hàng:</span>
+                    <span>7,700,000 VND</span>
+                </div>
+                <div class="total-row">
+                    <span>Phí Vận Chuyển:</span>
+                    <span>30,000 VND</span>
+                </div>
+                <div class="total-row" style="color: #e74c3c;">
+                    <span>Giảm giá (Mã SALE20):</span>
+                    <span>- 154,000 VND</span>
+                </div>
+                <div class="total-row final">
+                    <span>TỔNG CỘNG:</span>
+                    <span style="color: #333; font-size: 1.2em;">7,576,000 VND</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<div id="cancel-modal" style="display:none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000; justify-content: center; align-items: center;">
+    <div class="modal-content">
+        <h3 style="color: #e74c3c;">Xác Nhận Hủy Đơn Hàng #SC-1001</h3>
+        <p>Bạn có chắc chắn muốn hủy đơn hàng này không? Hành động này **không thể hoàn tác**.</p>
+        <label for="cancel-reason" style="font-weight: bold; display: block; margin-top: 15px;">Lý do Hủy Đơn (*)</label>
+        <textarea id="cancel-reason" rows="3" placeholder="Ví dụ: Khách hàng hủy do đổi ý, Sản phẩm hết hàng..." style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; margin-bottom: 20px;"></textarea>
+
+        <div style="text-align: right;">
+            <button onclick="hideCancelModal()" class="btn-action" style="background-color: #bdc3c7; color: #34495e;">Đóng</button>
+            <button onclick="confirmCancel()" class="btn-action btn-cancel" style="background-color: #e74c3c;">XÁC NHẬN HỦY</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    const modal = document.getElementById('cancel-modal');
+
+    function showCancelModal() {
+        modal.style.display = 'flex';
+    }
+
+    function hideCancelModal() {
+        modal.style.display = 'none';
+    }
+
+    function confirmCancel() {
+        const reason = document.getElementById('cancel-reason').value;
+        if (reason.trim() === '') {
+            alert('Vui lòng nhập lý do hủy đơn hàng.');
+            return;
+        }
+        // Logic HỦY ĐƠN HÀNG thực tế sẽ gửi lý do lên backend tại đây
+        console.log(`Đang gửi yêu cầu hủy đơn #SC-1001 với lý do: ${reason}`);
+        alert(`Đơn hàng #SC-1001 đã được hủy với lý do: ${reason}. (Giả lập)`);
+        hideCancelModal();
+    }
+
+    // Cải thiện nút Quay lại
+    document.querySelector('.btn-back').addEventListener('click', function(e) {
+        e.preventDefault();
+        // Trong môi trường thực tế, bạn sẽ dùng: window.location.href = '/admin/orders';
+        window.history.back(); // Quay lại trang danh sách đơn hàng trước đó
+    });
+</script>

@@ -1,7 +1,15 @@
 wwwroot\css\Admin\CaiDatWebsite.css
+wwwroot\css\Admin\ChiTietSanPham.css
+wwwroot\css\Admin\HoaDon.css
 wwwroot\css\Admin\QuanLiBaiViet.css
+wwwroot\css\Admin\QuanLiDanhMuc.css
+wwwroot\css\Admin\QuanLiDonHang.css
+wwwroot\css\Admin\QuanLiSanPham.css
 wwwroot\css\Admin\ThemBaiViet.css
+wwwroot\css\Admin\ThemSanPhamMoi.css
+wwwroot\css\Admin\ThemSanPhamSale.css
 wwwroot\css\Admin\TrangChu.css
+wwwroot\css\Admin\XemDonHang.css
 wwwroot\css\NguoiDung\CapNhatMatKhau.css
 wwwroot\css\NguoiDung\MyDonHang.css
 wwwroot\css\NguoiDung\SanPhamYeuThich.css
@@ -75,3 +83,6 @@ wwwroot\lib\jquery\dist\jquery.js
 wwwroot\lib\jquery\dist\jquery.min.js
 wwwroot\lib\jquery\dist\jquery.min.map
 wwwroot\lib\jquery\LICENSE.txt
+wwwroot\css\Admin\BinhLuan.css
+wwwroot\css\Admin\QuanLiNguoiDung.css
+wwwroot\css\Admin\TaiKhoanCaNhan.css

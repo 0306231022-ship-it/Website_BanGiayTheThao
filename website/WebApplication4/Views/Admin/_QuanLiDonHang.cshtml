@@ -1,0 +1,101 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "_Adminlayout";
+}
+
+<link rel="stylesheet" href="~/css/Admin/QuanLiDonHang.css" />
+
+
+<div id="main-content">
+
+    <div class="header-admin">
+        <h1>Quản Lý Đơn Hàng (Tổng: 120 đơn)</h1>
+        <a href="#create-order" class="btn-primary">+ Tạo Đơn Hàng Mới</a>
+    </div>
+
+    <div class="filter-area">
+
+        <div class="search-input-group">
+            <input type="text" placeholder="Tìm kiếm Mã đơn, Tên KH, SĐT..." title="Nhập từ khóa tìm kiếm">
+            <button class="search-button" type="submit">🔍</button>
+        </div>
+        <select>
+            <option>Lọc theo Phương thức TT</option>
+            <option>Thanh toán khi nhận hàng (COD)</option>
+            <option>Chuyển khoản ngân hàng</option>
+        </select>
+        <input type="date" title="Lọc theo Ngày tạo">
+
+        <button class="btn-primary" style="background-color: #2ecc71;">Áp dụng Lọc</button>
+    </div>
+
+    <div class="status-tabs">
+        <button class="active">Tất cả <span>(120)</span></button>
+        <button>Mới 📥 <span style="color: #f1c40f;">(15)</span></button>
+        <button>Đang xử lý ⚙️ <span style="color: #3498db;">(25)</span></button>
+        <button>Đang giao hàng 🚚 <span style="color: #2ecc71;">(60)</span></button>
+        <button>Hoàn thành ✅ <span>(20)</span></button>
+        <button>Đã hủy ❌ <span>(5)</span></button>
+    </div>
+
+    <div>
+        <table class="order-table">
+            <thead>
+                <tr>
+                    <th style="width: 10%;">Mã Đơn</th>
+                    <th style="width: 20%;">Khách Hàng</th>
+                    <th style="width: 15%;">Ngày Tạo</th>
+                    <th style="width: 15%;">Tổng Tiền</th>
+                    <th style="width: 15%;">Trạng Thái</th>
+                    <th style="width: 15%;">PT Thanh Toán</th>
+                    <th style="width: 10%;">Hành động</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>#SC-1001</td>
+                    <td>Nguyễn Văn A (098xxxxxx)</td>
+                    <td>26/10/2025 14:30</td>
+                    <td style="font-weight: bold;">3,500,000 VND</td>
+                    <td><span class="status-badge status-new">Mới</span></td>
+                    <td>COD</td>
+                    <td><a asp-action="XemDonHang" asp-controller="Admin" class="view-btn">Xem</a></td>
+                </tr>
+                <tr>
+                    <td>#SC-1002</td>
+                    <td>Trần Thị B</td>
+                    <td>25/10/2025 09:00</td>
+                    <td style="font-weight: bold;">4,200,000 VND</td>
+                    <td><span class="status-badge status-processing">Đang xử lý</span></td>
+                    <td>Chuyển khoản</td>
+                    <td><a href="#view-1002" class="view-btn">Xem</a></td>
+                </tr>
+                <tr>
+                    <td>#SC-1003</td>
+                    <td>Lê Văn C</td>
+                    <td>24/10/2025 11:15</td>
+                    <td style="font-weight: bold;">1,400,000 VND</td>
+                    <td><span class="status-badge status-shipping">Đang giao hàng</span></td>
+                    <td>COD</td>
+                    <td><a href="#view-1003" class="view-btn">Xem</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+<script>
+    document.querySelectorAll('.status-tabs button').forEach(button => {
+        button.addEventListener('click', function() {
+            // Remove active class from all buttons
+            document.querySelectorAll('.status-tabs button').forEach(btn => btn.classList.remove('active'));
+            // Add active class to the clicked button
+            this.classList.add('active');
+            // Logic lọc đơn hàng thực tế sẽ được thực hiện ở đây (Backend/JS)
+            console.log('Đã lọc đơn hàng theo trạng thái:', this.textContent.trim().split(' ')[0]);
+        });
+    });
+</script>

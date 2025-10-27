@@ -1,0 +1,209 @@
+﻿/* CSS Cơ bản cho Admin Panel */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f7f9;
+    margin: 0;
+    display: flex;
+}
+
+#sidebar {
+    width: 250px;
+    background-color: #2c3e50;
+    color: white;
+    height: 100vh;
+    padding-top: 20px;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+}
+
+    #sidebar a {
+        color: white;
+        text-decoration: none;
+        padding: 15px 20px;
+        display: block;
+    }
+
+        #sidebar a:hover {
+            background-color: #34495e;
+        }
+
+#main-content {
+    flex-grow: 1;
+    padding: 20px;
+}
+
+.header-admin {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* Bộ lọc và Tìm kiếm */
+.filter-area {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+    .filter-area input[type="text"] {
+        flex-grow: 1;
+        padding: 10px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+    }
+
+    .filter-area select {
+        padding: 10px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+    }
+
+/* Tab Menu */
+.tab-menu {
+    display: flex;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #ddd;
+}
+
+    .tab-menu button {
+        background-color: transparent;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        font-size: 16px;
+        border-radius: 5px 5px 0 0;
+        margin-right: 5px;
+    }
+
+        .tab-menu button.active {
+            border-bottom: 3px solid #3498db;
+            font-weight: bold;
+            color: #3498db;
+        }
+
+/* Bảng Bình luận */
+.comment-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+    .comment-table th, .comment-table td {
+        padding: 12px 15px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+        vertical-align: top;
+    }
+
+    .comment-table th {
+        background-color: #ecf0f1;
+        color: #34495e;
+    }
+
+    /* KHẮC PHỤC LỖI THỤT LỀ NỘI DUNG */
+    .comment-table td:nth-child(2) {
+        padding-left: 5px;
+    }
+
+    .comment-table th:nth-child(2) {
+        padding-left: 5px;
+    }
+
+/* Khối bình luận */
+.comment-content {
+    max-width: 350px;
+    white-space: pre-wrap;
+    font-size: 0.95em;
+}
+
+.comment-meta {
+    font-size: 0.9em;
+    color: #7f8c8d;
+}
+
+    .comment-meta strong {
+        color: #34495e;
+    }
+
+/* Nút Hành động */
+.action-buttons-group {
+    display: flex;
+    gap: 5px;
+    flex-wrap: nowrap;
+}
+
+.action-btn {
+    margin-right: 5px;
+    padding: 6px 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.approve-btn {
+    background-color: #2ecc71;
+    color: white;
+}
+
+.reply-btn {
+    background-color: #3498db;
+    color: white;
+}
+
+.delete-btn {
+    background-color: #e74c3c;
+    color: white;
+}
+
+/* Hiển thị trên Sản phẩm/Bài viết */
+.link-to-entity {
+    font-size: 0.9em;
+    color: #3498db;
+    text-decoration: none;
+}
+
+/* Modal CSS */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    padding: 25px;
+    border-radius: 8px;
+    width: 500px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+    .modal-content textarea {
+        width: 100%;
+        padding: 10px;
+        margin-top: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    .modal-content .modal-footer {
+        margin-top: 20px;
+        text-align: right;
+    }

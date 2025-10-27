@@ -2,6 +2,7 @@
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
+
 }
 <link rel="stylesheet" href="~/css/NguoiDung/SoDiaChi.css" />
 <header class="header">
@@ -13,7 +14,7 @@
 
 <main class="container">
     <div class="address-actions">
-        <button class="add-btn">➕ Thêm địa chỉ mới</button>
+        <button class="add-btn" id="show-form-btn">➕ Thêm địa chỉ mới</button>
     </div>
 
     <div class="address-list">
@@ -43,3 +44,95 @@
         </div>
     </div>
 </main>
+
+<div class="address-form-modal" id="address-modal">
+    <div class="form-content">
+        <h2>Thêm Địa Chỉ Mới</h2>
+        <form>
+            <div class="form-group">
+                <label for="full-name">Họ và Tên người nhận</label>
+                <input type="text" id="full-name" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Số điện thoại</label>
+                <input type="tel" id="phone" required>
+            </div>
+
+            <div class="form-group">
+                <label for="province">Tỉnh/Thành phố</label>
+                <select id="province">
+                    <option value="">-- Chọn Tỉnh/Thành phố --</option>
+                    <option>TP. Hồ Chí Minh</option>
+                    <option>Hà Nội</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="address-detail">Địa chỉ chi tiết</label>
+                <textarea id="address-detail" rows="3" placeholder="Số nhà, tên đường, phường/xã..."></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>
+                    <input type="checkbox" id="set-default-checkbox"> Đặt làm địa chỉ mặc định
+                </label>
+            </div>
+
+            <div class="form-actions">
+                <button type="button" class="cancel-btn" id="cancel-form-btn">Hủy</button>
+                <button type="submit" class="save-btn">Lưu Địa Chỉ</button>
+            </div>
+        </form>
+    </div>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const showBtn = document.getElementById('show-form-btn');
+        const cancelBtn = document.getElementById('cancel-form-btn');
+        const modal = document.getElementById('address-modal');
+        const formContent = modal.querySelector('.form-content');
+
+        // Hiển thị modal
+        showBtn.addEventListener('click', function() {
+            modal.style.display = 'flex';
+            // Đợi một chút rồi thêm class 'visible' để kích hoạt transition opacity
+            setTimeout(() => {
+                modal.classList.add('visible');
+            }, 10);
+            document.body.style.overflow = 'hidden'; // Ngăn cuộn body
+        });
+
+        // Ẩn modal
+        function hideModal() {
+            modal.classList.remove('visible');
+            // Đợi transition kết thúc (0.3s) rồi ẩn hẳn
+            setTimeout(() => {
+                modal.style.display = 'none';
+            }, 300);
+            document.body.style.overflow = ''; // Cho phép cuộn body
+        }
+
+        cancelBtn.addEventListener('click', hideModal);
+
+        // Ẩn modal khi click ra bên ngoài form
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                hideModal();
+            }
+        });
+
+        // Ngăn sự kiện click lan ra ngoài form (không cần thiết nếu đã dùng e.target === modal, nhưng là best practice)
+        formContent.addEventListener('click', function(e) {
+            e.stopPropagation();
+        });
+
+        // Xử lý submit form (chỉ để minh họa)
+        const form = modal.querySelector('form');
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Địa chỉ đã được lưu! (Chức năng thực tế cần backend)');
+            hideModal();
+            // Logic AJAX hoặc POST form ở đây
+        });
+    });
+</script>

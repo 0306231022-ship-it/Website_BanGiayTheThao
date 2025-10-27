@@ -4,44 +4,242 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thêm Sản Phẩm Mới - SNEAKER CITY Admin</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
-        /* (Giữ nguyên các style cơ bản từ các trang trước) */
-        body { font-family: Arial, sans-serif; background-color: #f4f7f9; margin: 0; display: flex; }
-        #sidebar { width: 250px; background-color: #2c3e50; color: white; height: 100vh; padding-top: 20px; box-shadow: 2px 0 5px rgba(0,0,0,0.1); }
-        #sidebar a { color: white; text-decoration: none; padding: 15px 20px; display: block; }
-        #sidebar a:hover { background-color: #34495e; }
-        #main-content { flex-grow: 1; padding: 20px; display: flex; }
-        
-        .product-form-container { flex: 3; /* Cột thông tin cơ bản */
-            background-color: white; padding: 25px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); margin-right: 20px; }
-        .sidebar-settings { flex: 1; /* Cột cài đặt */
-            padding: 0; }
-        
-        /* Style cho Form */
-        input[type="text"], input[type="number"], textarea, select {
-            width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; 
+        /* ==================== THIẾT LẬP CHUNG ==================== */
+        * {
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
         }
-        label { font-weight: bold; display: block; margin-bottom: 5px; color: #34495e;}
+        body { 
+            font-size: 16px; 
+            background-color: #f4f7f9; 
+            margin: 0; 
+            display: flex; 
+            min-height: 100vh;
+        }
+
+        /* ==================== SIDEBAR ==================== */
+        #sidebar { 
+            width: 250px; 
+            background-color: #2c3e50; 
+            color: white; 
+            padding-top: 20px; 
+            box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+            position: sticky; /* Giúp sidebar cố định */
+            top: 0;
+            height: 100vh;
+        }
+        .sidebar-logo {
+            text-align: center; 
+            padding: 10px 0; 
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #ecf0f1;
+        }
+        #sidebar a { 
+            color: white; 
+            text-decoration: none; 
+            padding: 15px 20px; 
+            display: block; 
+            transition: background-color 0.2s;
+            border-left: 5px solid transparent;
+        }
+        #sidebar a:hover { 
+            background-color: #34495e; 
+        }
+        #sidebar a.active {
+            background-color: #34495e; 
+            border-left-color: #2ecc71;
+        }
+        /* Nút quay lại - Thêm style nổi bật */
+        #sidebar a.btn-back {
+            background-color: #e67e22; 
+            border-left-color: #d35400;
+            margin-top: 20px;
+        }
+        #sidebar a.btn-back:hover {
+            background-color: #d35400;
+        }
+
+        /* ==================== MAIN CONTENT LAYOUT ==================== */
+        #main-content { 
+            flex-grow: 1; 
+            padding: 30px; 
+            /* SỬ DỤNG FLEX CHO NỘI DUNG CHÍNH */
+            display: flex; 
+            flex-direction: column; 
+        }
         
-        /* Style cho khối chức năng */
-        .setting-block { background-color: white; border: 1px solid #ddd; padding: 15px; border-radius: 4px; margin-bottom: 20px; }
+        .page-header {
+            border-bottom: 1px solid #ddd; 
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .page-header h1 {
+            margin: 0;
+            font-size: 2rem;
+            color: #34495e;
+        }
+
+        /* Cấu trúc 2 cột chính (Form và Sidebar Settings) */
+        .form-layout {
+            display: flex;
+            gap: 25px; /* Khoảng cách giữa hai cột */
+            width: 100%;
+        }
+
+        .product-form-container { 
+            flex: 3; /* Chiếm 3/4 không gian */
+            background-color: white; 
+            padding: 25px; 
+            border-radius: 8px; 
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05); 
+        }
         
-        .btn-action { padding: 10px 15px; border: none; border-radius: 4px; cursor: pointer; font-weight: bold; }
-        .btn-save { background-color: #2ecc71; color: white; }
-        .btn-cancel { background-color: #e67e22; color: white; margin-right: 10px; }
+        .sidebar-settings { 
+            flex: 1; /* Chiếm 1/4 không gian */
+            padding: 0; 
+        }
+
+        /* ==================== FORM ELEMENTS ==================== */
+        label { 
+            font-weight: 500; 
+            display: block; 
+            margin-bottom: 5px; 
+            color: #34495e;
+            font-size: 0.95rem;
+        }
+        input[type="text"], input[type="number"], textarea, select {
+            width: 100%; 
+            padding: 10px; 
+            margin-bottom: 15px; 
+            border: 1px solid #ccc; 
+            border-radius: 4px; 
+            box-sizing: border-box; 
+            transition: border-color 0.2s;
+        }
+        input:focus, textarea:focus, select:focus {
+            border-color: #2ecc71;
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(46, 204, 113, 0.2);
+        }
+        
+        /* Khối chức năng (Setting Block) */
+        .setting-block { 
+            background-color: white; 
+            border: 1px solid #ddd; 
+            padding: 15px; 
+            border-radius: 4px; 
+            margin-bottom: 20px; 
+        }
+        .setting-block h3 {
+            margin-top: 0;
+            margin-bottom: 15px;
+            color: #34495e;
+            font-size: 1.1rem;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+
+        /* Nút hành động */
+        .btn-action { 
+            padding: 10px 15px; 
+            border: none; 
+            border-radius: 4px; 
+            cursor: pointer; 
+            font-weight: bold; 
+            transition: opacity 0.2s;
+        }
+        .btn-action:hover { opacity: 0.9; }
+
+        .btn-save { background-color: #2ecc71; color: white; width: 100%; margin-top: 10px; }
+        .btn-cancel { background-color: #e67e22; color: white; width: 100%; }
 
         /* Style cho khối Variant */
-        .variant-item { border: 1px solid #eee; padding: 10px; margin-top: 10px; border-radius: 4px; background-color: #f9f9f9; }
-        .variant-header { display: flex; justify-content: space-between; align-items: center; }
+        .variant-item { 
+            border: 1px solid #ddd; 
+            padding: 15px; 
+            margin-top: 10px; 
+            border-radius: 6px; 
+            background-color: #fafafa; 
+            margin-bottom: 10px;
+        }
+        .variant-header { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            margin-bottom: 10px;
+        }
+        .action-btn.delete-btn {
+            background-color: #e74c3c;
+            color: white;
+            padding: 5px 10px;
+            font-size: 0.85rem;
+        }
+
+        /* Căn chỉnh các input của Variant */
+        .variant-details {
+            display: flex;
+            gap: 15px;
+        }
+        .variant-details > div {
+            flex: 1;
+        }
+        /* Đảm bảo input trong flex item vẫn đầy đủ chiều rộng */
+        .variant-details input {
+            margin-bottom: 0;
+        }
+        
+        /* Tùy chỉnh input file */
+        #product-images {
+            border: 2px dashed #ccc !important; 
+            padding: 40px 20px !important; 
+            height: auto;
+            text-align: center;
+            background-color: #fcfcfc;
+            cursor: pointer;
+        }
+
+        /* ==================== RESPONSIVE ==================== */
+        @media (max-width: 1000px) {
+            .form-layout {
+                flex-direction: column; /* Đưa các cột về 1 hàng duy nhất */
+            }
+            .product-form-container, .sidebar-settings {
+                flex: none;
+                width: 100%;
+            }
+            .setting-block.action-block {
+                display: flex;
+                gap: 10px;
+            }
+            .btn-action {
+                width: 50%;
+            }
+            #sidebar {
+                position: relative;
+                width: 100%;
+                height: auto;
+                padding-bottom: 0;
+            }
+            #sidebar a {
+                border-left: none;
+            }
+        }
     </style>
 </head>
 <body>
 
     <div id="sidebar">
-        <h2 style="text-align: center; padding: 10px 0; border-bottom: 1px solid #34495e;">SNEAKER CITY</h2>
+        <h2 class="sidebar-logo">SNEAKER CITY</h2>
+        <a href="#back" class="btn-back">⬅️ Quay lại DS Sản phẩm</a>
         <a href="#dashboard">🏠 Dashboard</a>
-        <a href="#posts">📝 Quản Lý Blog</a>
-        <a href="#products" style="background-color: #34495e;">📦 Quản Lý Sản Phẩm</a>
+        <a href="#products" class="active">📦 Quản Lý Sản Phẩm</a>
         <a href="#categories">🏷️ Danh Mục</a>
         <a href="#orders">🛒 Đơn Hàng</a>
         <a href="#users">👥 Người Dùng</a>
@@ -51,11 +249,14 @@
 
     <div id="main-content">
         
-        <form action="/add-product" method="POST">
+        <div class="page-header">
+            <h1>Thêm Sản Phẩm Mới</h1>
+        </div>
+
+        <form class="form-layout" action="/add-product" method="POST">
             
             <div class="product-form-container">
-                <h1 style="border-bottom: 1px solid #ddd; padding-bottom: 10px;">Thêm Sản Phẩm Mới</h1>
-
+                
                 <div class="setting-block">
                     <h3>Thông tin chung</h3>
                     <label for="product-name">Tên Sản Phẩm (*)</label>
@@ -71,8 +272,8 @@
                 <div class="setting-block">
                     <h3>Ảnh Sản Phẩm</h3>
                     <p style="font-size: 14px; color: gray; margin-bottom: 10px;">Tải lên ảnh chính và ảnh phụ cho sản phẩm. (Kéo thả hoặc chọn tệp)</p>
-                    <input type="file" id="product-images" name="images[]" multiple accept="image/*" style="border: 1px dashed #ccc; padding: 20px; height: auto;">
-                    </div>
+                    <input type="file" id="product-images" name="images[]" multiple accept="image/*">
+                </div>
 
                 <div class="setting-block">
                     <h3>Biến Thể Sản Phẩm (Kích cỡ, Màu sắc)</h3>
@@ -86,30 +287,29 @@
                         <label for="sku-1">SKU</label>
                         <input type="text" id="sku-1" name="sku[]" placeholder="Vd: NM97-40-BLK">
 
-                        <div style="display: flex; gap: 15px;">
-                            <div style="flex: 1;">
+                        <div class="variant-details">
+                            <div>
                                 <label for="size-1">Kích cỡ</label>
                                 <input type="text" id="size-1" name="size[]" value="40" placeholder="Vd: 40">
                             </div>
-                            <div style="flex: 1;">
+                            <div>
                                 <label for="color-1">Màu sắc</label>
                                 <input type="text" id="color-1" name="color[]" value="Đen" placeholder="Vd: Đen">
                             </div>
-                            <div style="flex: 1;">
+                            <div>
                                 <label for="stock-1">Tồn kho</label>
                                 <input type="number" id="stock-1" name="stock[]" value="10" min="0">
                             </div>
                         </div>
                     </div>
                     
-                    <button type="button" class="btn-primary" style="margin-top: 15px; background-color: #34495e;">+ Thêm Biến Thể</button>
+                    <button type="button" class="btn-action" style="margin-top: 5px; background-color: #34495e; color: white;">+ Thêm Biến Thể</button>
                 </div>
-                
             </div>
             
             <div class="sidebar-settings">
                 
-                <div class="setting-block" style="text-align: center;">
+                <div class="setting-block action-block">
                     <button type="button" class="btn-action btn-cancel" onclick="window.history.back()">Hủy</button>
                     <button type="submit" class="btn-action btn-save">Lưu & Xuất Bản</button>
                 </div>
@@ -122,7 +322,7 @@
                     <label for="sale-price">Giá Khuyến Mãi (nếu có)</label>
                     <input type="number" id="sale-price" name="sale_price" min="0" placeholder="Để trống nếu không sale">
 
-                    <label for="total-stock">Tổng Tồn Kho (Tự tính toán)</label>
+                    <label for="total-stock">Tổng Tồn Kho</label>
                     <input type="text" id="total-stock" value="10" disabled style="background-color: #eee;">
                 </div>
 
@@ -150,17 +350,16 @@
 
                 <div class="setting-block">
                     <h3>Trạng Thái</h3>
-                    <label>
+                    <label style="font-weight: normal;">
                         <input type="radio" name="status" value="published" checked> Đang Bán
                     </label><br>
-                    <label>
+                    <label style="font-weight: normal;">
                         <input type="radio" name="status" value="draft"> Bản Nháp
                     </label><br>
-                    <label>
+                    <label style="font-weight: normal;">
                         <input type="radio" name="status" value="hidden"> Ẩn khỏi trang
                     </label>
                 </div>
-
             </div>
 
         </form>

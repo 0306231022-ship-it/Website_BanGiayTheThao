@@ -1,0 +1,256 @@
+﻿/* ==================== THIẾT LẬP CHUNG ==================== */
+* {
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    font-size: 16px;
+    background-color: #f4f7f9;
+    margin: 0;
+    display: flex;
+    min-height: 100vh;
+}
+
+/* ==================== SIDEBAR ==================== */
+#sidebar {
+    width: 250px;
+    background-color: #2c3e50;
+    color: white;
+    padding-top: 20px;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    position: sticky; /* Giúp sidebar cố định */
+    top: 0;
+    height: 100vh;
+}
+
+.sidebar-logo {
+    text-align: center;
+    padding: 10px 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #ecf0f1;
+}
+
+#sidebar a {
+    color: white;
+    text-decoration: none;
+    padding: 15px 20px;
+    display: block;
+    transition: background-color 0.2s;
+    border-left: 5px solid transparent;
+}
+
+    #sidebar a:hover {
+        background-color: #34495e;
+    }
+
+    #sidebar a.active {
+        background-color: #34495e;
+        border-left-color: #2ecc71;
+    }
+    /* Nút quay lại - Thêm style nổi bật */
+    #sidebar a.btn-back {
+        background-color: #e67e22;
+        border-left-color: #d35400;
+        margin-top: 20px;
+    }
+
+        #sidebar a.btn-back:hover {
+            background-color: #d35400;
+        }
+
+/* ==================== MAIN CONTENT LAYOUT ==================== */
+#main-content {
+    flex-grow: 1;
+    padding: 30px;
+    /* SỬ DỤNG FLEX CHO NỘI DUNG CHÍNH */
+    display: flex;
+    flex-direction: column;
+}
+
+.page-header {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+    .page-header h1 {
+        margin: 0;
+        font-size: 2rem;
+        color: #34495e;
+    }
+
+/* Cấu trúc 2 cột chính (Form và Sidebar Settings) */
+.form-layout {
+    display: flex;
+    gap: 25px; /* Khoảng cách giữa hai cột */
+    width: 100%;
+}
+
+.product-form-container {
+    flex: 3; /* Chiếm 3/4 không gian */
+    background-color: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.sidebar-settings {
+    flex: 1; /* Chiếm 1/4 không gian */
+    padding: 0;
+}
+
+/* ==================== FORM ELEMENTS ==================== */
+label {
+    font-weight: 500;
+    display: block;
+    margin-bottom: 5px;
+    color: #34495e;
+    font-size: 0.95rem;
+}
+
+input[type="text"], input[type="number"], textarea, select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    transition: border-color 0.2s;
+}
+
+    input:focus, textarea:focus, select:focus {
+        border-color: #2ecc71;
+        outline: none;
+        box-shadow: 0 0 0 2px rgba(46, 204, 113, 0.2);
+    }
+
+/* Khối chức năng (Setting Block) */
+.setting-block {
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+    .setting-block h3 {
+        margin-top: 0;
+        margin-bottom: 15px;
+        color: #34495e;
+        font-size: 1.1rem;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 10px;
+    }
+
+/* Nút hành động */
+.btn-action {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: opacity 0.2s;
+}
+
+    .btn-action:hover {
+        opacity: 0.9;
+    }
+
+.btn-save {
+    background-color: #2ecc71;
+    color: white;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.btn-cancel {
+    background-color: #e67e22;
+    color: white;
+    width: 100%;
+}
+
+/* Style cho khối Variant */
+.variant-item {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-top: 10px;
+    border-radius: 6px;
+    background-color: #fafafa;
+    margin-bottom: 10px;
+}
+
+.variant-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.action-btn.delete-btn {
+    background-color: #e74c3c;
+    color: white;
+    padding: 5px 10px;
+    font-size: 0.85rem;
+}
+
+/* Căn chỉnh các input của Variant */
+.variant-details {
+    display: flex;
+    gap: 15px;
+}
+
+    .variant-details > div {
+        flex: 1;
+    }
+    /* Đảm bảo input trong flex item vẫn đầy đủ chiều rộng */
+    .variant-details input {
+        margin-bottom: 0;
+    }
+
+/* Tùy chỉnh input file */
+#product-images {
+    border: 2px dashed #ccc !important;
+    padding: 40px 20px !important;
+    height: auto;
+    text-align: center;
+    background-color: #fcfcfc;
+    cursor: pointer;
+}
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 1000px) {
+    .form-layout {
+        flex-direction: column; /* Đưa các cột về 1 hàng duy nhất */
+    }
+
+    .product-form-container, .sidebar-settings {
+        flex: none;
+        width: 100%;
+    }
+
+    .setting-block.action-block {
+        display: flex;
+        gap: 10px;
+    }
+
+    .btn-action {
+        width: 50%;
+    }
+
+    #sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        padding-bottom: 0;
+    }
+
+        #sidebar a {
+            border-left: none;
+        }
+}

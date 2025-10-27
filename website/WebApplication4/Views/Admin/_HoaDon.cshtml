@@ -1,0 +1,110 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "_Adminlayout";
+}
+
+<link rel="stylesheet" href="~/css/Admin/HoaDon.css" />
+<div class="invoice-container">
+
+    <div style="text-align: right;" class="print-button">
+        <button onclick="window.print()" style="padding: 10px 20px; background-color: #3498db; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 14pt;">🖨️ In Hóa Đơn</button>
+    </div>
+
+    <div class="invoice-header">
+        <div class="company-info">
+            <h1>SNEAKER CITY</h1>
+            <p>Địa chỉ: 123 Đường Thời Trang, Q. Trendy, TP.HCM</p>
+            <p>Email: hotro@sneakercity.vn</p>
+            <p>Hotline: 1900 6789</p>
+        </div>
+        <div class="invoice-details">
+            <h2>HÓA ĐƠN BÁN HÀNG</h2>
+            <p>Mã Đơn Hàng: <strong>#SC-1001</strong></p>
+            <p>Ngày Phát Hành: 26/10/2025</p>
+            <p>Trạng Thái Thanh Toán: **CHƯA THANH TOÁN** (COD)</p>
+        </div>
+    </div>
+
+    <div class="client-info">
+        <div class="client-block">
+            <h3>Khách Hàng</h3>
+            <p>Tên: Nguyễn Văn A</p>
+            <p>Điện thoại: 098 123 4567</p>
+            <p>Email: vana@example.com</p>
+        </div>
+        <div class="client-block">
+            <h3>Địa Chỉ Giao Hàng</h3>
+            <p>Địa chỉ: Số 123, đường Hùng Vương,</p>
+            <p>Phường Bến Nghé, Quận 1, TP. Hồ Chí Minh.</p>
+            <p>Phương thức: Giao hàng tiêu chuẩn</p>
+        </div>
+    </div>
+
+    <table class="product-table">
+        <thead>
+            <tr>
+                <th style="width: 50%;">Sản Phẩm</th>
+                <th style="width: 10%;">SL</th>
+                <th style="width: 20%;">Đơn Giá (VND)</th>
+                <th style="width: 20%;">Thành Tiền (VND)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Nike Air Max 97 'Silver Bullet' (Size 41)</td>
+                <td>1</td>
+                <td>3,500,000</td>
+                <td>3,500,000</td>
+            </tr>
+            <tr>
+                <td>Air Jordan 1 Mid 'Light Smoke Grey' (Size 42)</td>
+                <td>1</td>
+                <td>4,200,000</td>
+                <td>4,200,000</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="invoice-summary">
+        <div class="summary-box">
+            <div class="summary-row">
+                <span>TỔNG CỘNG TIỀN HÀNG:</span>
+                <span>7,700,000 VND</span>
+            </div>
+            <div class="summary-row">
+                <span>Phí Vận Chuyển:</span>
+                <span>30,000 VND</span>
+            </div>
+            <div class="summary-row" style="color: #e74c3c; font-weight: bold;">
+                <span>Chiết khấu/Giảm giá (Mã SALE20):</span>
+                <span>- 154,000 VND</span>
+            </div>
+            <div class="summary-row total">
+                <span>TỔNG THANH TOÁN:</span>
+                <span style="color: #e74c3c;">7,576,000 VND</span>
+            </div>
+
+            <p style="text-align: right; font-style: italic; margin-top: 15px;">(Bằng chữ: Bảy triệu năm trăm bảy mươi sáu nghìn đồng chẵn)</p>
+        </div>
+    </div>
+
+    <div class="footer-note">
+        <p style="font-style: italic; color: gray;">Xin cảm ơn quý khách đã tin tưởng và mua sắm tại SNEAKER CITY!</p>
+    </div>
+
+    <div class="signature-area">
+        <div class="signature-box">
+            <p>Khách hàng ký tên</p>
+            <p>(Ký, ghi rõ họ tên)</p>
+            <div style="height: 50px; border-bottom: 1px dashed #333; width: 150px; margin: 20px auto 0;"></div>
+        </div>
+        <div class="signature-box">
+            <p>Người bán hàng/Thủ quỹ</p>
+            <p>(Ký, ghi rõ họ tên)</p>
+            <div style="height: 50px; border-bottom: 1px dashed #333; width: 150px; margin: 20px auto 0;"></div>
+        </div>
+    </div>
+
+</div>

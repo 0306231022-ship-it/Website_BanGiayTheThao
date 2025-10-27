@@ -1,0 +1,128 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "_Adminlayout";
+}
+}
+<link rel="stylesheet" href="~/css/Admin/ThemSanPhamMoi.css" />
+
+
+<div id="main-content">
+
+    <div class="page-header">
+        <h1>Thêm Sản Phẩm Mới</h1>
+    </div>
+
+    <form class="form-layout" action="/add-product" method="POST">
+
+        <div class="product-form-container">
+
+            <div class="setting-block">
+                <h3>Thông tin chung</h3>
+                <label for="product-name">Tên Sản Phẩm (*)</label>
+                <input type="text" id="product-name" name="name" required placeholder="Ví dụ: Nike Air Max 97 'Silver Bullet'">
+
+                <label for="product-slug">Đường dẫn (URL Slug)</label>
+                <input type="text" id="product-slug" name="slug" placeholder="nike-air-max-97-silver-bullet">
+
+                <label for="product-description">Mô tả Sản Phẩm</label>
+                <textarea id="product-description" name="description" rows="8" placeholder="Nhập chi tiết về chất liệu, nguồn gốc, và công dụng của sản phẩm..."></textarea>
+            </div>
+
+            <div class="setting-block">
+                <h3>Ảnh Sản Phẩm</h3>
+                <p style="font-size: 14px; color: gray; margin-bottom: 10px;">Tải lên ảnh chính và ảnh phụ cho sản phẩm. (Kéo thả hoặc chọn tệp)</p>
+                <input type="file" id="product-images" name="images[]" multiple accept="image/*">
+            </div>
+
+            <div class="setting-block">
+                <h3>Biến Thể Sản Phẩm (Kích cỡ, Màu sắc)</h3>
+                <p style="font-size: 14px; color: gray; margin-bottom: 15px;">Mỗi biến thể sẽ có giá, SKU và tồn kho riêng.</p>
+
+                <div class="variant-item">
+                    <div class="variant-header">
+                        <strong>Biến thể #1 (Size 40 - Đen)</strong>
+                        <button type="button" class="action-btn delete-btn">Xóa</button>
+                    </div>
+                    <label for="sku-1">SKU</label>
+                    <input type="text" id="sku-1" name="sku[]" placeholder="Vd: NM97-40-BLK">
+
+                    <div class="variant-details">
+                        <div>
+                            <label for="size-1">Kích cỡ</label>
+                            <input type="text" id="size-1" name="size[]" value="40" placeholder="Vd: 40">
+                        </div>
+                        <div>
+                            <label for="color-1">Màu sắc</label>
+                            <input type="text" id="color-1" name="color[]" value="Đen" placeholder="Vd: Đen">
+                        </div>
+                        <div>
+                            <label for="stock-1">Tồn kho</label>
+                            <input type="number" id="stock-1" name="stock[]" value="10" min="0">
+                        </div>
+                    </div>
+                </div>
+
+                <button type="button" class="btn-action" style="margin-top: 5px; background-color: #34495e; color: white;">+ Thêm Biến Thể</button>
+            </div>
+        </div>
+
+        <div class="sidebar-settings">
+
+            <div class="setting-block action-block">
+                <a asp-action="QuanLiSanPham" asp-controller="Admin" class="btn-action btn-cancel" onclick="window.history.back()">Hủy</a>
+                <button type="submit" class="btn-action btn-save">Lưu & Xuất Bản</button>
+            </div>
+
+            <div class="setting-block">
+                <h3>Giá và Kho</h3>
+                <label for="base-price">Giá Niêm Yết (*)</label>
+                <input type="number" id="base-price" name="base_price" required min="1000" placeholder="Vd: 3500000">
+
+                <label for="sale-price">Giá Khuyến Mãi (nếu có)</label>
+                <input type="number" id="sale-price" name="sale_price" min="0" placeholder="Để trống nếu không sale">
+
+                <label for="total-stock">Tổng Tồn Kho</label>
+                <input type="text" id="total-stock" value="10" disabled style="background-color: #eee;">
+            </div>
+
+            <div class="setting-block">
+                <h3>Phân loại Sản phẩm</h3>
+
+                <label for="product-category">Danh mục chính (*)</label>
+                <select id="product-category" name="category" required>
+                    <option value="">-- Chọn Danh mục --</option>
+                    <option value="giay-nam">Giày Nam</option>
+                    <option value="giay-nu">Giày Nữ</option>
+                </select>
+
+                <label for="product-brand">Thương hiệu (*)</label>
+                <select id="product-brand" name="brand" required>
+                    <option value="">-- Chọn Thương hiệu --</option>
+                    <option value="nike">Nike</option>
+                    <option value="adidas">Adidas</option>
+                    <option value="jordan">Jordan</option>
+                </select>
+
+                <label for="product-tags">Tags (Thẻ)</label>
+                <input type="text" id="product-tags" name="tags" placeholder="running, jordan, air-max">
+            </div>
+
+            <div class="setting-block">
+                <h3>Trạng Thái</h3>
+                <label style="font-weight: normal;">
+                    <input type="radio" name="status" value="published" checked> Đang Bán
+                </label><br>
+                <label style="font-weight: normal;">
+                    <input type="radio" name="status" value="draft"> Bản Nháp
+                </label><br>
+                <label style="font-weight: normal;">
+                    <input type="radio" name="status" value="hidden"> Ẩn khỏi trang
+                </label>
+            </div>
+        </div>
+
+    </form>
+
+</div>

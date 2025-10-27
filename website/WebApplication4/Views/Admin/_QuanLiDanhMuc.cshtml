@@ -1,0 +1,111 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "_Adminlayout";
+}
+
+<link rel="stylesheet" href="~/css/Admin/QuanLiDanhMuc.css" />
+
+<div id="main-content">
+
+    <div class="header-admin">
+        <h1>Quản Lý Danh Mục Sản Phẩm</h1>
+        <a href="#add-category-form" class="btn-primary">+ Thêm Danh Mục Mới</a>
+    </div>
+
+    <div class="category-form-card" id="add-category-form">
+        <h2>🏷️ Thêm Danh Mục Mới</h2>
+        <form action="/add-category" method="POST">
+            <div class="form-group">
+                <div class="form-field">
+                    <label for="category-name">Tên Danh Mục (*)</label>
+                    <input type="text" id="category-name" name="category_name" required placeholder="Ví dụ: Giày Nam">
+                </div>
+
+                <div class="form-field">
+                    <label for="parent-category">Danh Mục Cha</label>
+                    <select id="parent-category" name="parent_id">
+                        <option value="0">-- (Không có) Danh mục gốc --</option>
+                        <option value="1">Giày</option>
+                        <option value="2">Quần áo</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="form-field">
+                    <label for="category-slug">Slug (URL)</label>
+                    <input type="text" id="category-slug" name="category_slug" placeholder="Ví dụ: giay-nam">
+                </div>
+
+                <div class="form-field" style="display: flex; align-items: flex-end;">
+                    <button type="submit" class="btn-primary" style="width: 100%; background-color: #27ae60;">💾 Lưu Danh Mục</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div>
+        <h2>Danh Sách Danh Mục Đã Tạo</h2>
+        <table class="category-table">
+            <thead>
+                <tr>
+                    <th style="width: 5%;">ID</th>
+                    <th style="width: 30%;">Tên Danh Mục</th>
+                    <th style="width: 25%;">Danh Mục Cha</th>
+                    <th style="width: 15%;">Số SP</th>
+                    <th style="width: 10%;">Slug</th>
+                    <th style="width: 15%;">Hành động</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td style="font-weight: bold;">Giày</td>
+                    <td>(Gốc)</td>
+                    <td>120</td>
+                    <td>giay</td>
+                    <td>
+                        <button class="action-btn edit-btn">Sửa</button>
+                        <button class="action-btn delete-btn">Xóa</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>&nbsp; &nbsp; ↳ Giày Nam</td>
+                    <td>Giày</td>
+                    <td>75</td>
+                    <td>giay-nam</td>
+                    <td>
+                        <button class="action-btn edit-btn">Sửa</button>
+                        <button class="action-btn delete-btn">Xóa</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>&nbsp; &nbsp; ↳ Giày Nữ</td>
+                    <td>Giày</td>
+                    <td>45</td>
+                    <td>giay-nu</td>
+                    <td>
+                        <button class="action-btn edit-btn">Sửa</button>
+                        <button class="action-btn delete-btn">Xóa</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td style="font-weight: bold;">Phụ kiện</td>
+                    <td>(Gốc)</td>
+                    <td>30</td>
+                    <td>phu-kien</td>
+                    <td>
+                        <button class="action-btn edit-btn">Sửa</button>
+                        <button class="action-btn delete-btn">Xóa</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>

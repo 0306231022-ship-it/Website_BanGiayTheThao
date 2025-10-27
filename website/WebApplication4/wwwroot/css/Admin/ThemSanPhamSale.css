@@ -1,0 +1,109 @@
+﻿/* (Giữ nguyên các style cơ bản từ các trang Admin trước) */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f7f9;
+    margin: 0;
+    display: flex;
+}
+
+#sidebar {
+    width: 250px;
+    background-color: #2c3e50;
+    color: white;
+    height: 100vh;
+    padding-top: 20px;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+}
+
+    #sidebar a {
+        color: white;
+        text-decoration: none;
+        padding: 15px 20px;
+        display: block;
+    }
+
+        #sidebar a:hover {
+            background-color: #34495e;
+        }
+
+#main-content {
+    flex-grow: 1;
+    padding: 20px;
+}
+
+.header-admin {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.sale-form-container {
+    max-width: 800px; /* Giới hạn chiều rộng form */
+    margin: 0 auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* Style cho Form */
+input[type="text"], input[type="number"], input[type="datetime-local"], select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+    color: #34495e;
+}
+
+/* Style cho khối chức năng */
+.setting-block {
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.btn-action {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-schedule {
+    background-color: #e74c3c;
+    color: white;
+}
+/* Màu đỏ nổi bật cho Sale */
+.btn-cancel {
+    background-color: #bdc3c7;
+    color: #34495e;
+}
+
+.price-input-group {
+    display: flex;
+    align-items: center;
+}
+
+    .price-input-group input {
+        margin-bottom: 0;
+    }
+
+.price-unit {
+    padding: 0 10px;
+    font-weight: bold;
+}

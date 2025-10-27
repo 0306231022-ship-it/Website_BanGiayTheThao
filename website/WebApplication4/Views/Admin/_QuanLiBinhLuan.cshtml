@@ -1,0 +1,192 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "_Adminlayout";
+}
+
+<link rel="stylesheet" href="~/css/Admin/BinhLuan.css" />
+
+
+<div id="main-content">
+
+    <div class="header-admin">
+        <h1>Quản Lý Bình Luận</h1>
+    </div>
+
+    <div class="filter-area">
+        <input type="text" placeholder="Tìm kiếm theo Tên, Email, Nội dung..." title="Tìm kiếm bình luận">
+        <select>
+            <option>Lọc theo Loại</option>
+            <option>Sản Phẩm</option>
+            <option>Bài Viết Blog</option>
+        </select>
+    </div>
+
+    <div class="tab-menu">
+        <button class="active" onclick="showTab('pending-comments')">Cần Phê Duyệt 🔔 <span style="color: #e74c3c; font-size: 1.1em;">(5)</span></button>
+        <button onclick="showTab('published-comments')">Đã Xuất Bản (95)</button>
+    </div>
+
+    <div id="pending-comments" class="tab-content" style="display: block;">
+        <h2>Bình Luận Đang Chờ (Cần hành động)</h2>
+        <table class="comment-table">
+            <thead>
+                <tr>
+                    <th style="width: 25%;">Tác giả</th>
+                    <th style="width: 40%;">Nội dung</th>
+                    <th style="width: 20%;">Thuộc về</th>
+                    <th style="width: 15%; min-width: 170px;">Hành động</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <strong>Trần Văn A</strong>
+                        <p class="comment-meta">vana@gmail.com</p>
+                    </td>
+                    <td>
+                        <div class="comment-content" id="comment-content-1">
+                            "Đôi này đẹp quá, còn size 40 không shop ơi? Mình đặt mua gấp."
+                        </div>
+                        <p class="comment-meta">Gửi lúc: 14:00 26/10/2025</p>
+                    </td>
+                    <td>
+                        <a href="#product-link-1" class="link-to-entity">Nike Air Max 97</a> (Sản phẩm)
+                    </td>
+                    <td>
+                        <div class="action-buttons-group">
+                            <button class="action-btn approve-btn" onclick="showReplyModal('1', 'Trần Văn A', 'Đôi này đẹp quá, còn size 40 không shop ơi? Mình đặt mua gấp.')">✅ Phê duyệt</button>
+                            <button class="action-btn delete-btn">🗑️ Xóa</button>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>Anonymous</strong>
+                        <p class="comment-meta">103.20.xxx.xx</p>
+                    </td>
+                    <td>
+                        <div class="comment-content" id="comment-content-2">
+                            "Bài viết hay ghê, thông tin rất hữu ích cho người mới chơi sneaker!"
+                        </div>
+                        <p class="comment-meta">Gửi lúc: 10:30 26/10/2025</p>
+                    </td>
+                    <td>
+                        <a href="#blog-link-1" class="link-to-entity">Blog: Top 5 Sneaker 2025</a> (Blog)
+                    </td>
+                    <td>
+                        <div class="action-buttons-group">
+                            <button class="action-btn approve-btn" onclick="showReplyModal('2', 'Anonymous', 'Bài viết hay ghê, thông tin rất hữu ích cho người mới chơi sneaker!')">✅ Phê duyệt</button>
+                            <button class="action-btn delete-btn">🗑️ Xóa</button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div id="published-comments" class="tab-content" style="display: none;">
+        <h2>Bình Luận Đã Xuất Bản (Đã hiển thị công khai)</h2>
+        <table class="comment-table">
+            <thead>
+                <tr>
+                    <th style="width: 25%;">Tác giả</th>
+                    <th style="width: 40%;">Nội dung</th>
+                    <th style="width: 20%;">Thuộc về</th>
+                    <th style="width: 15%; min-width: 170px;">Hành động</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <strong>Nguyễn Thị C</strong>
+                        <p class="comment-meta">Đã đăng ký (ID: 123)</p>
+                    </td>
+                    <td>
+                        <div class="comment-content">
+                            "Shop giao hàng nhanh, giày đẹp y hình! 5 sao nha."
+                        </div>
+                        <p class="comment-meta">Đã trả lời bởi Admin.</p>
+                    </td>
+                    <td>
+                        <a href="#product-link-2" class="link-to-entity">Adidas Ultraboost 21</a> (Sản phẩm)
+                    </td>
+                    <td>
+                        <div class="action-buttons-group">
+                            <button class="action-btn reply-btn">↩️ Trả lời</button>
+                            <button class="action-btn delete-btn">🗑️ Xóa</button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+<div id="reply-modal" class="modal" style="display: none;">
+    <div class="modal-content">
+        <h3 style="color: #3498db; margin-top: 0;">Phê Duyệt và Trả Lời Bình Luận</h3>
+        <p><strong>Tác giả:</strong> <span id="modal-author"></span></p>
+        <p style="border: 1px dashed #ccc; padding: 10px; background-color: #f9f9f9; font-style: italic;">
+            <strong>Nội dung:</strong> <span id="modal-comment-content"></span>
+        </p>
+
+        <label for="reply-text" style="font-weight: bold; margin-top: 15px; display: block;">Nội dung trả lời (Tùy chọn):</label>
+        <textarea id="reply-text" rows="4" placeholder="Ví dụ: Cảm ơn bạn đã quan tâm. Size 40 hiện vẫn còn hàng, bạn có thể đặt ngay nhé!"></textarea>
+
+        <div class="modal-footer">
+            <button class="action-btn delete-btn" onclick="closeReplyModal()">Hủy</button>
+            <button class="action-btn approve-btn" onclick="confirmApproveAndReply()">
+                ✅ Phê duyệt & Gửi trả lời
+            </button>
+            <button class="action-btn approve-btn" style="background-color: #1abc9c;" onclick="confirmApproveOnly()">
+                ✅ Chỉ Phê duyệt
+            </button>
+        </div>
+    </div>
+</div>
+
+<script>
+    let currentCommentId = null;
+
+    function showTab(tabId) {
+        document.querySelectorAll('.tab-content').forEach(tab => tab.style.display = 'none');
+        document.querySelectorAll('.tab-menu button').forEach(button => button.classList.remove('active'));
+
+        document.getElementById(tabId).style.display = 'block';
+        document.querySelector(`.tab-menu button[onclick="showTab('${tabId}')"]`).classList.add('active');
+    }
+
+    function showReplyModal(commentId, author, content) {
+        currentCommentId = commentId;
+        document.getElementById('modal-author').textContent = author;
+        document.getElementById('modal-comment-content').textContent = content;
+        document.getElementById('reply-text').value = '';
+        document.getElementById('reply-modal').style.display = 'flex';
+    }
+
+    function closeReplyModal() {
+        document.getElementById('reply-modal').style.display = 'none';
+        currentCommentId = null;
+    }
+
+    function confirmApproveAndReply() {
+        const replyText = document.getElementById('reply-text').value.trim();
+        if (replyText === '') {
+            alert('Vui lòng nhập nội dung trả lời hoặc chọn "Chỉ Phê duyệt".');
+            return;
+        }
+        alert(`Bình luận ID ${currentCommentId} đã được PHÊ DUYỆT và TRẢ LỜI:\n"${replyText}"`);
+        closeReplyModal();
+        // Logic gửi dữ liệu lên Backend sẽ được thực hiện ở đây
+    }
+
+    function confirmApproveOnly() {
+        alert(`Bình luận ID ${currentCommentId} đã được CHỈ PHÊ DUYỆT.`);
+        closeReplyModal();
+        // Logic gửi dữ liệu lên Backend sẽ được thực hiện ở đây
+    }
+</script>
+

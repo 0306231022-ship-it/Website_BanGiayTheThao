@@ -1,0 +1,135 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "_Adminlayout";
+}
+
+<link rel="stylesheet" href="~/css/Admin/TaiKhoanCaNhan.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/js/all.min.js"></script>
+
+
+
+<div id="main-content">
+
+    <div class="header-admin">
+        <h1><i class="fas fa-user-circle" style="color: #3498db; margin-right: 10px;"></i> Tài Khoản Cá Nhân</h1>
+    </div>
+
+    <div class="profile-container">
+
+        <div class="profile-settings-card">
+
+            <h2 class="section-header"><i class="fas fa-address-card"></i> Cập Nhật Thông Tin</h2>
+            <form id="profile-info-form" onsubmit="updateProfileInfo(event)">
+                <div class="form-group">
+                    <label for="admin-name">Họ và Tên:</label>
+                    <input type="text" id="admin-name" value="Nguyễn Văn Quản Trị" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="admin-email">Email:</label>
+                    <input type="email" id="admin-email" value="admin@sneakercity.vn" disabled title="Email Admin không thể thay đổi">
+                </div>
+
+                <div class="form-group">
+                    <label for="admin-phone">Số Điện Thoại:</label>
+                    <input type="text" id="admin-phone" value="0901 123 456">
+                </div>
+
+                <button type="submit" class="save-btn"><i class="fas fa-save"></i> Lưu Thông Tin</button>
+            </form>
+
+            <hr style="margin: 30px 0; border-top: 1px solid #eee;">
+
+            <h2 class="section-header"><i class="fas fa-lock"></i> Thay Đổi Mật Khẩu</h2>
+            <form id="password-form" onsubmit="changePassword(event)">
+                <div class="form-group">
+                    <label for="current-password">Mật Khẩu Hiện Tại:</label>
+                    <input type="password" id="current-password" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="new-password">Mật Khẩu Mới:</label>
+                    <input type="password" id="new-password" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="confirm-password">Xác Nhận Mật Khẩu Mới:</label>
+                    <input type="password" id="confirm-password" required>
+                </div>
+
+                <button type="submit" class="save-btn" style="background-color: #e74c3c;"><i class="fas fa-key"></i> Đổi Mật Khẩu</button>
+            </form>
+
+        </div>
+
+        <div class="profile-info-card">
+            <h2 class="section-header"><i class="fas fa-camera"></i> Ảnh Đại Diện</h2>
+
+            <div class="avatar-area">
+                <div class="avatar">
+                    <i class="fas fa-user-shield"></i>
+                </div>
+                <input type="file" id="avatar-upload" accept="image/*" style="display: block; margin: 0 auto; width: 100%;">
+            </div>
+
+            <hr style="border-top: 1px solid #eee;">
+
+            <p style="text-align: left; font-size: 0.9em; margin-top: 20px;">
+                <strong><i class="fas fa-user-tag"></i> Vai trò:</strong> <span style="color: #e74c3c;">Super Admin</span><br>
+                <strong><i class="fas fa-clock"></i> Ngày tham gia:</strong> 01/01/2024<br>
+                <strong><i class="fas fa-laptop-code"></i> IP Đăng nhập cuối:</strong> 113.190.xx.xx
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+    function updateProfileInfo(event) {
+        event.preventDefault();
+        const name = document.getElementById('admin-name').value;
+        const phone = document.getElementById('admin-phone').value;
+
+        alert(`Đã lưu thông tin cá nhân thành công!\nHọ Tên: ${name}\nSĐT: ${phone}`);
+        // Thực tế: Gửi dữ liệu cập nhật
+    }
+
+    function changePassword(event) {
+        event.preventDefault();
+
+        const currentPass = document.getElementById('current-password').value;
+        const newPass = document.getElementById('new-password').value;
+        const confirmPass = document.getElementById('confirm-password').value;
+
+        if (newPass.length < 6) {
+            alert('Lỗi: Mật khẩu mới phải có ít nhất 6 ký tự.');
+            return;
+        }
+        if (newPass !== confirmPass) {
+            alert('Lỗi: Mật khẩu mới và Xác nhận Mật khẩu không khớp!');
+            return;
+        }
+
+        // Giả lập kiểm tra mật khẩu hiện tại thành công
+        if (currentPass === '123456') { // Thay bằng logic kiểm tra Backend thực tế
+            alert('Đã thay đổi mật khẩu thành công!');
+            document.getElementById('password-form').reset();
+        } else {
+            alert('Lỗi: Mật khẩu hiện tại không chính xác.');
+        }
+        // Thực tế: Gửi dữ liệu đổi mật khẩu đến Backend
+    }
+
+    // Thêm tính năng tải ảnh đại diện (giả lập)
+    document.getElementById('avatar-upload').addEventListener('change', function(event) {
+        const file = event.target.files[0];
+        if (file) {
+            alert(`Đang tải lên ảnh đại diện: ${file.name}`);
+            // Thêm logic tải ảnh lên server
+        }
+    });
+</script>

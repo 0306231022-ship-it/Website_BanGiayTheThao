@@ -28,12 +28,56 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cX0NhaURhdFdlYnNpdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/Website_BanGiayTheThao/website/WebApplication4/Views/Admin/_ChiTietSanPham.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cX0NoaVRpZXRTYW5QaGFtLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Website_BanGiayTheThao/website/WebApplication4/Views/Admin/_HoaDon.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cX0hvYURvbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Website_BanGiayTheThao/website/WebApplication4/Views/Admin/_QuanLiBaiViet.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cX1F1YW5MaUJhaVZpZXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/Website_BanGiayTheThao/website/WebApplication4/Views/Admin/_QuanLiBinhLuan.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cX1F1YW5MaUJpbmhMdWFuLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Website_BanGiayTheThao/website/WebApplication4/Views/Admin/_QuanLiDanhMuc.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cX1F1YW5MaURhbmhNdWMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Website_BanGiayTheThao/website/WebApplication4/Views/Admin/_QuanLiDonHang.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cX1F1YW5MaURvbkhhbmcuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Website_BanGiayTheThao/website/WebApplication4/Views/Admin/_QuanLiNguoiDung.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cX1F1YW5MaU5ndW9pRHVuZy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Website_BanGiayTheThao/website/WebApplication4/Views/Admin/_QuanLiSanPham.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cX1F1YW5MaVNhblBoYW0uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Website_BanGiayTheThao/website/WebApplication4/Views/Admin/_TaiKhoan.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cX1RhaUtob2FuLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Website_BanGiayTheThao/website/WebApplication4/Views/Admin/_ThemBaiViet.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cX1RoZW1CYWlWaWV0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Website_BanGiayTheThao/website/WebApplication4/Views/Admin/_ThemSanPhamMoi.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cX1RoZW1TYW5QaGFtTW9pLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Website_BanGiayTheThao/website/WebApplication4/Views/Admin/_ThemSanPhamSale.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cX1RoZW1TYW5QaGFtU2FsZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Website_BanGiayTheThao/website/WebApplication4/Views/Admin/_XemDonHang.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cX1hlbURvbkhhbmcuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Website_BanGiayTheThao/website/WebApplication4/Views/NguoiDung/TrangChuNguoiDung.cshtml]
@@ -70,10 +114,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/Website_BanGiayTheThao/website/WebApplication4/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/Website_BanGiayTheThao/website/WebApplication4/Views/Shared/TruyCapNhanh_NguoiDung.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFRydXlDYXBOaGFuaF9OZ3VvaUR1bmcuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Website_BanGiayTheThao/website/WebApplication4/Views/Shared/_Adminlayout.cshtml]

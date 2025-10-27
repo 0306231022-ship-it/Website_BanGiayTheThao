@@ -1,0 +1,230 @@
+﻿/* ==================== CƠ BẢN & SIDEBAR (Giữ nguyên) ==================== */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f7f9;
+    margin: 0;
+    display: flex;
+}
+
+#sidebar {
+    width: 250px;
+    background-color: #2c3e50;
+    color: white;
+    height: 100vh;
+    padding-top: 20px;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+}
+
+    #sidebar a {
+        color: white;
+        text-decoration: none;
+        padding: 15px 20px;
+        display: block;
+    }
+
+        #sidebar a:hover {
+            background-color: #34495e;
+        }
+
+#main-content {
+    flex-grow: 1;
+    padding: 20px;
+}
+
+/* ==================== HEADER VÀ ACTIONS ==================== */
+.header-admin {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+    .header-left h1 {
+        margin: 0;
+        font-size: 1.8em;
+        color: #2c3e50;
+    }
+
+.btn-action {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: none;
+    margin-left: 10px;
+    display: inline-block;
+    transition: opacity 0.2s;
+}
+
+    .btn-action:hover {
+        opacity: 0.9;
+    }
+
+/* Màu nút hành động */
+.btn-back {
+    background-color: #7f8c8d;
+    color: white;
+    margin-right: 15px;
+}
+/* Nút Quay lại MỚI */
+.btn-update {
+    background-color: #2ecc71;
+    color: white;
+}
+
+.btn-cancel {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.btn-print {
+    background-color: #bdc3c7;
+    color: #34495e;
+}
+
+/* ==================== BỐ CỤC CHÍNH (2 cột) ==================== */
+.order-detail-grid {
+    display: flex;
+    gap: 20px;
+}
+
+.info-column {
+    flex: 1;
+}
+
+.summary-column {
+    width: 350px;
+}
+
+.detail-card {
+    background-color: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    margin-bottom: 20px;
+}
+
+    .detail-card h2 {
+        margin-top: 0;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #eee;
+        margin-bottom: 15px;
+        color: #34495e;
+        font-size: 1.4em;
+    }
+
+/* Hiển thị thông tin */
+.info-group {
+    margin-bottom: 10px;
+}
+
+.info-label {
+    font-weight: bold;
+    color: #34495e;
+    display: inline-block;
+    width: 140px;
+}
+/* Tăng chiều rộng label */
+.info-value {
+    display: inline-block;
+}
+
+/* Bảng Sản phẩm */
+.product-list-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+    .product-list-table th, .product-list-table td {
+        padding: 10px;
+        text-align: left;
+        border-bottom: 1px solid #eee;
+    }
+
+    .product-list-table th {
+        background-color: #ecf0f1;
+    }
+
+    .product-list-table img {
+        width: 40px;
+        height: 40px;
+        object-fit: cover;
+        border-radius: 4px;
+        margin-right: 10px;
+        vertical-align: middle;
+    }
+
+/* Tổng kết tiền */
+.total-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-top: 1px dashed #ddd;
+}
+
+    .total-row.final {
+        border-top: 2px solid #333;
+        font-size: 1.1em;
+        font-weight: bold;
+        margin-top: 10px;
+        padding-top: 15px;
+    }
+
+.status-badge {
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.status-new {
+    background-color: #f1c40f;
+    color: #333;
+}
+
+/* ==================== MODAL ==================== */
+#cancel-modal .modal-content {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    width: 400px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .order-detail-grid {
+        flex-direction: column;
+    }
+
+    .summary-column {
+        width: 100%;
+    }
+
+    .header-admin {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+        .header-admin > div {
+            margin-top: 15px;
+        }
+
+    .btn-action {
+        margin-left: 0;
+        margin-right: 10px;
+        margin-bottom: 10px;
+    }
+}

@@ -1,0 +1,162 @@
+﻿/* CSS CHÍNH: Chỉ áp dụng cho khu vực hóa đơn in ấn */
+body {
+    font-family: 'Times New Roman', Times, serif;
+    margin: 0;
+    background-color: #f4f7f9;
+    font-size: 12pt;
+}
+
+.invoice-container {
+    width: 800px; /* Chiều rộng phù hợp cho in A4 */
+    margin: 30px auto;
+    padding: 30px;
+    background-color: white;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* Tiêu đề công ty và thông tin hóa đơn */
+.invoice-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 2px solid #2c3e50;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+
+.company-info h1 {
+    color: #2c3e50;
+    margin: 0;
+    font-size: 24pt;
+}
+
+.invoice-details {
+    text-align: right;
+}
+
+    .invoice-details p {
+        margin: 5px 0;
+    }
+
+    .invoice-details strong {
+        font-size: 14pt;
+        color: #3498db;
+    }
+
+/* Khối thông tin khách hàng và giao hàng */
+.client-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.client-block {
+    width: 48%;
+}
+
+    .client-block h3 {
+        margin-top: 0;
+        margin-bottom: 10px;
+        color: #2c3e50;
+        font-size: 14pt;
+    }
+
+    .client-block p {
+        margin: 3px 0;
+    }
+
+/* Bảng sản phẩm */
+.product-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+}
+
+    .product-table th, .product-table td {
+        border: 1px solid #ddd;
+        padding: 12px;
+        text-align: left;
+    }
+
+    .product-table th {
+        background-color: #ecf0f1;
+        color: #2c3e50;
+        font-weight: bold;
+    }
+
+    .product-table td:last-child {
+        text-align: right;
+    }
+
+    .product-table th:last-child {
+        text-align: right;
+    }
+
+/* Tổng kết tiền */
+.invoice-summary {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.summary-box {
+    width: 350px;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+}
+
+    .summary-row.total {
+        border-top: 2px solid #2c3e50;
+        margin-top: 10px;
+        padding-top: 15px;
+        font-size: 16pt;
+        font-weight: bold;
+        color: #e74c3c; /* Màu nổi bật cho Tổng cộng */
+    }
+
+/* Chữ ký và Ghi chú */
+.footer-note {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.signature-area {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 80px;
+}
+
+.signature-box {
+    text-align: center;
+    width: 40%;
+}
+
+    .signature-box p {
+        margin: 5px 0 0 0;
+        font-style: italic;
+    }
+
+/* CSS dành cho In ấn (Quan trọng) */
+@media print {
+    body {
+        background: none;
+    }
+
+    .invoice-container {
+        box-shadow: none;
+        border: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .print-button {
+        display: none;
+    }
+    /* Ẩn nút in khi đang in */
+}

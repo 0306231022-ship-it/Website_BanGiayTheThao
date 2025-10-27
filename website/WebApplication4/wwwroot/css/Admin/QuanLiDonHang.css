@@ -1,0 +1,201 @@
+﻿/* CSS Cơ bản cho Admin Panel */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f7f9;
+    margin: 0;
+    display: flex;
+}
+
+#sidebar {
+    width: 250px;
+    background-color: #2c3e50;
+    color: white;
+    height: 100vh;
+    padding-top: 20px;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+}
+
+    #sidebar a {
+        color: white;
+        text-decoration: none;
+        padding: 15px 20px;
+        display: block;
+    }
+
+        #sidebar a:hover {
+            background-color: #34495e;
+        }
+
+#main-content {
+    flex-grow: 1;
+    padding: 20px;
+}
+
+.header-admin {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.btn-primary {
+    background-color: #3498db;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+}
+
+/* Bộ lọc và Tìm kiếm (Đã chỉnh sửa) */
+.filter-area {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+    align-items: center;
+}
+
+/* KHỐI TÌM KIẾM MỚI */
+.search-input-group {
+    flex-grow: 1;
+    display: flex;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    overflow: hidden;
+    background-color: white;
+    max-width: 400px; /* Giới hạn chiều rộng thanh tìm kiếm */
+}
+
+    .search-input-group input[type="text"] {
+        border: none;
+        padding: 10px;
+        flex-grow: 1;
+        box-sizing: border-box;
+        margin: 0;
+    }
+
+.search-button {
+    background-color: #3498db;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.2s;
+}
+
+    .search-button:hover {
+        background-color: #2980b9;
+    }
+/* Hết KHỐI TÌM KIẾM MỚI */
+
+.filter-area select, .filter-area input[type="date"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: white;
+}
+
+/* Các nút trạng thái (Status Tabs) */
+.status-tabs {
+    display: flex;
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    margin-bottom: 20px;
+}
+
+    .status-tabs button {
+        flex-grow: 1;
+        padding: 12px 10px;
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+        font-weight: 600;
+        color: #555;
+        border-bottom: 3px solid transparent;
+        transition: all 0.2s;
+    }
+
+        .status-tabs button.active {
+            color: #3498db;
+            border-bottom: 3px solid #3498db;
+            background-color: #f0f8ff;
+        }
+
+        .status-tabs button span {
+            margin-left: 5px;
+            font-weight: bold;
+        }
+
+/* Bảng Đơn hàng */
+.order-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+    .order-table th, .order-table td {
+        padding: 12px 15px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .order-table th {
+        background-color: #ecf0f1;
+        color: #34495e;
+    }
+
+/* Các trạng thái màu */
+.status-badge {
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.status-new {
+    background-color: #f1c40f;
+    color: #333;
+}
+
+.status-processing {
+    background-color: #3498db;
+    color: white;
+}
+
+.status-shipping {
+    background-color: #2ecc71;
+    color: white;
+}
+
+.status-completed {
+    background-color: #27ae60;
+    color: white;
+}
+
+.status-cancelled {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.view-btn {
+    background-color: #3498db;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+}

@@ -1,0 +1,156 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "_Adminlayout";
+}
+
+<link rel="stylesheet" href="~/css/Admin/QuanLiNguoiDung.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/js/all.min.js"></script>
+
+<div id="main-content">
+
+    <div class="header-admin">
+        <h1><i class="fas fa-users" style="color: #3498db; margin-right: 10px;"></i> Quản Lý Người Dùng</h1>
+        <button class="add-user-btn" onclick="showAddUserModal()"><i class="fas fa-plus"></i> Thêm Người Dùng Mới</button>
+    </div>
+
+    <div class="filter-area">
+        <input type="text" placeholder="🔍 Tìm kiếm theo Tên, Email, SĐT..." title="Tìm kiếm người dùng">
+        <select>
+            <option>Lọc theo Vai trò</option>
+            <option>Admin</option>
+            <option>Nhân viên (Staff)</option>
+            <option>Khách hàng (Customer)</option>
+        </select>
+        <select>
+            <option>Lọc theo Trạng thái</option>
+            <option>Hoạt động</option>
+            <option>Đã khóa</option>
+        </select>
+        <button style="background-color: #f39c12; color: white; border: none; font-weight: bold;">Lọc</button>
+    </div>
+
+    <table class="user-table">
+        <thead>
+            <tr>
+                <th style="width: 5%;">ID</th>
+                <th style="width: 20%;">Họ & Tên</th>
+                <th style="width: 25%;">Email / SĐT</th>
+                <th style="width: 15%;">Vai trò</th>
+                <th style="width: 10%;">Trạng thái</th>
+                <th style="width: 25%;">Hành động</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>#001</td>
+                <td>Nguyễn Văn Quản Trị</td>
+                <td>admin@shop.com<br>0901 123 456</td>
+                <td><span class="role-tag role-admin">ADMIN</span></td>
+                <td><span class="status-tag status-active">Hoạt động</span></td>
+                <td>
+                    <button class="action-btn edit-btn"><i class="fas fa-edit"></i> Chỉnh sửa</button>
+                    <button class="action-btn lock-btn"><i class="fas fa-lock"></i> Khóa</button>
+                </td>
+            </tr>
+            <tr>
+                <td>#105</td>
+                <td>Trần Thị Khách Hàng</td>
+                <td>tranthi@gmail.com<br>0987 654 321</td>
+                <td><span class="role-tag role-customer">KHÁCH HÀNG</span></td>
+                <td><span class="status-tag status-active">Hoạt động</span></td>
+                <td>
+                    <button class="action-btn edit-btn"><i class="fas fa-edit"></i> Chỉnh sửa</button>
+                    <button class="action-btn lock-btn"><i class="fas fa-lock"></i> Khóa</button>
+                </td>
+            </tr>
+            <tr>
+                <td>#210</td>
+                <td>Lê Văn Phạm Luật</td>
+                <td>levan@mail.com<br>0900 111 222</td>
+                <td><span class="role-tag role-customer">KHÁCH HÀNG</span></td>
+                <td><span class="status-tag status-inactive">Đã khóa</span></td>
+                <td>
+                    <button class="action-btn edit-btn"><i class="fas fa-edit"></i> Chỉnh sửa</button>
+                    <button class="action-btn unlock-btn"><i class="fas fa-unlock"></i> Mở khóa</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="pagination">
+        <span>Hiển thị 1 - 10 trên 210 người dùng</span>
+        <div class="pagination-controls">
+            <button>&laquo; Trang trước</button>
+            <button class="active">1</button>
+            <button>2</button>
+            <button>3</button>
+            <button>Trang sau &raquo;</button>
+        </div>
+    </div>
+
+</div>
+
+<div id="add-user-modal" class="modal">
+    <div class="modal-content">
+        <h3 style="color: #2ecc71; margin-top: 0;"><i class="fas fa-user-plus"></i> Thêm Người Dùng Mới</h3>
+        <form id="add-user-form">
+            <label for="full-name">Họ và Tên:</label>
+            <input type="text" id="full-name" required placeholder="Nguyễn Văn A">
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" required placeholder="ten@email.com">
+
+            <label for="phone">Số Điện Thoại:</label>
+            <input type="text" id="phone" placeholder="09xxxxxxx">
+
+            <label for="password">Mật Khẩu:</label>
+            <input type="password" id="password" required placeholder="Ít nhất 6 ký tự">
+
+            <label for="role">Vai trò:</label>
+            <select id="role" required>
+                <option value="customer">Khách hàng</option>
+                <option value="staff">Nhân viên</option>
+                <option value="admin">Admin</option>
+            </select>
+
+            <div class="modal-footer">
+                <button type="button" class="action-btn cancel-btn" onclick="closeAddUserModal()">
+                    <i class="fas fa-times"></i> Hủy
+                </button>
+                <button type="submit" class="action-btn save-btn">
+                    <i class="fas fa-save"></i> Lưu & Thêm
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+    // Hiển thị Modal
+    function showAddUserModal() {
+        document.getElementById('add-user-modal').style.display = 'flex';
+    }
+
+    // Đóng Modal
+    function closeAddUserModal() {
+        document.getElementById('add-user-modal').style.display = 'none';
+        document.getElementById('add-user-form').reset(); // Reset form khi đóng
+    }
+
+    // Xử lý sự kiện Submit Form (Giả lập)
+    document.getElementById('add-user-form').addEventListener('submit', function(event) {
+        event.preventDefault(); // Ngăn form submit thực tế
+
+        const fullName = document.getElementById('full-name').value;
+        const email = document.getElementById('email').value;
+        const role = document.getElementById('role').value;
+
+        alert(`Đã thêm người dùng mới thành công! \n Họ tên: ${fullName} \n Email: ${email} \n Vai trò: ${role.toUpperCase()}`);
+
+        closeAddUserModal();
+        // THỰC TẾ: Gửi dữ liệu form qua AJAX/Fetch API lên Backend
+    });
+
+</script>

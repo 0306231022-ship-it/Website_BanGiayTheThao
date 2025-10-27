@@ -1,0 +1,130 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "_Adminlayout";
+}
+
+<link rel="stylesheet" href="~/css/Admin/ChiTietSanPham.css" />
+
+
+<div id="main-content">
+
+    <div class="header-admin">
+        <h1>Chi Tiết Sản Phẩm: Nike Air Max 97 'Silver Bullet'</h1>
+        <div>
+            <a href="#edit" class="btn-action btn-edit">📝 Chỉnh Sửa</a>
+            <button class="btn-action btn-delete">🗑️ Xóa Sản Phẩm</button>
+        </div>
+    </div>
+
+    <div class="detail-card">
+        <h2>Thông Tin Cơ Bản</h2>
+        <div class="detail-group">
+            <span class="detail-label">Tên Sản Phẩm:</span>
+            <span class="detail-value">Nike Air Max 97 'Silver Bullet'</span>
+        </div>
+        <div class="detail-group">
+            <span class="detail-label">Đường dẫn (Slug):</span>
+            <span class="detail-value"><a href="link-to-product-page" target="_blank">nike-air-max-97-silver-bullet</a></span>
+        </div>
+        <div class="detail-group">
+            <span class="detail-label">Thương Hiệu:</span>
+            <span class="detail-value">Nike</span>
+        </div>
+        <div class="detail-group">
+            <span class="detail-label">Danh Mục:</span>
+            <span class="detail-value">Giày Nam / Giày Thể Thao</span>
+        </div>
+        <div class="detail-group">
+            <span class="detail-label">Trạng Thái:</span>
+            <span class="detail-value" style="color: green; font-weight: bold;">Đang Bán</span>
+        </div>
+    </div>
+
+    <div class="detail-card">
+        <h2>Quản Lý Giá và Kho</h2>
+        <div class="detail-group">
+            <span class="detail-label">Giá Niêm Yết:</span>
+            <span class="detail-value">5,000,000 VND</span>
+        </div>
+        <div class="detail-group">
+            <span class="detail-label">Giá Khuyến Mãi:</span>
+            <span class="detail-value" style="color: red;">2,500,000 VND (Sale 50%)</span>
+        </div>
+        <div class="detail-group">
+            <span class="detail-label">Tổng Tồn Kho:</span>
+            <span class="detail-value" style="font-weight: bold;">75 sản phẩm</span>
+        </div>
+        <div class="detail-group">
+            <span class="detail-label">SKU Gốc:</span>
+            <span class="detail-value">NM97-SB-MAIN</span>
+        </div>
+    </div>
+
+    <div class="detail-card">
+        <h2>Thư Viện Ảnh (4 Ảnh)</h2>
+        <div class="image-preview-admin">
+            <img src="images/airmax97_main.jpg" alt="Ảnh Chính">
+            <img src="images/airmax97_side.jpg" alt="Ảnh Phụ 1">
+            <img src="images/airmax97_sole.jpg" alt="Ảnh Phụ 2">
+            <img src="images/airmax97_detail.jpg" alt="Ảnh Phụ 3">
+        </div>
+    </div>
+
+    <div class="detail-card">
+        <h2>Biến Thể (Variants) Chi Tiết</h2>
+        <table class="variant-table">
+            <thead>
+                <tr>
+                    <th>Kích Cỡ</th>
+                    <th>Màu Sắc</th>
+                    <th>SKU Riêng</th>
+                    <th>Tồn Kho</th>
+                    <th>Trạng Thái</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>40</td>
+                    <td>Bạc</td>
+                    <td>NM97-SB-40</td>
+                    <td style="color: green;">25</td>
+                    <td>Còn hàng</td>
+                </tr>
+                <tr>
+                    <td>41</td>
+                    <td>Bạc</td>
+                    <td>NM97-SB-41</td>
+                    <td style="color: green;">30</td>
+                    <td>Còn hàng</td>
+                </tr>
+                <tr>
+                    <td>42</td>
+                    <td>Bạc</td>
+                    <td>NM97-SB-42</td>
+                    <td style="color: red; font-weight: bold;">0</td>
+                    <td>Hết hàng</td>
+                </tr>
+                <tr>
+                    <td>43</td>
+                    <td>Bạc</td>
+                    <td>NM97-SB-43</td>
+                    <td style="color: green;">20</td>
+                    <td>Còn hàng</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="detail-card">
+        <h2>Mô Tả Sản Phẩm</h2>
+        <div style="white-space: pre-wrap;">
+            Nike Air Max 97 'Silver Bullet' là một biểu tượng không thể nhầm lẫn...
+            - Chất liệu: Da tổng hợp và lưới thoáng khí.
+            - Công nghệ: Đệm Air Max toàn bộ.
+            - Màu sắc: Metallic Silver/Varsity Red-Black.
+        </div>
+    </div>
+
+</div>

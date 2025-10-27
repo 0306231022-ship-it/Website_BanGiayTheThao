@@ -1,0 +1,98 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "_Adminlayout";
+}
+
+<link rel="stylesheet" href="~/css/Admin/ThemSanPhamSale.css" />
+
+
+<div id="main-content">
+
+    <div class="header-admin">
+        <h1>Thiết Lập Chương Trình Giảm Giá (Sale)</h1>
+        <a asp-action="QuanLiSanPham" asp-controller="Admin" class="btn-cancel" style="padding: 10px 15px;">⬅️ Quay lại Quản lý Sản phẩm</a>
+    </div>
+
+    <div class="sale-form-container">
+        <form action="/schedule-sale" method="POST">
+
+            <div class="setting-block">
+                <h3>Chọn Sản Phẩm Áp Dụng</h3>
+                <label for="product-select">Chọn Sản Phẩm (*)</label>
+                <select id="product-select" name="product_id" required>
+                    <option value="">-- Chọn Sản Phẩm Cần Giảm Giá --</option>
+                    <option value="1">Nike Air Max 97 'Silver Bullet'</option>
+                    <option value="2">Air Jordan 1 Mid 'Light Smoke Grey'</option>
+                    <option value="3">Adidas Ultraboost 21</option>
+                </select>
+
+                <label for="sale-name">Tên Chương Trình Giảm Giá (Nội bộ)</label>
+                <input type="text" id="sale-name" name="sale_name" placeholder="Ví dụ: Flash Sale Giày Nam Cuối Tuần">
+            </div>
+
+            <div class="setting-block">
+                <h3>Cài Đặt Mức Giảm</h3>
+
+                <label for="discount-type">Loại Giảm Giá (*)</label>
+                <select id="discount-type" name="discount_type" required>
+                    <option value="percentage">Giảm theo Phần trăm (%)</option>
+                    <option value="fixed">Giảm theo Số tiền cố định (VND)</option>
+                    <option value="fixed_price">Giá cố định sau giảm (VND)</option>
+                </select>
+
+                <label for="discount-value">Giá trị Giảm (*)</label>
+                <div class="price-input-group">
+                    <input type="number" id="discount-value" name="discount_value" required min="1" placeholder="Ví dụ: 50 (nếu chọn %) hoặc 1000000 (nếu chọn số tiền)">
+                    <span class="price-unit">%</span>
+                </div>
+
+                <p style="margin-top: -10px; font-size: 14px; color: gray;">*Giá cuối cùng sẽ được tính toán dựa trên Giá Niêm Yết của sản phẩm.</p>
+            </div>
+
+            <div class="setting-block">
+                <h3>Thời Gian Áp Dụng (*)</h3>
+
+                <div style="display: flex; gap: 20px;">
+                    <div style="flex: 1;">
+                        <label for="start-time">Thời gian BẮT ĐẦU</label>
+                        <input type="datetime-local" id="start-time" name="start_time" required>
+                    </div>
+                    <div style="flex: 1;">
+                        <label for="end-time">Thời gian KẾT THÚC</label>
+                        <input type="datetime-local" id="end-time" name="end_time" required>
+                    </div>
+                </div>
+
+                <label>
+                    <input type="checkbox" name="no_end_date"> Không có ngày kết thúc (Áp dụng vô thời hạn)
+                </label>
+            </div>
+
+            <div class="setting-block" style="text-align: right;">
+                <button type="button" class="btn-action btn-cancel" onclick="window.history.back()">Hủy Bỏ</button>
+                <button type="submit" class="btn-action btn-schedule">🛒 Lên Lịch Giảm Giá Ngay</button>
+            </div>
+
+        </form>
+    </div>
+
+</div>
+
+<script>
+    document.getElementById('discount-type').addEventListener('change', function() {
+        const unitElement = document.querySelector('.price-unit');
+        const valueInput = document.getElementById('discount-value');
+        if (this.value === 'percentage') {
+            unitElement.textContent = '%';
+            valueInput.placeholder = 'Ví dụ: 50 (cho 50%)';
+        } else if (this.value === 'fixed') {
+            unitElement.textContent = 'VND';
+            valueInput.placeholder = 'Ví dụ: 500000 (cho 500,000 VND)';
+        } else { // fixed_price
+            unitElement.textContent = 'VND';
+            valueInput.placeholder = 'Giá bán sau giảm (VND)';
+        }
+    });
+</script>

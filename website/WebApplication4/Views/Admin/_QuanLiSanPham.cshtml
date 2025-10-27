@@ -1,0 +1,127 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "_Adminlayout";
+}
+<link rel="stylesheet" href="~/css/Admin/QuanLiSanPham.css" />
+
+
+<div id="main-content">
+
+    <div class="header-admin">
+        <h1>Quản Lý Sản Phẩm</h1>
+        <a asp-action="ThemSanPham" asp-controller="Admin"  class="btn-primary">+ Thêm Sản Phẩm Mới</a>
+    </div>
+
+    <div class="search-container">
+
+        <div class="search-input-group">
+            <input type="text" placeholder="Tìm kiếm theo tên sản phẩm, SKU..." title="Nhập từ khóa tìm kiếm">
+            <button class="search-button" type="submit">🔍</button>
+        </div>
+        <select style="padding: 10px; border-radius: 4px; border: 1px solid #ccc;">
+            <option>Lọc theo Danh mục</option>
+            <option>Giày Nam</option>
+            <option>Giày Nữ</option>
+        </select>
+    </div>
+
+    <div class="tab-menu">
+        <button class="active" onclick="showTab('all-products')">Tất Cả Sản Phẩm</button>
+        <button onclick="showTab('sale-products')">Sản Phẩm Đang Sale (SALE 50%)</button>
+    </div>
+
+    <div id="all-products" class="tab-content" style="display: block;">
+        <h2>Danh Sách Sản Phẩm</h2>
+        <table class="product-table">
+            <thead>
+                <tr>
+                    <th>Ảnh</th>
+                    <th>Tên Sản Phẩm</th>
+                    <th>SKU</th>
+                    <th>Giá (VND)</th>
+                    <th>Tồn Kho</th>
+                    <th>Trạng Thái</th>
+                    <th>Hành động</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><img src="product1.jpg" alt="Nike Air Max"></td>
+                    <td>Nike Air Max 97 'Silver Bullet'</td>
+                    <td>NM97-SB01</td>
+                    <td>3,500,000</td>
+                    <td>45</td>
+                    <td style="color: green; font-weight: bold;">Đang bán</td>
+                    <td>
+                        <a asp-action="ChiTietSanPham" asp-action="Admin" class="action-btn view-btn">Xem</a>
+                        <a href="#edit-product-1" class="action-btn edit-btn">Sửa</a>
+                        <button class="action-btn delete-btn">Xóa</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td><img src="product2.jpg" alt="Air Jordan"></td>
+                    <td>Air Jordan 1 Mid 'Light Smoke Grey'</td>
+                    <td>AJ1-LSG</td>
+                    <td>4,200,000</td>
+                    <td>0</td>
+                    <td style="color: red; font-weight: bold;">Hết hàng</td>
+                    <td>
+                        <a href="#view-product-2" class="action-btn view-btn">Xem</a>
+                        <a href="#edit-product-2" class="action-btn edit-btn">Sửa</a>
+                        <button class="action-btn delete-btn">Xóa</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div id="sale-products" class="tab-content" style="display: none;">
+        <h2>Quản lý Sản Phẩm Giảm Giá (SALE 50%)</h2>
+        <a asp-action="ThemSanPhamSale" asp-controller="Admin" class="btn-primary" style="background-color: #e74c3c; margin-bottom: 15px;">+ Thêm Sản Phẩm Giảm Giá</a>
+
+        <table class="product-table">
+            <thead>
+                <tr>
+                    <th>Tên Sản Phẩm</th>
+                    <th>Giá Gốc</th>
+                    <th>Giá Sale</th>
+                    <th>Thời gian Sale còn lại</th>
+                    <th>Hành động</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Nike Air Force 1 Low White</td>
+                    <td>2,800,000</td>
+                    <td style="color: #e74c3c; font-weight: bold;">1,400,000</td>
+                    <td>3 ngày 10 giờ</td>
+                    <td>
+                        <button class="action-btn delete-btn">Hủy Sale</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p style="margin-top: 15px; color: gray;">*Các sản phẩm trong danh sách này sẽ tự động áp dụng mức giảm 50% cho đến khi kết thúc thời gian sale hoặc được hủy thủ công.</p>
+    </div>
+
+</div>
+
+<script>
+    function showTab(tabId) {
+        // Ẩn tất cả nội dung tab
+        document.querySelectorAll('.tab-content').forEach(tab => {
+            tab.style.display = 'none';
+        });
+        // Loại bỏ active khỏi tất cả nút
+        document.querySelectorAll('.tab-menu button').forEach(button => {
+            button.classList.remove('active');
+        });
+
+        // Hiển thị tab được chọn
+        document.getElementById(tabId).style.display = 'block';
+        // Thêm active vào nút được chọn
+        document.querySelector(`.tab-menu button[onclick="showTab('${tabId}')"]`).classList.add('active');
+    }
+</script>
