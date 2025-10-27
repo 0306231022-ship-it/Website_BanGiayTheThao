@@ -7,14 +7,6 @@
     --bg-gray: #f9f9f9;
 }
 
-/* ==================== CÁC THIẾT LẬP CHUNG ==================== */
-body {
-    font-family: 'Poppins', sans-serif;
-    line-height: 1.6;
-    background-color: var(--bg-gray);
-    color: var(--text-dark);
-    padding: 20px; /* Thêm padding giả lập container */
-}
 
 a {
     text-decoration: none;

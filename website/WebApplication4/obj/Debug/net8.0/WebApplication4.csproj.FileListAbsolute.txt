@@ -161,3 +161,4 @@ D:\Website_BanGiayTheThao\Website_BanGiayTheThao\website\WebApplication4\obj\Deb
 D:\Website_BanGiayTheThao\Website_BanGiayTheThao\website\WebApplication4\obj\Debug\net8.0\WebApplication4.pdb
 D:\Website_BanGiayTheThao\Website_BanGiayTheThao\website\WebApplication4\obj\Debug\net8.0\WebApplication4.genruntimeconfig.cache
 D:\Website_BanGiayTheThao\Website_BanGiayTheThao\website\WebApplication4\obj\Debug\net8.0\ref\WebApplication4.dll
+D:\Website_BanGiayTheThao\website\WebApplication4\obj\Debug\net8.0\WebApplication4.sourcelink.json

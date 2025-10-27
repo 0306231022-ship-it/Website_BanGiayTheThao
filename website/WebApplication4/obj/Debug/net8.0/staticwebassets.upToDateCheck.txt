@@ -1,9 +1,14 @@
-wwwroot\css\NguoiDung\MyDonHang.css
+wwwroot\css\Admin\CaiDatWebsite.css
+wwwroot\css\Admin\QuanLiBaiViet.css
+wwwroot\css\Admin\ThemBaiViet.css
+wwwroot\css\Admin\TrangChu.css
 wwwroot\css\NguoiDung\CapNhatMatKhau.css
+wwwroot\css\NguoiDung\MyDonHang.css
 wwwroot\css\NguoiDung\SanPhamYeuThich.css
 wwwroot\css\NguoiDung\SoDiaChi.css
 wwwroot\css\NguoiDung\ThongTinNguoiDung.css
 wwwroot\css\NguoiDung\TongQuan.css
+wwwroot\css\NguoiDung\TrangChuNguoiDung.css
 wwwroot\css\site.css
 wwwroot\css\Website\GiayNam.css
 wwwroot\css\Website\GiayNu.css
@@ -11,7 +16,6 @@ wwwroot\css\Website\GioHang.css
 wwwroot\css\Website\SanPhamSale.css
 wwwroot\css\Website\style.css
 wwwroot\css\Website\TrangBlog.css
-wwwroot\css\Website\TrangChuNguoiDung.css
 wwwroot\favicon.ico
 wwwroot\js\site.js
 wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css
@@ -71,7 +75,3 @@ wwwroot\lib\jquery\dist\jquery.js
 wwwroot\lib\jquery\dist\jquery.min.js
 wwwroot\lib\jquery\dist\jquery.min.map
 wwwroot\lib\jquery\LICENSE.txt
-wwwroot\css\Admin\TrangChu.css
-wwwroot\css\Admin\CaiDatWebsite.css
-wwwroot\css\Admin\ThemBaiViet.css
-wwwroot\css\Admin\QuanLiBaiViet.css

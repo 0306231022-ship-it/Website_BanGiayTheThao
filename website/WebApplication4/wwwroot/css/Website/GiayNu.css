@@ -1,51 +1,24 @@
-﻿/* ==================== CÁC THIẾT LẬP CHUNG ==================== */
+﻿/* ==================== CÁC THIẾT LẬP CHUNG TRANG NỮ ==================== */
+/* Dùng biến từ root của Layout nhưng nếu muốn thay đổi màu cho trang nữ (Ví dụ: Hồng) thì thay ở đây */
 :root {
-    --primary-color: #2a9d8f; /* Màu xanh ngọc năng động */
-    --secondary-color: #e76f51; /* Màu cam nổi bật cho CTA */
+    --primary-color: #f7a6b3; /* Màu Hồng Pastel nhẹ nhàng */
+    --secondary-color: #e76f51; /* Màu cam nổi bật cho CTA (giữ nguyên) */
     --text-dark: #264653;
     --text-light: #f4f4f4;
     --bg-light: #ffffff;
     --bg-gray: #f9f9f9;
 }
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
 
-body {
-    font-family: 'Poppins', sans-serif;
-    line-height: 1.6;
-    background-color: var(--bg-gray);
-    color: var(--text-dark);
-}
 
-a {
-    text-decoration: none;
-    color: var(--primary-color);
-    transition: color 0.3s;
-}
 
-    a:hover {
-        color: var(--secondary-color);
-    }
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-/* ==================== DANH MỤC SẢN PHẨM ==================== */
-
-/* Category Header không còn dính với Header nên cần padding trên */
+/* ==================== 1. CATEGORY HEADER NỮ ==================== */
 .category-header {
-    background-color: var(--bg-light);
-    padding: 50px 0 30px 0; /* Tăng padding-top để tạo khoảng trống */
+    background: linear-gradient(135deg, #fce0e6 0%, #ffe9ee 100%); /* Nền gradient nhẹ nhàng */
+    color: var(--text-dark);
+    padding: 40px 0;
     margin-bottom: 30px;
-    text-align: center;
-    border-bottom: 1px solid #eee;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
     .category-header h1 {
@@ -57,15 +30,17 @@ a {
     .category-header p {
         font-size: 1.1em;
         color: #555;
+        font-style: italic;
     }
 
+/* ==================== 2. LISTING VÀ FILTER LAYOUT ==================== */
 .listing-container {
     display: flex;
     gap: 30px;
     margin-bottom: 50px;
 }
 
-/* Sidebar Bộ lọc */
+/* Sidebar Bộ lọc (ĐẶT LẠI THUỘC TÍNH STICKY) */
 .sidebar-filter {
     flex: 0 0 250px;
     background-color: var(--bg-light);
@@ -73,9 +48,10 @@ a {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
     padding: 20px;
     height: fit-content;
-    /* Loại bỏ 'position: sticky;' vì không còn Header để dính vào */
-    /* position: sticky; */
-    /* top: 100px; */
+    /* 📌 CHỈNH SỬA CHO PHÉP THANH LỌC DÍNH */
+    position: sticky;
+    top: 20px; /* Khoảng cách từ đỉnh Header/Màn hình */
+    z-index: 10;
 }
 
 .filter-group {
@@ -151,6 +127,7 @@ a {
         cursor: pointer;
         outline: none;
         appearance: none;
+        /* Custom dropdown arrow - giữ nguyên */
         background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23264653%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-6.5%200-12.3%203.4-15.6%208.9-3.3%205.5-3.2%2012%20-.2%2017.5l123.6%20182.3c3.6%205.3%209.5%208.2%2015.7%208.2s12.1-2.9%2015.7-8.2L287%2086.9c3.2-5.5%203.3-12%20-.2-17.5z%22%2F%3E%3C%2Fsvg%3E');
         background-repeat: no-repeat;
         background-position: right 8px center;
@@ -158,6 +135,7 @@ a {
         padding-right: 30px;
     }
 
+/* ==================== 3. PRODUCT GRID & CARD ==================== */
 .product-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -197,6 +175,15 @@ a {
         -webkit-box-orient: vertical;
     }
 
+        /* 📌 CHỈNH SỬA: Đảm bảo liên kết trong card sản phẩm hoạt động đúng */
+        .product-card h3 a {
+            color: var(--text-dark); /* Màu chữ tiêu đề sản phẩm */
+        }
+
+            .product-card h3 a:hover {
+                color: var(--primary-color);
+            }
+
     .product-card p {
         font-size: 0.9em;
         color: #777;
@@ -235,9 +222,10 @@ a {
 }
 
     .btn-add:hover {
-        background-color: #218579;
+        background-color: #d8573a; /* Thay đổi màu hover cho nút CTA */
     }
 
+/* ==================== 4. PAGINATION (Phân Trang) ==================== */
 .pagination {
     text-align: center;
     margin-top: 40px;
@@ -253,6 +241,7 @@ a {
         border-radius: 5px;
         color: var(--text-dark);
         font-weight: 600;
+        /* Thêm style riêng cho liên kết phân trang */
     }
 
         .pagination a.active, .pagination a:hover {
@@ -261,7 +250,7 @@ a {
             border-color: var(--primary-color);
         }
 
-/* ==================== RESPONSIVE (Điều chỉnh cho không có Header) ==================== */
+/* ==================== 5. RESPONSIVE ==================== */
 @media (max-width: 992px) {
     .product-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -279,8 +268,9 @@ a {
     }
 
     .sidebar-filter {
-        position: static;
+        position: static; /* Loại bỏ sticky trên mobile để tiết kiệm không gian */
         width: 100%;
+        box-shadow: none; /* Giảm bớt hiệu ứng trên mobile */
     }
 
     .product-grid {
@@ -291,11 +281,5 @@ a {
         flex-direction: column;
         align-items: flex-start;
         gap: 10px;
-    }
-}
-
-@media (max-width: 480px) {
-    .category-header h1 {
-        font-size: 2em;
     }
 }

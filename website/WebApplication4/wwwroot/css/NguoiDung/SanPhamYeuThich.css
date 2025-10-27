@@ -6,14 +6,7 @@
     --bg-gray: #f9f9f9;
 }
 
-body {
-    font-family: 'Poppins', sans-serif;
-    line-height: 1.6;
-    background-color: var(--bg-gray);
-    color: var(--text-dark);
-    padding: 40px;
-    margin: 0;
-}
+
 
 .main-content {
     background-color: var(--bg-light);
